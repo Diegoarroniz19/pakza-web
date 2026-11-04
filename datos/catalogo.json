@@ -1,7 +1,7 @@
 {
- "actualizado": "2026-11-03 18:26",
+ "actualizado": "2026-11-03 22:00",
  "mostrar_precios": false,
- "precios_con_iva": true,
+ "precios_con_iva": false,
  "pedido_minimo": 500.0,
  "envio_gratis_desde": 3000.0,
  "efectivo_hasta": 1000,
