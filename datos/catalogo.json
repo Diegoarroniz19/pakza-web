@@ -1,0 +1,525 @@
+{
+ "actualizado": "2026-11-03 18:26",
+ "mostrar_precios": false,
+ "precios_con_iva": true,
+ "pedido_minimo": 500.0,
+ "envio_gratis_desde": 3000.0,
+ "efectivo_hasta": 1000,
+ "whatsapp": "523313673566",
+ "telefono": "33 1367 3566",
+ "correo": "diego.hernandez@pakza.com.mx",
+ "familias": {
+  "playo": "Emplayes y películas",
+  "cinta": "Cintas",
+  "cajas": "Cajas de cartón",
+  "burbuja": "Burbuja y protección",
+  "bolsas": "Bolsas",
+  "kraft": "Papel kraft"
+ },
+ "productos": [
+  {
+   "id": "P01",
+   "producto": "Playo / emplaye 18\" calibre 80 (2.5 kg)",
+   "presentacion": "Rollo",
+   "piezas": 1.0,
+   "familia": "playo",
+   "estrella": true
+  },
+  {
+   "id": "P02",
+   "producto": "Playo / emplaye 18\" calibre 80 (2.5 kg)",
+   "presentacion": "Caja 4 rollos",
+   "piezas": 4.0,
+   "familia": "playo",
+   "estrella": true
+  },
+  {
+   "id": "P03",
+   "producto": "Playo / emplaye 18\" calibre 60 (1.5 kg)",
+   "presentacion": "Rollo",
+   "piezas": 1.0,
+   "familia": "playo",
+   "estrella": true
+  },
+  {
+   "id": "P04",
+   "producto": "Cinta transparente 48 mm x 150 m",
+   "presentacion": "Rollo",
+   "piezas": 1.0,
+   "familia": "cinta",
+   "estrella": true
+  },
+  {
+   "id": "P05",
+   "producto": "Cinta transparente 48 mm x 150 m",
+   "presentacion": "Paquete 6",
+   "piezas": 6.0,
+   "familia": "cinta",
+   "estrella": true
+  },
+  {
+   "id": "P06",
+   "producto": "Cinta canela 48 mm x 150 m",
+   "presentacion": "Rollo",
+   "piezas": 1.0,
+   "familia": "cinta",
+   "estrella": true
+  },
+  {
+   "id": "P07",
+   "producto": "Cinta canela 48 mm x 150 m",
+   "presentacion": "Paquete 6",
+   "piezas": 6.0,
+   "familia": "cinta",
+   "estrella": true
+  },
+  {
+   "id": "P08",
+   "producto": "Caja cartón corrugado 30 x 20 x 20 cm (ECT 32)",
+   "presentacion": "Pieza",
+   "piezas": 1.0,
+   "familia": "cajas",
+   "estrella": true
+  },
+  {
+   "id": "P09",
+   "producto": "Caja cartón corrugado 30 x 20 x 20 cm (ECT 32)",
+   "presentacion": "Paquete 25",
+   "piezas": 25.0,
+   "familia": "cajas",
+   "estrella": true
+  },
+  {
+   "id": "P10",
+   "producto": "Poliburbuja burbuja chica (3/16\") 1.20 x 120 m",
+   "presentacion": "Rollo",
+   "piezas": 1.0,
+   "familia": "burbuja",
+   "estrella": true
+  },
+  {
+   "id": "P11",
+   "producto": "Poliburbuja burbuja grande (1/2\") 1.20 x 60 m",
+   "presentacion": "Rollo",
+   "piezas": 1.0,
+   "familia": "burbuja",
+   "estrella": true
+  },
+  {
+   "id": "P12",
+   "producto": "Bolsa de seguridad para paquetería 25 x 36 cm (autoadherible)",
+   "presentacion": "Paquete 100",
+   "piezas": 1.0,
+   "familia": "bolsas",
+   "estrella": true
+  },
+  {
+   "id": "P13",
+   "producto": "Bolsa de seguridad para paquetería 32 x 41 cm (autoadherible)",
+   "presentacion": "Paquete 100",
+   "piezas": 1.0,
+   "familia": "bolsas",
+   "estrella": true
+  },
+  {
+   "id": "P14",
+   "producto": "Papel kraft para envolver y rellenar 60 cm (125 g)",
+   "presentacion": "Paquete 5 kg (aprox. 66 m)",
+   "piezas": 5.0,
+   "familia": "kraft",
+   "estrella": true
+  },
+  {
+   "id": "P15",
+   "producto": "Cinta transparente económica 48 mm x 135 m",
+   "presentacion": "Rollo",
+   "piezas": 1.0,
+   "familia": "cinta",
+   "estrella": true
+  },
+  {
+   "id": "P16",
+   "producto": "Película estirable (playo) 5\" manual chica",
+   "presentacion": "Pieza",
+   "piezas": 1.0,
+   "familia": "playo",
+   "estrella": false
+  },
+  {
+   "id": "P17",
+   "producto": "Película estirable (playo) 5\" manual chica",
+   "presentacion": "Paquete 16",
+   "piezas": 16.0,
+   "familia": "playo",
+   "estrella": false
+  },
+  {
+   "id": "P18",
+   "producto": "Polipack (espuma de polietileno) 1/4\"",
+   "presentacion": "Rollo",
+   "piezas": 1.0,
+   "familia": "burbuja",
+   "estrella": false
+  },
+  {
+   "id": "P19",
+   "producto": "Película estirable (playo) 3\" manual chica",
+   "presentacion": "Pieza",
+   "piezas": 1.0,
+   "familia": "playo",
+   "estrella": false
+  },
+  {
+   "id": "P20",
+   "producto": "Película estirable (playo) 3\" manual chica",
+   "presentacion": "Paquete 24",
+   "piezas": 24.0,
+   "familia": "playo",
+   "estrella": false
+  },
+  {
+   "id": "P21",
+   "producto": "Película estirable (playo) 4\" calibre 60 x 1000 ft",
+   "presentacion": "Rollo",
+   "piezas": 1.0,
+   "familia": "playo",
+   "estrella": false
+  },
+  {
+   "id": "P22",
+   "producto": "Película estirable (playo) 5\" calibre 60 x 700 ft",
+   "presentacion": "Rollo",
+   "piezas": 1.0,
+   "familia": "playo",
+   "estrella": false
+  },
+  {
+   "id": "P23",
+   "producto": "Película estirable (playo) 5\" calibre 60 x 800 ft con centro de cartón",
+   "presentacion": "Rollo",
+   "piezas": 1.0,
+   "familia": "playo",
+   "estrella": false
+  },
+  {
+   "id": "P24",
+   "producto": "Playo / emplaye 10\" calibre 60 x 800 ft",
+   "presentacion": "Rollo",
+   "piezas": 1.0,
+   "familia": "playo",
+   "estrella": false
+  },
+  {
+   "id": "P25",
+   "producto": "Playo / emplaye 18\" calibre 50 x 700 ft",
+   "presentacion": "Rollo",
+   "piezas": 1.0,
+   "familia": "playo",
+   "estrella": false
+  },
+  {
+   "id": "P26",
+   "producto": "Playo / emplaye 18\" calibre 50 x 900 ft",
+   "presentacion": "Rollo",
+   "piezas": 1.0,
+   "familia": "playo",
+   "estrella": false
+  },
+  {
+   "id": "P27",
+   "producto": "Playo / emplaye 18\" calibre 50 x 1000 ft",
+   "presentacion": "Rollo",
+   "piezas": 1.0,
+   "familia": "playo",
+   "estrella": false
+  },
+  {
+   "id": "P28",
+   "producto": "Playo / emplaye 18\" calibre 50 x 1200 ft",
+   "presentacion": "Rollo",
+   "piezas": 1.0,
+   "familia": "playo",
+   "estrella": false
+  },
+  {
+   "id": "P29",
+   "producto": "Playo / emplaye 18\" calibre 60 x 800 ft de color",
+   "presentacion": "Rollo",
+   "piezas": 1.0,
+   "familia": "playo",
+   "estrella": false
+  },
+  {
+   "id": "P30",
+   "producto": "Playo / emplaye 18\" calibre 60 x 1000 ft",
+   "presentacion": "Rollo",
+   "piezas": 1.0,
+   "familia": "playo",
+   "estrella": false
+  },
+  {
+   "id": "P31",
+   "producto": "Playo / emplaye 18\" calibre 60 x 1200 ft",
+   "presentacion": "Rollo",
+   "piezas": 1.0,
+   "familia": "playo",
+   "estrella": false
+  },
+  {
+   "id": "P32",
+   "producto": "Playo / emplaye 18\" calibre 60 x 1500 ft",
+   "presentacion": "Rollo",
+   "piezas": 1.0,
+   "familia": "playo",
+   "estrella": false
+  },
+  {
+   "id": "P33",
+   "producto": "Playo / emplaye 18\" calibre 70 x 1300 ft",
+   "presentacion": "Rollo",
+   "piezas": 1.0,
+   "familia": "playo",
+   "estrella": false
+  },
+  {
+   "id": "P34",
+   "producto": "Playo / emplaye 18\" calibre 80 x 1300 ft (rollo grande)",
+   "presentacion": "Rollo",
+   "piezas": 1.0,
+   "familia": "playo",
+   "estrella": false
+  },
+  {
+   "id": "P35",
+   "producto": "Playo / emplaye 20\" calibre 80 x 1100 ft",
+   "presentacion": "Rollo",
+   "piezas": 1.0,
+   "familia": "playo",
+   "estrella": false
+  },
+  {
+   "id": "P36",
+   "producto": "Cinta delimitadora (marcaje) amarillo/negro 48 mm x 33 m",
+   "presentacion": "Rollo",
+   "piezas": 1.0,
+   "familia": "cinta",
+   "estrella": false
+  },
+  {
+   "id": "P37",
+   "producto": "Cinta ducto 48 mm x 10 m",
+   "presentacion": "Rollo",
+   "piezas": 1.0,
+   "familia": "cinta",
+   "estrella": false
+  },
+  {
+   "id": "P38",
+   "producto": "Cinta ducto TUK 48 mm x 50 m",
+   "presentacion": "Rollo",
+   "piezas": 1.0,
+   "familia": "cinta",
+   "estrella": false
+  },
+  {
+   "id": "P39",
+   "producto": "Caja cartón corrugado 19 x 17 x 17 cm (sencillo)",
+   "presentacion": "Pieza",
+   "piezas": 1.0,
+   "familia": "cajas",
+   "estrella": false
+  },
+  {
+   "id": "P40",
+   "producto": "Caja cartón corrugado 29.5 x 27.5 x 10.5 cm (ECT 23)",
+   "presentacion": "Pieza",
+   "piezas": 1.0,
+   "familia": "cajas",
+   "estrella": false
+  },
+  {
+   "id": "P41",
+   "producto": "Caja cartón corrugado 30 x 30 x 20 cm (doble corrugado)",
+   "presentacion": "Pieza",
+   "piezas": 1.0,
+   "familia": "cajas",
+   "estrella": false
+  },
+  {
+   "id": "P42",
+   "producto": "Caja cartón corrugado 31 x 21 x 20 cm (doble corrugado)",
+   "presentacion": "Pieza",
+   "piezas": 1.0,
+   "familia": "cajas",
+   "estrella": false
+  },
+  {
+   "id": "P43",
+   "producto": "Caja cartón corrugado 31 x 26 x 30 cm (doble corrugado)",
+   "presentacion": "Pieza",
+   "piezas": 1.0,
+   "familia": "cajas",
+   "estrella": false
+  },
+  {
+   "id": "P44",
+   "producto": "Caja cartón corrugado 31 x 30.5 x 11.8 cm (ECT 23)",
+   "presentacion": "Pieza",
+   "piezas": 1.0,
+   "familia": "cajas",
+   "estrella": false
+  },
+  {
+   "id": "P45",
+   "producto": "Caja cartón corrugado 41 x 31 x 20 cm (doble corrugado)",
+   "presentacion": "Pieza",
+   "piezas": 1.0,
+   "familia": "cajas",
+   "estrella": false
+  },
+  {
+   "id": "P46",
+   "producto": "Caja cartón corrugado 41 x 31 x 30 cm (doble corrugado)",
+   "presentacion": "Pieza",
+   "piezas": 1.0,
+   "familia": "cajas",
+   "estrella": false
+  },
+  {
+   "id": "P47",
+   "producto": "Caja cartón corrugado 43 x 32 x 15 cm (ECT 23)",
+   "presentacion": "Pieza",
+   "piezas": 1.0,
+   "familia": "cajas",
+   "estrella": false
+  },
+  {
+   "id": "P48",
+   "producto": "Caja cartón corrugado 51 x 41 x 25 cm (doble corrugado)",
+   "presentacion": "Pieza",
+   "piezas": 1.0,
+   "familia": "cajas",
+   "estrella": false
+  },
+  {
+   "id": "P49",
+   "producto": "Caja cartón corrugado 51 x 41 x 50 cm (doble corrugado)",
+   "presentacion": "Pieza",
+   "piezas": 1.0,
+   "familia": "cajas",
+   "estrella": false
+  },
+  {
+   "id": "P50",
+   "producto": "Caja cartón corrugado 55 x 45 x 35 cm (doble corrugado)",
+   "presentacion": "Pieza",
+   "piezas": 1.0,
+   "familia": "cajas",
+   "estrella": false
+  },
+  {
+   "id": "P51",
+   "producto": "Caja huevera 60.5 x 30 x 33.6 cm (ECT 26)",
+   "presentacion": "Pieza",
+   "piezas": 1.0,
+   "familia": "cajas",
+   "estrella": false
+  },
+  {
+   "id": "P52",
+   "producto": "Caja para archivo (ECT 23)",
+   "presentacion": "Pieza",
+   "piezas": 1.0,
+   "familia": "cajas",
+   "estrella": false
+  },
+  {
+   "id": "P53",
+   "producto": "Caja para calzado 6 pares 32.5 x 26.5 x 26.5 cm (ECT 20)",
+   "presentacion": "Pieza",
+   "piezas": 1.0,
+   "familia": "cajas",
+   "estrella": false
+  },
+  {
+   "id": "P54",
+   "producto": "Caja para calzado 12 pares 33 x 27.5 x 55.5 cm (ECT 23)",
+   "presentacion": "Pieza",
+   "piezas": 1.0,
+   "familia": "cajas",
+   "estrella": false
+  },
+  {
+   "id": "P55",
+   "producto": "Caja para calzado 18 pares 48 x 27 x 55 cm (ECT 23)",
+   "presentacion": "Pieza",
+   "piezas": 1.0,
+   "familia": "cajas",
+   "estrella": false
+  },
+  {
+   "id": "P56",
+   "producto": "Caja para calzado 24 pares 49 x 36 x 55.5 cm (ECT 23)",
+   "presentacion": "Pieza",
+   "piezas": 1.0,
+   "familia": "cajas",
+   "estrella": false
+  },
+  {
+   "id": "P57",
+   "producto": "Caja para calzado 36 pares 53.5 x 49 x 55.5 cm, pegada (ECT 23)",
+   "presentacion": "Pieza",
+   "piezas": 1.0,
+   "familia": "cajas",
+   "estrella": false
+  },
+  {
+   "id": "P58",
+   "producto": "Caja para calzado 48 pares 56.5 x 55 x 66.5 cm, pegada (ECT 23)",
+   "presentacion": "Pieza",
+   "piezas": 1.0,
+   "familia": "cajas",
+   "estrella": false
+  },
+  {
+   "id": "P59",
+   "producto": "Caja para calzado 52 pares 62.5 x 56 x 73 cm (ECT 23)",
+   "presentacion": "Pieza",
+   "piezas": 1.0,
+   "familia": "cajas",
+   "estrella": false
+  },
+  {
+   "id": "P60",
+   "producto": "Caja para paquetería 39 x 31 x 13 cm (ECT 26)",
+   "presentacion": "Pieza",
+   "piezas": 1.0,
+   "familia": "cajas",
+   "estrella": false
+  },
+  {
+   "id": "P61",
+   "producto": "Caja para paquetería 40 x 30 x 20 cm (ECT 26)",
+   "presentacion": "Pieza",
+   "piezas": 1.0,
+   "familia": "cajas",
+   "estrella": false
+  },
+  {
+   "id": "P62",
+   "producto": "Caja para paquetería 46.5 x 31 x 35 cm (ECT 26)",
+   "presentacion": "Pieza",
+   "piezas": 1.0,
+   "familia": "cajas",
+   "estrella": false
+  },
+  {
+   "id": "P63",
+   "producto": "Caja para paquetería 60 x 40 x 40 cm (ECT 26)",
+   "presentacion": "Pieza",
+   "piezas": 1.0,
+   "familia": "cajas",
+   "estrella": false
+  }
+ ]
+}

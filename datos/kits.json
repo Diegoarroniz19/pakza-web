@@ -1,0 +1,22 @@
+{
+ "nota": "Kits y destacados de la portada (brief/contenido.md 2.3 y 2.4). Solo ids y cantidades: los precios y totales salen de catalogo.json.",
+ "destacados": ["P16", "P01", "P12", "P09", "P05", "P10"],
+ "kits": [
+  {"id": "emprendedor", "nombre": "Kit Emprendedor", "subtitulo": "Para tu tienda en línea: empaque para 125 envíos",
+   "foto": "img/k-emprendedor-720.webp", "alt": "Paquete de 100 bolsas de seguridad, cajas de 29.5 x 27.5 x 10.5 cm y 2 rollos de cinta transparente",
+   "items": [{"id": "P12", "cantidad": 1, "texto": "100 bolsas de seguridad 25 x 36 cm"},
+             {"id": "P40", "cantidad": 25, "texto": "25 cajas de 29.5 x 27.5 x 10.5 cm"},
+             {"id": "P15", "cantidad": 2, "texto": "2 cintas transparentes 48 mm x 135 m"}]},
+  {"id": "mudanza", "nombre": "Kit Mudanza y bodega", "subtitulo": "Para cambiarte o acomodar tu bodega",
+   "foto": "img/k-mudanza-720.webp", "alt": "Cajas de doble corrugado, un rollo de playo de 18 pulgadas, uno de 5 pulgadas y 2 cintas canela",
+   "items": [{"id": "P46", "cantidad": 10, "texto": "10 cajas de doble corrugado 41 x 31 x 30 cm"},
+             {"id": "P01", "cantidad": 1, "texto": "1 rollo de playo 18\" calibre 80 (2.5 kg)"},
+             {"id": "P16", "cantidad": 1, "texto": "1 rollo de playo 5\" manual"},
+             {"id": "P06", "cantidad": 2, "texto": "2 cintas canela 48 mm x 150 m"}]},
+  {"id": "fragiles", "nombre": "Kit Envíos frágiles", "subtitulo": "Para vidrio, cerámica y productos delicados",
+   "foto": "img/k-fragiles-720.webp", "alt": "Rollo de poliburbuja, cajas de doble corrugado y 2 rollos de cinta transparente",
+   "items": [{"id": "P10", "cantidad": 1, "texto": "1 rollo de poliburbuja chica 1.20 x 120 m"},
+             {"id": "P42", "cantidad": 10, "texto": "10 cajas de doble corrugado 31 x 21 x 20 cm"},
+             {"id": "P04", "cantidad": 2, "texto": "2 cintas transparentes 48 mm x 150 m"}]}
+ ]
+}
