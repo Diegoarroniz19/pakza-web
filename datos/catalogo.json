@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-03 22:00",
+ "actualizado": "2026-11-05 10:22",
  "mostrar_precios": false,
  "precios_con_iva": false,
  "pedido_minimo": 500.0,
@@ -23,7 +23,18 @@
    "presentacion": "Rollo",
    "piezas": 1.0,
    "familia": "playo",
-   "estrella": true
+   "estrella": true,
+   "tipo": "Emplaye 18\" y 20\"",
+   "titulo": "18\" calibre 80",
+   "detalle": "2.5 kg",
+   "medidas": {
+    "ancho_in": 18,
+    "calibre": 80,
+    "largo_ft": null,
+    "peso_kg": 2.5,
+    "color": false
+   },
+   "pres_web": "1 rollo"
   },
   {
    "id": "P02",
@@ -31,7 +42,18 @@
    "presentacion": "Caja 4 rollos",
    "piezas": 4.0,
    "familia": "playo",
-   "estrella": true
+   "estrella": true,
+   "tipo": "Emplaye 18\" y 20\"",
+   "titulo": "18\" calibre 80",
+   "detalle": "2.5 kg",
+   "medidas": {
+    "ancho_in": 18,
+    "calibre": 80,
+    "largo_ft": null,
+    "peso_kg": 2.5,
+    "color": false
+   },
+   "pres_web": "Caja de 4 rollos"
   },
   {
    "id": "P03",
@@ -39,7 +61,18 @@
    "presentacion": "Rollo",
    "piezas": 1.0,
    "familia": "playo",
-   "estrella": true
+   "estrella": true,
+   "tipo": "Emplaye 18\" y 20\"",
+   "titulo": "18\" calibre 60",
+   "detalle": "1.5 kg",
+   "medidas": {
+    "ancho_in": 18,
+    "calibre": 60,
+    "largo_ft": null,
+    "peso_kg": 1.5,
+    "color": false
+   },
+   "pres_web": "1 rollo"
   },
   {
    "id": "P04",
@@ -47,7 +80,15 @@
    "presentacion": "Rollo",
    "piezas": 1.0,
    "familia": "cinta",
-   "estrella": true
+   "estrella": true,
+   "tipo": "Transparente",
+   "titulo": "48 mm × 150 m",
+   "detalle": "",
+   "medidas": {
+    "ancho_mm": 48,
+    "largo_m": 150
+   },
+   "pres_web": "1 rollo"
   },
   {
    "id": "P05",
@@ -55,7 +96,15 @@
    "presentacion": "Paquete 6",
    "piezas": 6.0,
    "familia": "cinta",
-   "estrella": true
+   "estrella": true,
+   "tipo": "Transparente",
+   "titulo": "48 mm × 150 m",
+   "detalle": "",
+   "medidas": {
+    "ancho_mm": 48,
+    "largo_m": 150
+   },
+   "pres_web": "Paquete de 6 rollos"
   },
   {
    "id": "P06",
@@ -63,7 +112,15 @@
    "presentacion": "Rollo",
    "piezas": 1.0,
    "familia": "cinta",
-   "estrella": true
+   "estrella": true,
+   "tipo": "Canela",
+   "titulo": "48 mm × 150 m",
+   "detalle": "",
+   "medidas": {
+    "ancho_mm": 48,
+    "largo_m": 150
+   },
+   "pres_web": "1 rollo"
   },
   {
    "id": "P07",
@@ -71,7 +128,15 @@
    "presentacion": "Paquete 6",
    "piezas": 6.0,
    "familia": "cinta",
-   "estrella": true
+   "estrella": true,
+   "tipo": "Canela",
+   "titulo": "48 mm × 150 m",
+   "detalle": "",
+   "medidas": {
+    "ancho_mm": 48,
+    "largo_m": 150
+   },
+   "pres_web": "Paquete de 6 rollos"
   },
   {
    "id": "P08",
@@ -79,7 +144,18 @@
    "presentacion": "Pieza",
    "piezas": 1.0,
    "familia": "cajas",
-   "estrella": true
+   "estrella": true,
+   "tipo": "Corrugado sencillo",
+   "titulo": "30 × 20 × 20 cm",
+   "detalle": "ECT 32",
+   "medidas": {
+    "largo_cm": 30,
+    "ancho_cm": 20,
+    "alto_cm": 20,
+    "resistencia": "ECT 32",
+    "pares": null
+   },
+   "pres_web": "1 pieza"
   },
   {
    "id": "P09",
@@ -87,23 +163,52 @@
    "presentacion": "Paquete 25",
    "piezas": 25.0,
    "familia": "cajas",
-   "estrella": true
+   "estrella": true,
+   "tipo": "Corrugado sencillo",
+   "titulo": "30 × 20 × 20 cm",
+   "detalle": "ECT 32",
+   "medidas": {
+    "largo_cm": 30,
+    "ancho_cm": 20,
+    "alto_cm": 20,
+    "resistencia": "ECT 32",
+    "pares": null
+   },
+   "pres_web": "Paquete de 25 piezas"
   },
   {
    "id": "P10",
-   "producto": "Poliburbuja burbuja chica (3/16\") 1.20 x 120 m",
+   "producto": "Poliburbuja burbuja chica (3/16\") 1.25 x 120 m",
    "presentacion": "Rollo",
    "piezas": 1.0,
    "familia": "burbuja",
-   "estrella": true
+   "estrella": true,
+   "tipo": "Poliburbuja",
+   "titulo": "1.25 × 120 m",
+   "detalle": "burbuja chica 3/16\"",
+   "medidas": {
+    "ancho_m": 1.25,
+    "largo_m": 120,
+    "burbuja": "3/16\""
+   },
+   "pres_web": "1 rollo"
   },
   {
    "id": "P11",
-   "producto": "Poliburbuja burbuja grande (1/2\") 1.20 x 60 m",
+   "producto": "Poliburbuja burbuja grande (1/2\") 1.25 x 60 m",
    "presentacion": "Rollo",
    "piezas": 1.0,
    "familia": "burbuja",
-   "estrella": true
+   "estrella": true,
+   "tipo": "Poliburbuja",
+   "titulo": "1.25 × 60 m",
+   "detalle": "burbuja grande 1/2\"",
+   "medidas": {
+    "ancho_m": 1.25,
+    "largo_m": 60,
+    "burbuja": "1/2\""
+   },
+   "pres_web": "1 rollo"
   },
   {
    "id": "P12",
@@ -111,7 +216,15 @@
    "presentacion": "Paquete 100",
    "piezas": 1.0,
    "familia": "bolsas",
-   "estrella": true
+   "estrella": true,
+   "tipo": "Bolsa de seguridad",
+   "titulo": "25 × 36 cm",
+   "detalle": "autoadherible",
+   "medidas": {
+    "ancho_cm": 25,
+    "alto_cm": 36
+   },
+   "pres_web": "Paquete de 100 bolsas"
   },
   {
    "id": "P13",
@@ -119,7 +232,15 @@
    "presentacion": "Paquete 100",
    "piezas": 1.0,
    "familia": "bolsas",
-   "estrella": true
+   "estrella": true,
+   "tipo": "Bolsa de seguridad",
+   "titulo": "32 × 41 cm",
+   "detalle": "autoadherible",
+   "medidas": {
+    "ancho_cm": 32,
+    "alto_cm": 41
+   },
+   "pres_web": "Paquete de 100 bolsas"
   },
   {
    "id": "P14",
@@ -127,7 +248,15 @@
    "presentacion": "Paquete 5 kg (aprox. 66 m)",
    "piezas": 5.0,
    "familia": "kraft",
-   "estrella": true
+   "estrella": true,
+   "tipo": "Papel kraft",
+   "titulo": "60 cm de ancho",
+   "detalle": "125 g",
+   "medidas": {
+    "ancho_cm": 60,
+    "gramaje_g": 125
+   },
+   "pres_web": "Paquete 5 kg (aprox. 66 m)"
   },
   {
    "id": "P15",
@@ -135,7 +264,15 @@
    "presentacion": "Rollo",
    "piezas": 1.0,
    "familia": "cinta",
-   "estrella": true
+   "estrella": true,
+   "tipo": "Transparente económica",
+   "titulo": "48 mm × 135 m",
+   "detalle": "",
+   "medidas": {
+    "ancho_mm": 48,
+    "largo_m": 135
+   },
+   "pres_web": "1 rollo"
   },
   {
    "id": "P16",
@@ -143,7 +280,18 @@
    "presentacion": "Pieza",
    "piezas": 1.0,
    "familia": "playo",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Playo chico 3\" a 5\"",
+   "titulo": "5\" manual",
+   "detalle": "",
+   "medidas": {
+    "ancho_in": 5,
+    "calibre": null,
+    "largo_ft": null,
+    "peso_kg": null,
+    "color": false
+   },
+   "pres_web": "1 rollo"
   },
   {
    "id": "P17",
@@ -151,7 +299,18 @@
    "presentacion": "Paquete 16",
    "piezas": 16.0,
    "familia": "playo",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Playo chico 3\" a 5\"",
+   "titulo": "5\" manual",
+   "detalle": "",
+   "medidas": {
+    "ancho_in": 5,
+    "calibre": null,
+    "largo_ft": null,
+    "peso_kg": null,
+    "color": false
+   },
+   "pres_web": "Paquete de 16 rollos"
   },
   {
    "id": "P18",
@@ -159,7 +318,14 @@
    "presentacion": "Rollo",
    "piezas": 1.0,
    "familia": "burbuja",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Espuma (polipack)",
+   "titulo": "Espuma 1/4\"",
+   "detalle": "polietileno",
+   "medidas": {
+    "espesor": "1/4\""
+   },
+   "pres_web": "1 rollo"
   },
   {
    "id": "P19",
@@ -167,7 +333,18 @@
    "presentacion": "Pieza",
    "piezas": 1.0,
    "familia": "playo",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Playo chico 3\" a 5\"",
+   "titulo": "3\" manual",
+   "detalle": "",
+   "medidas": {
+    "ancho_in": 3,
+    "calibre": null,
+    "largo_ft": null,
+    "peso_kg": null,
+    "color": false
+   },
+   "pres_web": "1 rollo"
   },
   {
    "id": "P20",
@@ -175,7 +352,18 @@
    "presentacion": "Paquete 24",
    "piezas": 24.0,
    "familia": "playo",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Playo chico 3\" a 5\"",
+   "titulo": "3\" manual",
+   "detalle": "",
+   "medidas": {
+    "ancho_in": 3,
+    "calibre": null,
+    "largo_ft": null,
+    "peso_kg": null,
+    "color": false
+   },
+   "pres_web": "Paquete de 24 rollos"
   },
   {
    "id": "P21",
@@ -183,7 +371,18 @@
    "presentacion": "Rollo",
    "piezas": 1.0,
    "familia": "playo",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Playo chico 3\" a 5\"",
+   "titulo": "4\" calibre 60",
+   "detalle": "1,000 ft",
+   "medidas": {
+    "ancho_in": 4,
+    "calibre": 60,
+    "largo_ft": 1000,
+    "peso_kg": null,
+    "color": false
+   },
+   "pres_web": "1 rollo"
   },
   {
    "id": "P22",
@@ -191,7 +390,18 @@
    "presentacion": "Rollo",
    "piezas": 1.0,
    "familia": "playo",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Playo chico 3\" a 5\"",
+   "titulo": "5\" calibre 60",
+   "detalle": "700 ft",
+   "medidas": {
+    "ancho_in": 5,
+    "calibre": 60,
+    "largo_ft": 700,
+    "peso_kg": null,
+    "color": false
+   },
+   "pres_web": "1 rollo"
   },
   {
    "id": "P23",
@@ -199,7 +409,18 @@
    "presentacion": "Rollo",
    "piezas": 1.0,
    "familia": "playo",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Playo chico 3\" a 5\"",
+   "titulo": "5\" calibre 60",
+   "detalle": "800 ft · centro de cartón",
+   "medidas": {
+    "ancho_in": 5,
+    "calibre": 60,
+    "largo_ft": 800,
+    "peso_kg": null,
+    "color": false
+   },
+   "pres_web": "1 rollo"
   },
   {
    "id": "P24",
@@ -207,7 +428,18 @@
    "presentacion": "Rollo",
    "piezas": 1.0,
    "familia": "playo",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Emplaye 10\"",
+   "titulo": "10\" calibre 60",
+   "detalle": "800 ft",
+   "medidas": {
+    "ancho_in": 10,
+    "calibre": 60,
+    "largo_ft": 800,
+    "peso_kg": null,
+    "color": false
+   },
+   "pres_web": "1 rollo"
   },
   {
    "id": "P25",
@@ -215,7 +447,18 @@
    "presentacion": "Rollo",
    "piezas": 1.0,
    "familia": "playo",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Emplaye 18\" y 20\"",
+   "titulo": "18\" calibre 50",
+   "detalle": "700 ft",
+   "medidas": {
+    "ancho_in": 18,
+    "calibre": 50,
+    "largo_ft": 700,
+    "peso_kg": null,
+    "color": false
+   },
+   "pres_web": "1 rollo"
   },
   {
    "id": "P26",
@@ -223,7 +466,18 @@
    "presentacion": "Rollo",
    "piezas": 1.0,
    "familia": "playo",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Emplaye 18\" y 20\"",
+   "titulo": "18\" calibre 50",
+   "detalle": "900 ft",
+   "medidas": {
+    "ancho_in": 18,
+    "calibre": 50,
+    "largo_ft": 900,
+    "peso_kg": null,
+    "color": false
+   },
+   "pres_web": "1 rollo"
   },
   {
    "id": "P27",
@@ -231,7 +485,18 @@
    "presentacion": "Rollo",
    "piezas": 1.0,
    "familia": "playo",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Emplaye 18\" y 20\"",
+   "titulo": "18\" calibre 50",
+   "detalle": "1,000 ft",
+   "medidas": {
+    "ancho_in": 18,
+    "calibre": 50,
+    "largo_ft": 1000,
+    "peso_kg": null,
+    "color": false
+   },
+   "pres_web": "1 rollo"
   },
   {
    "id": "P28",
@@ -239,7 +504,18 @@
    "presentacion": "Rollo",
    "piezas": 1.0,
    "familia": "playo",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Emplaye 18\" y 20\"",
+   "titulo": "18\" calibre 50",
+   "detalle": "1,200 ft",
+   "medidas": {
+    "ancho_in": 18,
+    "calibre": 50,
+    "largo_ft": 1200,
+    "peso_kg": null,
+    "color": false
+   },
+   "pres_web": "1 rollo"
   },
   {
    "id": "P29",
@@ -247,7 +523,18 @@
    "presentacion": "Rollo",
    "piezas": 1.0,
    "familia": "playo",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Emplaye 18\" y 20\"",
+   "titulo": "18\" calibre 60",
+   "detalle": "800 ft · de color",
+   "medidas": {
+    "ancho_in": 18,
+    "calibre": 60,
+    "largo_ft": 800,
+    "peso_kg": null,
+    "color": true
+   },
+   "pres_web": "1 rollo"
   },
   {
    "id": "P30",
@@ -255,7 +542,18 @@
    "presentacion": "Rollo",
    "piezas": 1.0,
    "familia": "playo",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Emplaye 18\" y 20\"",
+   "titulo": "18\" calibre 60",
+   "detalle": "1,000 ft",
+   "medidas": {
+    "ancho_in": 18,
+    "calibre": 60,
+    "largo_ft": 1000,
+    "peso_kg": null,
+    "color": false
+   },
+   "pres_web": "1 rollo"
   },
   {
    "id": "P31",
@@ -263,7 +561,18 @@
    "presentacion": "Rollo",
    "piezas": 1.0,
    "familia": "playo",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Emplaye 18\" y 20\"",
+   "titulo": "18\" calibre 60",
+   "detalle": "1,200 ft",
+   "medidas": {
+    "ancho_in": 18,
+    "calibre": 60,
+    "largo_ft": 1200,
+    "peso_kg": null,
+    "color": false
+   },
+   "pres_web": "1 rollo"
   },
   {
    "id": "P32",
@@ -271,7 +580,18 @@
    "presentacion": "Rollo",
    "piezas": 1.0,
    "familia": "playo",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Emplaye 18\" y 20\"",
+   "titulo": "18\" calibre 60",
+   "detalle": "1,500 ft",
+   "medidas": {
+    "ancho_in": 18,
+    "calibre": 60,
+    "largo_ft": 1500,
+    "peso_kg": null,
+    "color": false
+   },
+   "pres_web": "1 rollo"
   },
   {
    "id": "P33",
@@ -279,7 +599,18 @@
    "presentacion": "Rollo",
    "piezas": 1.0,
    "familia": "playo",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Emplaye 18\" y 20\"",
+   "titulo": "18\" calibre 70",
+   "detalle": "1,300 ft",
+   "medidas": {
+    "ancho_in": 18,
+    "calibre": 70,
+    "largo_ft": 1300,
+    "peso_kg": null,
+    "color": false
+   },
+   "pres_web": "1 rollo"
   },
   {
    "id": "P34",
@@ -287,7 +618,18 @@
    "presentacion": "Rollo",
    "piezas": 1.0,
    "familia": "playo",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Emplaye 18\" y 20\"",
+   "titulo": "18\" calibre 80",
+   "detalle": "1,300 ft · rollo grande",
+   "medidas": {
+    "ancho_in": 18,
+    "calibre": 80,
+    "largo_ft": 1300,
+    "peso_kg": null,
+    "color": false
+   },
+   "pres_web": "1 rollo"
   },
   {
    "id": "P35",
@@ -295,7 +637,18 @@
    "presentacion": "Rollo",
    "piezas": 1.0,
    "familia": "playo",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Emplaye 18\" y 20\"",
+   "titulo": "20\" calibre 80",
+   "detalle": "1,100 ft",
+   "medidas": {
+    "ancho_in": 20,
+    "calibre": 80,
+    "largo_ft": 1100,
+    "peso_kg": null,
+    "color": false
+   },
+   "pres_web": "1 rollo"
   },
   {
    "id": "P36",
@@ -303,7 +656,15 @@
    "presentacion": "Rollo",
    "piezas": 1.0,
    "familia": "cinta",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Delimitadora",
+   "titulo": "48 mm × 33 m",
+   "detalle": "amarillo/negro",
+   "medidas": {
+    "ancho_mm": 48,
+    "largo_m": 33
+   },
+   "pres_web": "1 rollo"
   },
   {
    "id": "P37",
@@ -311,7 +672,15 @@
    "presentacion": "Rollo",
    "piezas": 1.0,
    "familia": "cinta",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Ducto",
+   "titulo": "48 mm × 10 m",
+   "detalle": "",
+   "medidas": {
+    "ancho_mm": 48,
+    "largo_m": 10
+   },
+   "pres_web": "1 rollo"
   },
   {
    "id": "P38",
@@ -319,7 +688,15 @@
    "presentacion": "Rollo",
    "piezas": 1.0,
    "familia": "cinta",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Ducto",
+   "titulo": "48 mm × 50 m",
+   "detalle": "TUK",
+   "medidas": {
+    "ancho_mm": 48,
+    "largo_m": 50
+   },
+   "pres_web": "1 rollo"
   },
   {
    "id": "P39",
@@ -327,7 +704,18 @@
    "presentacion": "Pieza",
    "piezas": 1.0,
    "familia": "cajas",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Corrugado sencillo",
+   "titulo": "19 × 17 × 17 cm",
+   "detalle": "Corrugado sencillo",
+   "medidas": {
+    "largo_cm": 19,
+    "ancho_cm": 17,
+    "alto_cm": 17,
+    "resistencia": "Corrugado sencillo",
+    "pares": null
+   },
+   "pres_web": "1 pieza"
   },
   {
    "id": "P40",
@@ -335,7 +723,18 @@
    "presentacion": "Pieza",
    "piezas": 1.0,
    "familia": "cajas",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Corrugado sencillo",
+   "titulo": "29.5 × 27.5 × 10.5 cm",
+   "detalle": "ECT 23",
+   "medidas": {
+    "largo_cm": 29.5,
+    "ancho_cm": 27.5,
+    "alto_cm": 10.5,
+    "resistencia": "ECT 23",
+    "pares": null
+   },
+   "pres_web": "1 pieza"
   },
   {
    "id": "P41",
@@ -343,7 +742,18 @@
    "presentacion": "Pieza",
    "piezas": 1.0,
    "familia": "cajas",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Doble corrugado",
+   "titulo": "30 × 30 × 20 cm",
+   "detalle": "Doble corrugado",
+   "medidas": {
+    "largo_cm": 30,
+    "ancho_cm": 30,
+    "alto_cm": 20,
+    "resistencia": "Doble corrugado",
+    "pares": null
+   },
+   "pres_web": "1 pieza"
   },
   {
    "id": "P42",
@@ -351,7 +761,18 @@
    "presentacion": "Pieza",
    "piezas": 1.0,
    "familia": "cajas",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Doble corrugado",
+   "titulo": "31 × 21 × 20 cm",
+   "detalle": "Doble corrugado",
+   "medidas": {
+    "largo_cm": 31,
+    "ancho_cm": 21,
+    "alto_cm": 20,
+    "resistencia": "Doble corrugado",
+    "pares": null
+   },
+   "pres_web": "1 pieza"
   },
   {
    "id": "P43",
@@ -359,7 +780,18 @@
    "presentacion": "Pieza",
    "piezas": 1.0,
    "familia": "cajas",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Doble corrugado",
+   "titulo": "31 × 26 × 30 cm",
+   "detalle": "Doble corrugado",
+   "medidas": {
+    "largo_cm": 31,
+    "ancho_cm": 26,
+    "alto_cm": 30,
+    "resistencia": "Doble corrugado",
+    "pares": null
+   },
+   "pres_web": "1 pieza"
   },
   {
    "id": "P44",
@@ -367,7 +799,18 @@
    "presentacion": "Pieza",
    "piezas": 1.0,
    "familia": "cajas",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Corrugado sencillo",
+   "titulo": "31 × 30.5 × 11.8 cm",
+   "detalle": "ECT 23",
+   "medidas": {
+    "largo_cm": 31,
+    "ancho_cm": 30.5,
+    "alto_cm": 11.8,
+    "resistencia": "ECT 23",
+    "pares": null
+   },
+   "pres_web": "1 pieza"
   },
   {
    "id": "P45",
@@ -375,7 +818,18 @@
    "presentacion": "Pieza",
    "piezas": 1.0,
    "familia": "cajas",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Doble corrugado",
+   "titulo": "41 × 31 × 20 cm",
+   "detalle": "Doble corrugado",
+   "medidas": {
+    "largo_cm": 41,
+    "ancho_cm": 31,
+    "alto_cm": 20,
+    "resistencia": "Doble corrugado",
+    "pares": null
+   },
+   "pres_web": "1 pieza"
   },
   {
    "id": "P46",
@@ -383,7 +837,18 @@
    "presentacion": "Pieza",
    "piezas": 1.0,
    "familia": "cajas",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Doble corrugado",
+   "titulo": "41 × 31 × 30 cm",
+   "detalle": "Doble corrugado",
+   "medidas": {
+    "largo_cm": 41,
+    "ancho_cm": 31,
+    "alto_cm": 30,
+    "resistencia": "Doble corrugado",
+    "pares": null
+   },
+   "pres_web": "1 pieza"
   },
   {
    "id": "P47",
@@ -391,7 +856,18 @@
    "presentacion": "Pieza",
    "piezas": 1.0,
    "familia": "cajas",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Corrugado sencillo",
+   "titulo": "43 × 32 × 15 cm",
+   "detalle": "ECT 23",
+   "medidas": {
+    "largo_cm": 43,
+    "ancho_cm": 32,
+    "alto_cm": 15,
+    "resistencia": "ECT 23",
+    "pares": null
+   },
+   "pres_web": "1 pieza"
   },
   {
    "id": "P48",
@@ -399,7 +875,18 @@
    "presentacion": "Pieza",
    "piezas": 1.0,
    "familia": "cajas",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Doble corrugado",
+   "titulo": "51 × 41 × 25 cm",
+   "detalle": "Doble corrugado",
+   "medidas": {
+    "largo_cm": 51,
+    "ancho_cm": 41,
+    "alto_cm": 25,
+    "resistencia": "Doble corrugado",
+    "pares": null
+   },
+   "pres_web": "1 pieza"
   },
   {
    "id": "P49",
@@ -407,7 +894,18 @@
    "presentacion": "Pieza",
    "piezas": 1.0,
    "familia": "cajas",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Doble corrugado",
+   "titulo": "51 × 41 × 50 cm",
+   "detalle": "Doble corrugado",
+   "medidas": {
+    "largo_cm": 51,
+    "ancho_cm": 41,
+    "alto_cm": 50,
+    "resistencia": "Doble corrugado",
+    "pares": null
+   },
+   "pres_web": "1 pieza"
   },
   {
    "id": "P50",
@@ -415,7 +913,18 @@
    "presentacion": "Pieza",
    "piezas": 1.0,
    "familia": "cajas",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Doble corrugado",
+   "titulo": "55 × 45 × 35 cm",
+   "detalle": "Doble corrugado",
+   "medidas": {
+    "largo_cm": 55,
+    "ancho_cm": 45,
+    "alto_cm": 35,
+    "resistencia": "Doble corrugado",
+    "pares": null
+   },
+   "pres_web": "1 pieza"
   },
   {
    "id": "P51",
@@ -423,7 +932,18 @@
    "presentacion": "Pieza",
    "piezas": 1.0,
    "familia": "cajas",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Archivo y huevera",
+   "titulo": "60.5 × 30 × 33.6 cm",
+   "detalle": "huevera · ECT 26",
+   "medidas": {
+    "largo_cm": 60.5,
+    "ancho_cm": 30,
+    "alto_cm": 33.6,
+    "resistencia": "ECT 26",
+    "pares": null
+   },
+   "pres_web": "1 pieza"
   },
   {
    "id": "P52",
@@ -431,7 +951,15 @@
    "presentacion": "Pieza",
    "piezas": 1.0,
    "familia": "cajas",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Archivo y huevera",
+   "titulo": "Caja para archivo",
+   "detalle": "ECT 23",
+   "medidas": {
+    "resistencia": "ECT 23",
+    "pares": null
+   },
+   "pres_web": "1 pieza"
   },
   {
    "id": "P53",
@@ -439,7 +967,18 @@
    "presentacion": "Pieza",
    "piezas": 1.0,
    "familia": "cajas",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Para calzado",
+   "titulo": "32.5 × 26.5 × 26.5 cm",
+   "detalle": "6 pares · ECT 20",
+   "medidas": {
+    "largo_cm": 32.5,
+    "ancho_cm": 26.5,
+    "alto_cm": 26.5,
+    "resistencia": "ECT 20",
+    "pares": 6
+   },
+   "pres_web": "1 pieza"
   },
   {
    "id": "P54",
@@ -447,7 +986,18 @@
    "presentacion": "Pieza",
    "piezas": 1.0,
    "familia": "cajas",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Para calzado",
+   "titulo": "33 × 27.5 × 55.5 cm",
+   "detalle": "12 pares · ECT 23",
+   "medidas": {
+    "largo_cm": 33,
+    "ancho_cm": 27.5,
+    "alto_cm": 55.5,
+    "resistencia": "ECT 23",
+    "pares": 12
+   },
+   "pres_web": "1 pieza"
   },
   {
    "id": "P55",
@@ -455,7 +1005,18 @@
    "presentacion": "Pieza",
    "piezas": 1.0,
    "familia": "cajas",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Para calzado",
+   "titulo": "48 × 27 × 55 cm",
+   "detalle": "18 pares · ECT 23",
+   "medidas": {
+    "largo_cm": 48,
+    "ancho_cm": 27,
+    "alto_cm": 55,
+    "resistencia": "ECT 23",
+    "pares": 18
+   },
+   "pres_web": "1 pieza"
   },
   {
    "id": "P56",
@@ -463,7 +1024,18 @@
    "presentacion": "Pieza",
    "piezas": 1.0,
    "familia": "cajas",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Para calzado",
+   "titulo": "49 × 36 × 55.5 cm",
+   "detalle": "24 pares · ECT 23",
+   "medidas": {
+    "largo_cm": 49,
+    "ancho_cm": 36,
+    "alto_cm": 55.5,
+    "resistencia": "ECT 23",
+    "pares": 24
+   },
+   "pres_web": "1 pieza"
   },
   {
    "id": "P57",
@@ -471,7 +1043,18 @@
    "presentacion": "Pieza",
    "piezas": 1.0,
    "familia": "cajas",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Para calzado",
+   "titulo": "53.5 × 49 × 55.5 cm",
+   "detalle": "36 pares · pegada · ECT 23",
+   "medidas": {
+    "largo_cm": 53.5,
+    "ancho_cm": 49,
+    "alto_cm": 55.5,
+    "resistencia": "ECT 23",
+    "pares": 36
+   },
+   "pres_web": "1 pieza"
   },
   {
    "id": "P58",
@@ -479,7 +1062,18 @@
    "presentacion": "Pieza",
    "piezas": 1.0,
    "familia": "cajas",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Para calzado",
+   "titulo": "56.5 × 55 × 66.5 cm",
+   "detalle": "48 pares · pegada · ECT 23",
+   "medidas": {
+    "largo_cm": 56.5,
+    "ancho_cm": 55,
+    "alto_cm": 66.5,
+    "resistencia": "ECT 23",
+    "pares": 48
+   },
+   "pres_web": "1 pieza"
   },
   {
    "id": "P59",
@@ -487,7 +1081,18 @@
    "presentacion": "Pieza",
    "piezas": 1.0,
    "familia": "cajas",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Para calzado",
+   "titulo": "62.5 × 56 × 73 cm",
+   "detalle": "52 pares · ECT 23",
+   "medidas": {
+    "largo_cm": 62.5,
+    "ancho_cm": 56,
+    "alto_cm": 73,
+    "resistencia": "ECT 23",
+    "pares": 52
+   },
+   "pres_web": "1 pieza"
   },
   {
    "id": "P60",
@@ -495,7 +1100,18 @@
    "presentacion": "Pieza",
    "piezas": 1.0,
    "familia": "cajas",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Para paquetería",
+   "titulo": "39 × 31 × 13 cm",
+   "detalle": "ECT 26",
+   "medidas": {
+    "largo_cm": 39,
+    "ancho_cm": 31,
+    "alto_cm": 13,
+    "resistencia": "ECT 26",
+    "pares": null
+   },
+   "pres_web": "1 pieza"
   },
   {
    "id": "P61",
@@ -503,7 +1119,18 @@
    "presentacion": "Pieza",
    "piezas": 1.0,
    "familia": "cajas",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Para paquetería",
+   "titulo": "40 × 30 × 20 cm",
+   "detalle": "ECT 26",
+   "medidas": {
+    "largo_cm": 40,
+    "ancho_cm": 30,
+    "alto_cm": 20,
+    "resistencia": "ECT 26",
+    "pares": null
+   },
+   "pres_web": "1 pieza"
   },
   {
    "id": "P62",
@@ -511,7 +1138,18 @@
    "presentacion": "Pieza",
    "piezas": 1.0,
    "familia": "cajas",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Para paquetería",
+   "titulo": "46.5 × 31 × 35 cm",
+   "detalle": "ECT 26",
+   "medidas": {
+    "largo_cm": 46.5,
+    "ancho_cm": 31,
+    "alto_cm": 35,
+    "resistencia": "ECT 26",
+    "pares": null
+   },
+   "pres_web": "1 pieza"
   },
   {
    "id": "P63",
@@ -519,7 +1157,257 @@
    "presentacion": "Pieza",
    "piezas": 1.0,
    "familia": "cajas",
-   "estrella": false
+   "estrella": false,
+   "tipo": "Para paquetería",
+   "titulo": "60 × 40 × 40 cm",
+   "detalle": "ECT 26",
+   "medidas": {
+    "largo_cm": 60,
+    "ancho_cm": 40,
+    "alto_cm": 40,
+    "resistencia": "ECT 26",
+    "pares": null
+   },
+   "pres_web": "1 pieza"
   }
- ]
+ ],
+ "orden_familias": [
+  "playo",
+  "cinta",
+  "cajas",
+  "bolsas",
+  "burbuja",
+  "kraft"
+ ],
+ "familias_web": {
+  "playo": {
+   "nombre": "Emplaye (playo)",
+   "boton": "Ver emplaye",
+   "foto": "img/fam-playo",
+   "modelos": 19,
+   "tabla": [
+    [
+     "Anchos",
+     "3\" · 4\" · 5\" · 10\" · 18\" · 20\""
+    ],
+    [
+     "Calibres",
+     "50 · 60 · 70 · 80"
+    ],
+    [
+     "Largos",
+     "700 a 1,500 ft"
+    ],
+    [
+     "Viene en",
+     "Rollo suelto · caja 4 rollos · paquete de 16 o 24"
+    ]
+   ],
+   "tipos": [
+    {
+     "nombre": "Emplaye 18\" y 20\"",
+     "texto": "Para emplayar tarimas, muebles y mudanzas. Calibre 50 y 60 para cargas ligeras; 70 y 80 para pesadas.",
+     "foto": "img/c-playo-18-768.webp"
+    },
+    {
+     "nombre": "Emplaye 10\"",
+     "texto": "Rollo angosto para bultos y cajas.",
+     "foto": "img/c-playo-angosto-768.webp"
+    },
+    {
+     "nombre": "Playo chico 3\" a 5\"",
+     "texto": "Para emplayar a mano bultos, cajas y muebles chicos.",
+     "foto": "img/c-playo-angosto-768.webp"
+    }
+   ]
+  },
+  "cinta": {
+   "nombre": "Cintas",
+   "boton": "Ver cintas",
+   "foto": "img/fam-cinta",
+   "modelos": 6,
+   "tabla": [
+    [
+     "Tipos",
+     "Transparente · Canela · Económica · Ducto · Delimitadora"
+    ],
+    [
+     "Ancho",
+     "48 mm"
+    ],
+    [
+     "Largos",
+     "10 · 33 · 50 · 135 · 150 m"
+    ],
+    [
+     "Viene en",
+     "Rollo suelto · paquete de 6"
+    ]
+   ],
+   "tipos": [
+    {
+     "nombre": "Transparente",
+     "texto": "Para cerrar cajas todos los días.",
+     "foto": "img/c-cinta-transparente-768.webp"
+    },
+    {
+     "nombre": "Canela",
+     "texto": "Para cerrar cajas, en color café.",
+     "foto": "img/c-cinta-canela-768.webp"
+    },
+    {
+     "nombre": "Transparente económica",
+     "texto": "Transparente, en rollo de 135 m.",
+     "foto": "img/c-cinta-transparente-768.webp"
+    },
+    {
+     "nombre": "Ducto",
+     "texto": "Para trabajo pesado.",
+     "foto": "img/c-cinta-ducto-768.webp"
+    },
+    {
+     "nombre": "Delimitadora",
+     "texto": "Para marcar pisos y áreas.",
+     "foto": "img/c-cinta-delimitadora-768.webp"
+    }
+   ]
+  },
+  "cajas": {
+   "nombre": "Cajas de cartón",
+   "boton": "Ver cajas",
+   "foto": "img/fam-cajas",
+   "modelos": 26,
+   "tabla": [
+    [
+     "Medidas",
+     "de 19 × 17 × 17 a 62.5 × 56 × 73 cm"
+    ],
+    [
+     "Tipos",
+     "Paquetería · sencillo · doble corrugado · calzado · archivo"
+    ],
+    [
+     "Viene en",
+     "Pieza suelta · paquete de 25"
+    ]
+   ],
+   "tipos": [
+    {
+     "nombre": "Para paquetería",
+     "texto": "Para mandar pedidos por paquetería.",
+     "foto": "img/c-caja-plana-768.webp"
+    },
+    {
+     "nombre": "Corrugado sencillo",
+     "texto": "Cartón resistente para envíos y para guardar.",
+     "foto": "img/c-caja-768.webp"
+    },
+    {
+     "nombre": "Doble corrugado",
+     "texto": "Para lo pesado y para mudanzas.",
+     "foto": "img/c-caja-doble-768.webp"
+    },
+    {
+     "nombre": "Para calzado",
+     "texto": "Por número de pares.",
+     "foto": "img/c-caja-768.webp"
+    },
+    {
+     "nombre": "Archivo y huevera",
+     "texto": "Medidas especiales.",
+     "foto": "img/c-caja-768.webp"
+    }
+   ]
+  },
+  "bolsas": {
+   "nombre": "Bolsas de seguridad",
+   "boton": "Ver bolsas",
+   "foto": "img/fam-bolsas",
+   "modelos": 2,
+   "tabla": [
+    [
+     "Medidas",
+     "25 × 36 y 32 × 41 cm"
+    ],
+    [
+     "Cierre",
+     "Autoadherible"
+    ],
+    [
+     "Viene en",
+     "Paquete de 100"
+    ]
+   ],
+   "tipos": [
+    {
+     "nombre": "Bolsa de seguridad",
+     "texto": "Autoadheribles: se cierran sin cinta. Para mandar ropa y accesorios.",
+     "foto": "img/c-bolsas-768.webp"
+    }
+   ]
+  },
+  "burbuja": {
+   "nombre": "Burbuja y espuma",
+   "boton": "Ver burbuja y espuma",
+   "foto": "img/fam-burbuja",
+   "modelos": 3,
+   "tabla": [
+    [
+     "Burbuja chica",
+     "3/16\" · 1.25 × 120 m"
+    ],
+    [
+     "Burbuja grande",
+     "1/2\" · 1.25 × 60 m"
+    ],
+    [
+     "Espuma",
+     "Polipack 1/4\""
+    ],
+    [
+     "Viene en",
+     "Rollo"
+    ]
+   ],
+   "tipos": [
+    {
+     "nombre": "Poliburbuja",
+     "texto": "Protege vidrio, cerámica y electrónicos.",
+     "foto": "img/c-burbuja-chica-768.webp"
+    },
+    {
+     "nombre": "Espuma (polipack)",
+     "texto": "Espuma de polietileno para proteger superficies y muebles.",
+     "foto": "img/c-polipack-768.webp"
+    }
+   ]
+  },
+  "kraft": {
+   "nombre": "Papel kraft",
+   "boton": "Ver papel kraft",
+   "foto": "img/fam-kraft",
+   "modelos": 1,
+   "tabla": [
+    [
+     "Ancho",
+     "60 cm"
+    ],
+    [
+     "Gramaje",
+     "125 g"
+    ],
+    [
+     "Viene en",
+     "Paquete 5 kg (aprox. 66 m)"
+    ]
+   ],
+   "tipos": [
+    {
+     "nombre": "Papel kraft",
+     "texto": "Para envolver, rellenar huecos en la caja y proteger superficies.",
+     "foto": "img/c-kraft-768.webp"
+    }
+   ]
+  }
+ }
 }
