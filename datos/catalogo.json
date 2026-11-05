@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-05 10:22",
+ "actualizado": "2026-11-05 10:51",
  "mostrar_precios": false,
  "precios_con_iva": false,
  "pedido_minimo": 500.0,
@@ -25,8 +25,8 @@
    "familia": "playo",
    "estrella": true,
    "tipo": "Emplaye 18\" y 20\"",
-   "titulo": "18\" calibre 80",
-   "detalle": "2.5 kg",
+   "titulo": "18\" calibre 80 · 2.5 kg",
+   "detalle": "",
    "medidas": {
     "ancho_in": 18,
     "calibre": 80,
@@ -44,8 +44,8 @@
    "familia": "playo",
    "estrella": true,
    "tipo": "Emplaye 18\" y 20\"",
-   "titulo": "18\" calibre 80",
-   "detalle": "2.5 kg",
+   "titulo": "18\" calibre 80 · 2.5 kg",
+   "detalle": "",
    "medidas": {
     "ancho_in": 18,
     "calibre": 80,
@@ -63,8 +63,8 @@
    "familia": "playo",
    "estrella": true,
    "tipo": "Emplaye 18\" y 20\"",
-   "titulo": "18\" calibre 60",
-   "detalle": "1.5 kg",
+   "titulo": "18\" calibre 60 · 1.5 kg",
+   "detalle": "",
    "medidas": {
     "ancho_in": 18,
     "calibre": 60,
@@ -283,7 +283,7 @@
    "estrella": false,
    "tipo": "Playo chico 3\" a 5\"",
    "titulo": "5\" manual",
-   "detalle": "",
+   "detalle": "Para emplayar a mano",
    "medidas": {
     "ancho_in": 5,
     "calibre": null,
@@ -302,7 +302,7 @@
    "estrella": false,
    "tipo": "Playo chico 3\" a 5\"",
    "titulo": "5\" manual",
-   "detalle": "",
+   "detalle": "Para emplayar a mano",
    "medidas": {
     "ancho_in": 5,
     "calibre": null,
@@ -336,7 +336,7 @@
    "estrella": false,
    "tipo": "Playo chico 3\" a 5\"",
    "titulo": "3\" manual",
-   "detalle": "",
+   "detalle": "Para emplayar a mano",
    "medidas": {
     "ancho_in": 3,
     "calibre": null,
@@ -355,7 +355,7 @@
    "estrella": false,
    "tipo": "Playo chico 3\" a 5\"",
    "titulo": "3\" manual",
-   "detalle": "",
+   "detalle": "Para emplayar a mano",
    "medidas": {
     "ancho_in": 3,
     "calibre": null,
@@ -373,8 +373,8 @@
    "familia": "playo",
    "estrella": false,
    "tipo": "Playo chico 3\" a 5\"",
-   "titulo": "4\" calibre 60",
-   "detalle": "1,000 ft",
+   "titulo": "4\" calibre 60 · 1,000 ft",
+   "detalle": "",
    "medidas": {
     "ancho_in": 4,
     "calibre": 60,
@@ -392,8 +392,8 @@
    "familia": "playo",
    "estrella": false,
    "tipo": "Playo chico 3\" a 5\"",
-   "titulo": "5\" calibre 60",
-   "detalle": "700 ft",
+   "titulo": "5\" calibre 60 · 700 ft",
+   "detalle": "",
    "medidas": {
     "ancho_in": 5,
     "calibre": 60,
@@ -411,8 +411,8 @@
    "familia": "playo",
    "estrella": false,
    "tipo": "Playo chico 3\" a 5\"",
-   "titulo": "5\" calibre 60",
-   "detalle": "800 ft · centro de cartón",
+   "titulo": "5\" calibre 60 · 800 ft",
+   "detalle": "centro de cartón",
    "medidas": {
     "ancho_in": 5,
     "calibre": 60,
@@ -430,8 +430,8 @@
    "familia": "playo",
    "estrella": false,
    "tipo": "Emplaye 10\"",
-   "titulo": "10\" calibre 60",
-   "detalle": "800 ft",
+   "titulo": "10\" calibre 60 · 800 ft",
+   "detalle": "",
    "medidas": {
     "ancho_in": 10,
     "calibre": 60,
@@ -449,8 +449,8 @@
    "familia": "playo",
    "estrella": false,
    "tipo": "Emplaye 18\" y 20\"",
-   "titulo": "18\" calibre 50",
-   "detalle": "700 ft",
+   "titulo": "18\" calibre 50 · 700 ft",
+   "detalle": "",
    "medidas": {
     "ancho_in": 18,
     "calibre": 50,
@@ -468,8 +468,8 @@
    "familia": "playo",
    "estrella": false,
    "tipo": "Emplaye 18\" y 20\"",
-   "titulo": "18\" calibre 50",
-   "detalle": "900 ft",
+   "titulo": "18\" calibre 50 · 900 ft",
+   "detalle": "",
    "medidas": {
     "ancho_in": 18,
     "calibre": 50,
@@ -487,8 +487,8 @@
    "familia": "playo",
    "estrella": false,
    "tipo": "Emplaye 18\" y 20\"",
-   "titulo": "18\" calibre 50",
-   "detalle": "1,000 ft",
+   "titulo": "18\" calibre 50 · 1,000 ft",
+   "detalle": "",
    "medidas": {
     "ancho_in": 18,
     "calibre": 50,
@@ -506,8 +506,8 @@
    "familia": "playo",
    "estrella": false,
    "tipo": "Emplaye 18\" y 20\"",
-   "titulo": "18\" calibre 50",
-   "detalle": "1,200 ft",
+   "titulo": "18\" calibre 50 · 1,200 ft",
+   "detalle": "",
    "medidas": {
     "ancho_in": 18,
     "calibre": 50,
@@ -525,8 +525,8 @@
    "familia": "playo",
    "estrella": false,
    "tipo": "Emplaye 18\" y 20\"",
-   "titulo": "18\" calibre 60",
-   "detalle": "800 ft · de color",
+   "titulo": "18\" calibre 60 · 800 ft",
+   "detalle": "de color",
    "medidas": {
     "ancho_in": 18,
     "calibre": 60,
@@ -544,8 +544,8 @@
    "familia": "playo",
    "estrella": false,
    "tipo": "Emplaye 18\" y 20\"",
-   "titulo": "18\" calibre 60",
-   "detalle": "1,000 ft",
+   "titulo": "18\" calibre 60 · 1,000 ft",
+   "detalle": "",
    "medidas": {
     "ancho_in": 18,
     "calibre": 60,
@@ -563,8 +563,8 @@
    "familia": "playo",
    "estrella": false,
    "tipo": "Emplaye 18\" y 20\"",
-   "titulo": "18\" calibre 60",
-   "detalle": "1,200 ft",
+   "titulo": "18\" calibre 60 · 1,200 ft",
+   "detalle": "",
    "medidas": {
     "ancho_in": 18,
     "calibre": 60,
@@ -582,8 +582,8 @@
    "familia": "playo",
    "estrella": false,
    "tipo": "Emplaye 18\" y 20\"",
-   "titulo": "18\" calibre 60",
-   "detalle": "1,500 ft",
+   "titulo": "18\" calibre 60 · 1,500 ft",
+   "detalle": "",
    "medidas": {
     "ancho_in": 18,
     "calibre": 60,
@@ -601,8 +601,8 @@
    "familia": "playo",
    "estrella": false,
    "tipo": "Emplaye 18\" y 20\"",
-   "titulo": "18\" calibre 70",
-   "detalle": "1,300 ft",
+   "titulo": "18\" calibre 70 · 1,300 ft",
+   "detalle": "",
    "medidas": {
     "ancho_in": 18,
     "calibre": 70,
@@ -620,8 +620,8 @@
    "familia": "playo",
    "estrella": false,
    "tipo": "Emplaye 18\" y 20\"",
-   "titulo": "18\" calibre 80",
-   "detalle": "1,300 ft · rollo grande",
+   "titulo": "18\" calibre 80 · 1,300 ft",
+   "detalle": "rollo grande",
    "medidas": {
     "ancho_in": 18,
     "calibre": 80,
@@ -639,8 +639,8 @@
    "familia": "playo",
    "estrella": false,
    "tipo": "Emplaye 18\" y 20\"",
-   "titulo": "20\" calibre 80",
-   "detalle": "1,100 ft",
+   "titulo": "20\" calibre 80 · 1,100 ft",
+   "detalle": "",
    "medidas": {
     "ancho_in": 20,
     "calibre": 80,
@@ -659,7 +659,7 @@
    "estrella": false,
    "tipo": "Delimitadora",
    "titulo": "48 mm × 33 m",
-   "detalle": "amarillo/negro",
+   "detalle": "Amarillo y negro",
    "medidas": {
     "ancho_mm": 48,
     "largo_m": 33
@@ -684,14 +684,14 @@
   },
   {
    "id": "P38",
-   "producto": "Cinta ducto TUK 48 mm x 50 m",
+   "producto": "Cinta ducto 48 mm x 50 m",
    "presentacion": "Rollo",
    "piezas": 1.0,
    "familia": "cinta",
    "estrella": false,
    "tipo": "Ducto",
    "titulo": "48 mm × 50 m",
-   "detalle": "TUK",
+   "detalle": "Reforzada",
    "medidas": {
     "ancho_mm": 48,
     "largo_m": 50
