@@ -1,4 +1,4 @@
-/* PAKZA · pakza.com.mx · estilos (un solo archivo). Tokens: brief/diseno.md 1.1 (Director de Diseño, 02/11/2026). */
+﻿/* PAKZA · pakza.com.mx · estilos (un solo archivo). Tokens: brief/diseno.md 1.1 (Director de Diseño, 02/11/2026). */
 :root{
   /* Color */
   --coral:#FF5A36;       /* precios grandes, botón principal, íconos de marca */
@@ -498,8 +498,8 @@ html.modal{overflow:hidden}
 .wa-flota{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:var(--z-wa);display:inline-flex;align-items:center;gap:10px;height:56px;padding:0 20px 0 16px;border-radius:var(--r-pildora);background:var(--coral);color:#fff;font-size:19px;font-weight:700;text-decoration:none;box-shadow:var(--sombra-flota);transition:opacity var(--t-rapida),visibility 0s,background-color var(--t-rapida)}
 .wa-flota .ico{width:24px;height:24px}
 .wa-flota.oculto,html.modal .wa-flota{opacity:0;visibility:hidden;transition:opacity var(--t-rapida),visibility 0s linear var(--t-rapida)}
-.con-barra .wa-flota{bottom:calc(106px + env(safe-area-inset-bottom));width:56px;padding:0;justify-content:center}
-.con-barra .wa-flota__txt{display:none} /* con la barra del pedido queda en círculo de 56 x 56 (mismo aria-label) */
+.con-barra .wa-flota{display:none} /* con la barra 'Ver mi lista' se oculta: tapaba los botones Agregar (Diseño 05/11) */
+
 @media (hover:hover){.wa-flota:hover{background:var(--coral-hover)}}
 @media (min-width:1024px){.wa-flota{display:none}}
 
@@ -559,4 +559,113 @@ html.modal{overflow:hidden}
   .sin-precios .fila__precio{grid-area:precio;padding-top:4px}
   .sin-precios .fila__acciones{grid-area:acc}
 }
-@media (min-width:1024px){.tarjeta .cotiza{font-size:16px}}
+@media (min-width:1024px){.tarjeta .cotiza{font-size:16px}}.pedido__desglose{margin-bottom:8px;font-size:16px}.pedido__desglose p{display:flex;justify-content:space-between;gap:12px;margin:0 0 4px;font-variant-numeric:tabular-nums}
+
+/* Familias con tablita de medidas (Diseño, 05/11/2026: brief/familias_diseno.md) */
+.familias{display:grid;gap:12px;margin-top:20px}
+#productos .familias{margin-top:24px}
+.fam{position:relative;display:flex;flex-direction:column;overflow:hidden;border-radius:16px;background:var(--negro);color:var(--hueso);text-decoration:none;-webkit-tap-highlight-color:transparent}
+.fam__foto{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--negro-2)}
+.fam__foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 200ms ease}
+.fam[data-fam-card=playo] img{object-position:50% 30%}
+.fam[data-fam-card=cajas] img,.fam[data-fam-card=kraft] img{object-position:50% 55%}
+.fam__foto::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(23,23,23,0) 45%,rgba(23,23,23,.85) 85%,#171717 100%)}
+.fam__nombre{position:absolute;z-index:1;left:16px;right:16px;bottom:10px;font-size:26px;font-weight:800;line-height:1.1;letter-spacing:-.02em;color:var(--hueso)}
+.fam__n{position:absolute;z-index:1;top:12px;right:12px;padding:6px 12px;border-radius:999px;background:rgba(23,23,23,.8);color:var(--hueso);font-size:14px;font-weight:700}
+.fam__tabla{margin:0;padding:4px 16px 0}
+.fam__tabla>div{display:grid;grid-template-columns:92px 1fr;gap:8px;padding:9px 0}
+.fam__tabla>div+div{border-top:1px solid var(--negro-3)}
+.fam__tabla dt{color:var(--gris-claro);font-size:14px;font-weight:600;line-height:1.5}
+.fam__tabla dd{margin:0;color:var(--hueso);font-size:16px;font-weight:700;line-height:1.35}
+.fam__desde dd{color:var(--coral);font-size:24px;font-weight:800;line-height:1.1}
+.fam__btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:52px;margin:12px 16px 16px;border-radius:12px;background:var(--hueso);color:var(--negro);font-size:17px;font-weight:800;text-align:center;transition:background-color 150ms}
+.fam:focus-visible{outline:3px solid var(--coral);outline-offset:3px}
+.fam:active .fam__btn{background:#fff}
+@media (hover:hover){.fam:hover .fam__btn{background:#fff}.fam:hover .fam__foto img{transform:scale(1.03)}}
+@media (prefers-reduced-motion:reduce){.fam__foto img{transition:none}.fam:hover .fam__foto img{transform:none}}
+@media (min-width:640px){.familias{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1024px){.familias{grid-template-columns:repeat(3,1fr);gap:24px}.fam__btn{margin-top:auto}.fam__tabla{margin-bottom:12px}}
+
+/* Barra de familias pegajosa y cabecera de familia */
+.barra-fam{position:sticky;top:0;z-index:var(--z-chips);min-height:60px;border-bottom:1px solid var(--arena);background:var(--hueso)}
+.barra-fam .chips{padding-top:8px;padding-bottom:8px}
+.barra-fam .contenedor{position:relative;padding-right:0}
+.chip{display:inline-flex;align-items:center;justify-content:center;text-decoration:none}
+.chip--todas{border-color:var(--negro);font-weight:700}
+.chip--lupa{width:44px;padding:0}
+.chip--lupa .ico{width:20px;height:20px}
+.cab-fam{padding:20px 0 24px}
+.cab-fam__h1{font-size:2rem;font-weight:800;line-height:1.08;letter-spacing:-.025em}
+.cab-fam__linea{margin-top:8px;color:var(--gris-claro);font-size:16px;font-weight:500}
+.cab-fam .fam__tabla{margin-top:12px;padding:0}
+.cab-fam .fam__tabla dt{padding-top:2px}
+.atajos{display:flex;gap:8px;margin:0 calc(-1*var(--margen));padding:12px var(--margen);overflow-x:auto;scrollbar-width:none}
+.atajos::-webkit-scrollbar{display:none}
+.atajo{flex:none;display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1.5px solid var(--negro);border-radius:999px;font-size:15px;font-weight:600;text-decoration:none}
+@media (hover:hover){.atajo:hover{background:var(--negro);color:var(--hueso)}}
+[data-vista-fam]{padding-bottom:96px}
+
+/* Grupo por tipo y renglones de medida */
+.rgrupo{margin-bottom:16px;overflow:hidden;border:1px solid var(--arena);border-radius:16px;background:var(--blanco);scroll-margin-top:72px}
+.rgrupo__cab{display:flex;align-items:center;gap:12px;padding:12px;border-bottom:1px solid var(--arena)}
+.rgrupo__foto{flex:none;width:88px;height:88px;border-radius:12px;object-fit:cover;background:var(--arena)}
+.rgrupo__nom{font-size:20px;font-weight:800;line-height:1.15}
+.rgrupo__txt{margin-top:4px;color:var(--gris);font-size:15px;line-height:1.35}
+.rgrupo--mini .rgrupo__cab{padding:10px 16px}
+.rgrupo--mini .rgrupo__nom{font-size:17px}
+.rg__cols{display:none}
+.rg{padding:14px 16px}
+.rg+.rg{border-top:1px solid var(--arena)}
+.rg__tit{font-size:20px;font-weight:800;line-height:1.2}
+.rg__det{margin-top:4px;color:var(--gris);font-size:16px;font-weight:500}
+.rg__pres{margin-top:10px}
+.rgl{display:grid;grid-template-columns:minmax(0,1fr) 156px;align-items:center;gap:4px 12px;padding:6px 0;border-radius:8px;scroll-margin-top:130px}
+.rgl+.rgl{margin-top:6px}
+.rgl__pres{grid-column:1;font-size:16px;font-weight:600}
+.rgl__precio{grid-column:1;grid-row:2;font-size:20px;line-height:1.2}
+.rgl__precio b{font-weight:800}
+.rgl__precio small{color:var(--gris);font-size:13px;font-weight:500}
+.rgl__pieza{display:block}
+.rgl__acc{grid-column:2;grid-row:1/span 2;justify-self:end;width:156px}
+.rgl__acc .accion{display:flex;flex-direction:column;align-items:flex-end}
+.rgl__acc .btn{width:156px;min-height:48px;font-size:17px;font-weight:800}
+.rgl__acc .cant{width:156px}
+.rgl.senalada{background:#FFF1EC;box-shadow:-8px 0 0 #FFF1EC,8px 0 0 #FFF1EC}
+.res-fam{margin-top:20px}
+.res-fam__nom{margin-bottom:10px;font-size:18px;font-weight:800}
+.conteo{margin-top:16px}
+.no-medida{margin-top:8px;padding:24px 16px;border:1px solid var(--arena);border-radius:16px;background:var(--blanco);text-align:center}
+.no-medida h2{font-size:20px}
+.no-medida p{margin-top:4px;color:var(--gris)}
+.no-medida .btn{min-height:48px;margin-top:14px}
+.busqueda{margin-top:0}
+@media (min-width:1024px){
+  .barra-fam{top:var(--alto-header)}
+  .cab-fam{padding:28px 0 32px}
+  .cab-fam__h1{font-size:2.5rem}
+  .cab-fam .fam__tabla{display:grid;grid-template-columns:1fr 1fr;column-gap:32px;max-width:780px}
+  .cab-fam .fam__tabla>div{border-top:0}
+  .atajos{margin:0;padding:12px 0}
+  .rgrupo{scroll-margin-top:140px}
+  .rgrupo__foto{width:120px;height:120px}
+  .rgrupo__nom{font-size:24px}
+  .rgrupo__txt{font-size:16px}
+  .rg__cols{display:grid;grid-template-columns:minmax(0,1fr) 200px 170px;gap:16px;padding:10px 20px;border-bottom:1px solid var(--arena);background:var(--hueso);color:var(--gris);font-size:14px;font-weight:700}
+  html:not(.sin-precios) .rg__cols{grid-template-columns:minmax(0,1fr) 200px 160px 170px}
+  .rg{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:start;padding:12px 20px}
+  .rg__pres{margin-top:0}
+  .rgl{grid-template-columns:200px 170px;gap:16px;padding:0;margin:0}
+  .rgl+.rgl{margin-top:12px}
+  html:not(.sin-precios) .rgl{grid-template-columns:200px 160px 170px}
+  .rgl__pres{grid-column:auto}
+  .rgl__precio{grid-column:auto;grid-row:auto}
+  .rgl__acc{grid-column:auto;grid-row:auto;justify-self:stretch;width:auto}
+  .rgl__acc .accion{align-items:flex-start}
+  .rgl__acc .btn,.rgl__acc .cant{width:156px}
+  .rgl__pres{align-self:center}
+  @media (hover:hover){.rg:hover{background:#FAF9F7}}
+}
+
+/* 'Vaciar lista': un solo subrayado (en flex salían dos pedazos) */
+.liga[data-vaciar]{display:inline-block;padding:10px 0;line-height:24px}
+

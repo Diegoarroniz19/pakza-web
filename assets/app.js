@@ -69,13 +69,13 @@
     var pu = p.precio_pieza != null ? p.precio_pieza : p.precio / n;
     var suelta = cat.productos.filter(function (q) { return q.producto === p.producto && q.id !== p.id && piezas(q) === 1; })[0];
     if (suelta && pu >= suelta.precio) return '';
-    return 'sale a <b>' + dinero(pu) + '</b> por ' + ({ cajas: 'caja', bolsas: 'bolsa' }[p.familia] || 'rollo');
+    return 'sale a <b>' + dinero(pu) + '</b> + IVA por ' + ({ cajas: 'caja', bolsas: 'bolsa' }[p.familia] || 'rollo');
   }
   function bloquePrecio(p) {
     if (SIN) return '<p class="cotiza">' + ico('wa', 'ico--marca') + '<span>' + COTIZA + '</span></p>';
     var s = saleA(p);
     return '<p class="precio"><span class="precio__monto">' + dinero(p.precio) + '</span> <span class="precio__unidad">' + esc(unidad(p)) +
-      '</span></p>' + (s ? '<p class="precio__sale">' + s + '</p>' : '') + '<p class="precio__iva">IVA incluido</p>';
+      '</span></p>' + (s ? '<p class="precio__sale">' + s + '</p>' : '') + '<p class="precio__iva">+ IVA</p>';
   }
   function imagen(p) {
     var r = imagenes[p.id];
@@ -91,8 +91,11 @@
     for (var i = 0; i < items.length && items[i][0] !== id; i++);
     if (i < items.length) { if (c) items[i][1] = c; else items.splice(i, 1); } else if (c) items.push([id, c]);
   }
-  function suma(lista) { return lista.reduce(function (s, x) { return s + x[1] * porId[x[0]].precio; }, 0); }
-  function total() { return suma(items); }
+  /* Desde 03/11/2026 (Diego): el precio publicado va SIN IVA y con "+ IVA". El minimo y la entrega gratis se miden con el total con IVA. */
+  function r2(n) { return Math.round(n * 100) / 100; }
+  function suma(lista) { return r2(lista.reduce(function (s, x) { return s + x[1] * porId[x[0]].precio; }, 0)); } // subtotal sin IVA
+  function desglose(lista) { var sub = suma(lista), iva = r2(sub * 0.16); return { sub: sub, iva: iva, tot: r2(sub + iva) }; }
+  function total() { return desglose(items).tot; } // total con IVA
   function leer() {
     var v = null, vistos = {};
     try { v = JSON.parse(localStorage.getItem(CLAVE) || 'null'); } catch (e) { v = null; }
@@ -161,7 +164,7 @@
     if (!barra) return;
     if (tTira) { // el aviso "Agregaste…" sigue a la vista, pero con el total de ahora (QA 3)
       var b = $('[data-llevas]', barra);
-      if (b) b.textContent = dinero(total());
+      if (b) b.textContent = dinero(total()) + ' con IVA';
       return;
     }
     if (SIN) { $('[data-tira]', barra).textContent = COTIZA; return; } // sin total no hay avance: la barra solo invita a cotizar
@@ -172,13 +175,19 @@
     if (!cat) return;
     var n = items.length, t = SIN ? 0 : total(), a = SIN ? null : avance(t), cuantos = n + (n === 1 ? ' producto' : ' productos');
     $$('[data-n]').forEach(function (el) { el.textContent = n; });
-    if (!SIN) $$('[data-total]').forEach(function (el) { el.textContent = dinero(t); });
+    if (!SIN) $$('[data-total]').forEach(function (el) { el.textContent = dinero(t) + (el.closest('[data-total-fila]') ? '' : ' con IVA'); });
     $$('.btn--mipedido').forEach(function (b) { b.hidden = !n; b.setAttribute('aria-label', (SIN ? 'Mi lista, ' : 'Mi pedido, ') + cuantos); });
     if (panel) {
       $('.pedido__titulo small', panel).textContent = '(' + cuantos + ')';
       $('[data-vacio]', panel).hidden = !!n;
       $('[data-lleno]', panel).hidden = !n;
-      if (!SIN) $('[data-total-fila]', panel).hidden = !n; // sin precios no hay total: la fila se queda escondida
+      if (!SIN) {
+        var fila = $('[data-total-fila]', panel), dz = desglose(items), des = $('[data-desglose]', panel);
+        fila.hidden = !n; // sin precios no hay total: la fila se queda escondida
+        if (!des) { des = d.createElement('div'); des.className = 'pedido__desglose'; des.setAttribute('data-desglose', ''); fila.parentNode.insertBefore(des, fila); }
+        des.hidden = !n;
+        des.innerHTML = '<p><span>Subtotal (sin IVA)</span><span>' + dinero(dz.sub) + '</span></p><p><span>IVA 16%</span><span>' + dinero(dz.iva) + '</span></p>';
+      }
       if (n) $('[data-deshacer-caja]', panel).hidden = true;
       pintarLineas();
       var e = $('#entrega');
@@ -203,13 +212,13 @@
       } else if (!n) { barra.hidden = true; barra.classList.add('fuera'); }
       cuerpo.classList.toggle('con-barra', !!n);
       if (!SIN) $('[data-pista]', barra).style.width = Math.min(100, a.pct * 100) + '%';
-      $('[data-abrir-pedido]', barra).setAttribute('aria-label', SIN ? 'Ver mi lista: ' + cuantos : 'Ver mi pedido: ' + cuantos + ', total ' + dinero(t));
+      $('[data-abrir-pedido]', barra).setAttribute('aria-label', SIN ? 'Ver mi lista: ' + cuantos : 'Ver mi pedido: ' + cuantos + ', total ' + dinero(t) + ' con IVA');
       pintarTira(a);
     }
   }
   function cambiar(id, c) { poner(id, c); guardar(); pintarPedido(); }
   function avisar(nombre) {
-    var t = SIN ? '' : dinero(total());
+    var t = SIN ? '' : dinero(total()) + ' con IVA';
     nombre = medida(nombre);
     if (barra && !escritorio.matches) {
       clearTimeout(tTira);
@@ -239,14 +248,14 @@
       s.push('', '¿Me pasan el precio y el día de entrega?');
       return s.join('\n');
     }
-    var t = suma(lista), l = [inicio, ''];
+    var z = desglose(lista), t = z.tot, l = [inicio, ''];
     lista.forEach(function (x) {
       var p = porId[x[0]];
-      l.push('- ' + x[1] + ' x ' + p.producto + ', ' + p.presentacion + ' (' + p.id + '): ' + dinero(x[1] * p.precio));
+      l.push('- ' + x[1] + ' x ' + p.producto + ', ' + p.presentacion + ' (' + p.id + '): ' + dinero(x[1] * p.precio) + ' + IVA');
     });
-    l.push('', 'Total en la página: ' + dinero(t) + ' con IVA');
+    l.push('', 'Subtotal sin IVA: ' + dinero(z.sub), 'IVA 16%: ' + dinero(z.iva), 'Total con IVA: ' + dinero(t));
     l = l.concat(extras || [], ['']);
-    if (t < cat.pedido_minimo) l.push('Todavía no llego al mínimo de ' + dinero(cat.pedido_minimo) + ': ¿qué me recomiendan agregar?');
+    if (t < cat.pedido_minimo) l.push('Todavía no llego al mínimo de ' + dinero(cat.pedido_minimo) + ' con IVA: ¿qué me recomiendan agregar?');
     l.push('¿Me confirman el total y el día de entrega?');
     return l.join('\n');
   }
@@ -269,10 +278,10 @@
     $$('[data-kits]').forEach(function (cont) {
       var compacto = cont.getAttribute('data-kits') === 'compacto';
       cont.innerHTML = validos.map(function (k) {
-        var tot = SIN ? '' : dinero(suma(kitLista(k))), cosas = k.items.map(function (x) { return medida(x.texto); });
+        var dk = SIN ? null : desglose(kitLista(k)), tot = SIN ? '' : dinero(dk.sub), totIva = SIN ? '' : dinero(dk.tot), cosas = k.items.map(function (x) { return medida(x.texto); });
         if (compacto) {
           return '<article class="kitc"><h3>' + esc(k.nombre) + '</h3><p class="kitc__trae">' + esc(cosas.join('\u00a0· ')) + '</p>' +
-            (SIN ? '' : '<p class="kitc__total"><b>' + tot + '</b> IVA incluido</p>') +
+            (SIN ? '' : '<p class="kitc__total"><b>' + tot + '</b> + IVA <small>(total ' + totIva + ' con IVA)</small></p>') +
             '<button type="button" class="btn btn--secundario btn--ancho" data-agregar-kit="' + esc(k.id) + '">' + (SIN ? 'Agregar kit a mi lista' : 'Agregar kit') + '</button></article>';
         }
         var f = k.foto ? BASE + k.foto : '', srcset = /-720\.webp$/.test(f) ? ' srcset="' + [480, 600, 720].map(function (a) {
@@ -285,7 +294,7 @@
           esc(k.alt || '') + '" loading="lazy" decoding="async">' : '') + '<div class="kit__cuerpo"><h3>' + esc(k.nombre) + '</h3>' +
           '<p class="kit__sub">' + esc(k.subtitulo || '') + '</p><ul class="lista-check">' +
           cosas.map(function (c) { return '<li>' + ico('check') + '<span>' + esc(c) + '</span></li>'; }).join('') + '</ul>' +
-          (SIN ? '<div class="kit__acciones">' + boton + liga + '</div>' : '<p class="kit__total"><b>' + tot + '</b><span>IVA incluido</span></p>' + boton + liga) +
+          (SIN ? '<div class="kit__acciones">' + boton + liga + '</div>' : '<p class="kit__total"><b>' + tot + '</b><span>+ IVA (IVA ' + dinero(dk.iva) + ' · total ' + totIva + ' con IVA)</span></p>' + boton + liga) +
           '</div></article>';
       }).join('');
       var sec = cont.closest('section');
@@ -313,7 +322,7 @@
     if (SIN) return ''; // sin precios: nunca el monto de un producto, el total de un kit ni "precios del <fecha>"
     if (k[0] === 'actualizado') return fecha(cat.actualizado);
     if (k[0] === 'P' && porId[k[1]]) return dinero(porId[k[1]].precio);
-    if (k[0] === 'X' && porId[k[2]]) return dinero(+k[1] * porId[k[2]].precio);
+    if (k[0] === 'X' && porId[k[2]]) return dinero(desglose([[k[2], +k[1]]]).tot); // con IVA: se compara contra el minimo, que es con IVA
     if (k[0] === 'KIT' && kitValido(kit = kitPorId(k[1]))) return dinero(suma(kitLista(kit)));
     return '';
   }
@@ -365,7 +374,7 @@
         var pr = p.precio.toFixed(2), img = imagen(p), prod = { '@type': 'Product', name: p.producto + ', ' + p.presentacion, sku: p.id,
           category: cat.familias && cat.familias[p.familia] || p.familia,
           offers: { '@type': 'Offer', price: pr, priceCurrency: 'MXN', url: SITIO + 'catalogo.html#' + p.id, seller: { '@id': SITIO + '#tienda' },
-            priceSpecification: { '@type': 'UnitPriceSpecification', price: pr, priceCurrency: 'MXN', valueAddedTaxIncluded: true } } };
+            priceSpecification: { '@type': 'UnitPriceSpecification', price: pr, priceCurrency: 'MXN', valueAddedTaxIncluded: false } } };
         if (img) prod.image = img;
         return prod;
       }) };
@@ -373,8 +382,11 @@
     } catch (e) { /* se queda la tienda sola */ }
   }
 
-  /* ---------- Catálogo: buscador, filtros y orden ---------- */
-  var est = { fam: '', q: '', orden: 'rec' }, buscar = null, tBusca = 0;
+  /* ---------- Familias: tarjetas, vista de familia y búsqueda (brief/familias_diseno.md) ---------- */
+  var est = { fam: '', q: '' }, buscar = null, tBusca = 0, barraFam = null, tituloBase = '', tSenal = 0;
+  var CORTO = { playo: 'Emplaye', cinta: 'Cintas', cajas: 'Cajas', bolsas: 'Bolsas', burbuja: 'Burbuja', kraft: 'Kraft' };
+  var ALT = { playo: 'Rollo de playo para emplayar', cinta: 'Rollo de cinta canela', cajas: 'Caja de cartón corrugado',
+    bolsas: 'Bolsas de seguridad para paquetería', burbuja: 'Rollo de poliburbuja', kraft: 'Rollo de papel kraft' };
   var VACIAS = /^(de|del|la|las|el|los|y|e|para|con|en|a|al|por|un|una|unos|unas)$/;
   function normal(s) {
     return String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')
@@ -400,8 +412,8 @@
     return e.join(' ');
   }
   function pajar(p) {
-    if (!p._h) p._h = ' ' + normal([p.producto, p.presentacion, cat.familias && cat.familias[p.familia], FAM[p.familia] && FAM[p.familia][1],
-      p.id, extras(p)].join(' ')) + ' ';
+    if (!p._h) p._h = ' ' + normal([p.producto, p.presentacion, p.pres_web, p.titulo, p.detalle, p.tipo, cat.familias && cat.familias[p.familia],
+      FAM[p.familia] && FAM[p.familia][1], p.id, extras(p)].join(' ')) + ' ';
     return p._h;
   }
   function tokens(q) { return normal(q).split(' ').filter(function (t) { return t && !VACIAS.test(t); }); }
@@ -412,92 +424,200 @@
     });
   }
   function nombreFam(k) { return FAM[k] ? FAM[k][0] : (cat.familias && cat.familias[k]) || k; }
-  function fila(p) {
-    return '<li class="fila" id="' + esc(p.id) + '"><div class="fila__info"><p class="fila__nombre">' + esc(medida(p.producto)) + '</p>' +
-      '<p class="fila__pres">' + esc(medida(p.presentacion)) + '</p></div><div class="fila__precio">' + bloquePrecio(p) + '</div>' +
-      '<div class="fila__acciones"><div class="accion" data-accion="' + esc(p.id) + '">' + htmlAccion(p.id) + '</div>' +
-      '<a class="btn btn--contorno fila__preguntar" href="' + esc(wa(preguntar(p))) + '" target="_blank" rel="noopener" aria-label="' +
-      esc('Preguntar por ' + p.producto + ', ' + p.presentacion) + '">Preguntar</a></div></li>';
+  function uniq(a) { return a.filter(function (x, i) { return a.indexOf(x) === i; }); }
+  function slug(s) { return normal(s).replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
+  function nMedidas(n) { return n + (n === 1 ? ' medida' : ' medidas'); }
+  function claves() {
+    var o = Array.isArray(cat.orden_familias) ? cat.orden_familias.slice() : [];
+    cat.productos.forEach(function (p) { if (p.familia && o.indexOf(p.familia) < 0) o.push(p.familia); });
+    return o.filter(function (k) { return cat.productos.some(function (p) { return p.familia === k; }); });
   }
-  function filtrar(sinUrl) {
-    var toks = tokens(est.q), dest = kits.destacados || [], pos = {};
-    if (SIN) est.orden = 'rec'; // sin precios no hay orden por precio
-    cat.productos.forEach(function (p, i) { pos[p.id] = i; });
-    function rango(p) { var i = dest.indexOf(p.id); return i >= 0 ? i : p.estrella ? 100 : 200; }
-    var lista = cat.productos.filter(function (p) { return (!est.fam || p.familia === est.fam) && coincide(p, toks); });
-    lista.sort(function (a, b) {
-      var r = est.orden === 'asc' ? a.precio - b.precio : est.orden === 'desc' ? b.precio - a.precio : rango(a) - rango(b);
-      return r || pos[a.id] - pos[b.id];
+  function famInfo(k) { // todo sale de familias_web del JSON; si falta algo, se arma con lo que haya (nunca la foto de otra familia)
+    var w = (cat.familias_web || {})[k] || {}, ps = cat.productos.filter(function (p) { return p.familia === k; });
+    return { nombre: w.nombre || nombreFam(k), boton: w.boton || 'Ver ' + nombreFam(k).toLowerCase(), foto: w.foto || '',
+      modelos: w.modelos || uniq(ps.map(function (p) { return p.producto; })).length,
+      tabla: Array.isArray(w.tabla) ? w.tabla : [], tipos: Array.isArray(w.tipos) ? w.tipos : [] };
+  }
+  function filaTabla(r) { return '<div><dt>' + esc(r[0]) + '</dt><dd>' + esc(medida(r[1])) + '</dd></div>'; }
+  function desdeFam(k) { // solo con precios: el menor precio por pieza de la familia
+    var v = cat.productos.filter(function (p) { return p.familia === k && conPrecio(p); }).map(function (p) { return p.precio_pieza || p.precio; });
+    return v.length ? dinero(Math.min.apply(null, v)) + ' + IVA' : '';
+  }
+  function imgFam(k, f) {
+    var m = /^img\/(fam-[\w-]+)$/.exec(f.foto || ''), alt = esc(ALT[k] || '');
+    if (m) return '<img src="img/' + m[1] + '-480.webp" srcset="img/' + m[1] + '-480.webp 480w, img/' + m[1] + '-768.webp 768w" sizes="(min-width:1024px) 384px, calc(100vw - 32px)" width="480" height="300" alt="' + alt + '" loading="lazy" decoding="async">';
+    if (/^img\/[\w-]+\.webp$/.test(f.foto || '')) return '<img src="' + f.foto + '" width="480" height="300" alt="' + alt + '" loading="lazy" decoding="async">';
+    return '';
+  }
+  function tarjeta(k) {
+    var f = famInfo(k), ds = SIN ? '' : desdeFam(k);
+    var tab = (ds ? '<div class="fam__desde"><dt>Desde</dt><dd>' + esc(ds) + '</dd></div>' : '') + f.tabla.map(filaTabla).join('');
+    return '<a class="fam" href="catalogo.html?familia=' + esc(k) + '" data-fam-card="' + esc(k) + '" aria-label="' + esc(f.boton + ': ' + nMedidas(f.modelos)) + '">' +
+      '<div class="fam__foto">' + imgFam(k, f) + (f.modelos ? '<span class="fam__n">' + nMedidas(f.modelos) + '</span>' : '') +
+      '<h3 class="fam__nombre">' + esc(f.nombre) + '</h3></div>' + (tab ? '<dl class="fam__tabla">' + tab + '</dl>' : '') +
+      '<span class="fam__btn">' + esc(f.boton) + ' <span aria-hidden="true">→</span></span></a>';
+  }
+  function pintarFamilias() { $$('[data-familias]').forEach(function (el) { el.innerHTML = claves().map(tarjeta).join(''); }); }
+
+  /* Componente B: grupo por tipo, un renglón por producto con sus presentaciones */
+  function unidadPieza(p) { return { cajas: 'pieza', bolsas: 'bolsa', kraft: 'paquete' }[p.familia] || 'rollo'; }
+  function lineaPres(p) {
+    var pr = '';
+    if (!SIN && conPrecio(p)) {
+      pr = '<div class="rgl__precio"><b>' + dinero(p.precio) + '</b> <small>+ IVA</small>' +
+        (p.precio_pieza ? '<small class="rgl__pieza">' + dinero(p.precio_pieza) + ' por ' + unidadPieza(p) + '</small>' : '') + '</div>';
+    }
+    return '<div class="rgl" id="' + esc(p.id) + '"><p class="rgl__pres">' + esc(medida(p.pres_web || p.presentacion)) + '</p>' + pr +
+      '<div class="rgl__acc"><div class="accion" data-accion="' + esc(p.id) + '">' + htmlAccion(p.id) + '</div></div></div>';
+  }
+  function renglon(ps) {
+    var p = ps[0];
+    return '<li class="rg"><div class="rg__med"><p class="rg__tit">' + esc(medida(p.titulo || p.producto)) + '</p>' +
+      (p.detalle ? '<p class="rg__det">' + esc(medida(p.detalle)) + '</p>' : '') + '</div><div class="rg__pres">' + ps.map(lineaPres).join('') + '</div></li>';
+  }
+  function claveOrden(p) {
+    var m = p.medidas || {}, n = function (x) { return typeof x === 'number' ? x : -1; };
+    if (p.familia === 'playo') return [n(m.ancho_in), n(m.calibre), n(m.largo_ft)];
+    if (p.familia === 'cinta') return [n(m.largo_m)];
+    if (p.familia === 'cajas') return [typeof m.largo_cm === 'number' ? m.largo_cm * m.ancho_cm * m.alto_cm : 1e12];
+    if (p.familia === 'bolsas') return [n(m.ancho_cm)];
+    return null;
+  }
+  function renglones(lista) { // agrupa por producto exacto (rollo y paquete juntos) y ordena por medida
+    var g = [], por = {};
+    lista.forEach(function (p) {
+      if (!por[p.producto]) { por[p.producto] = []; g.push(por[p.producto]); }
+      por[p.producto].push(p);
     });
-    var n = lista.length;
-    $('[data-lista]').innerHTML = lista.map(fila).join('');
-    $('[data-lista-caja]').hidden = !n;
-    $('[data-conteo]').textContent = n === 1 ? '1 producto' : n + ' productos';
-    $('[data-sin]').hidden = !!n;
-    if (!n) {
+    g.forEach(function (ps) { ps.sort(function (a, b) { return piezas(a) - piezas(b); }); });
+    var pos = g.map(function (ps, i) { return i; });
+    return g.map(function (ps, i) { return { ps: ps, i: i, k: claveOrden(ps[0]) }; }).sort(function (a, b) {
+      if (a.k && b.k) for (var j = 0; j < a.k.length; j++) if (a.k[j] !== b.k[j]) return a.k[j] - b.k[j];
+      return a.i - b.i;
+    }).map(function (x) { return x.ps; });
+  }
+  function gruposDe(k, lista) {
+    var f = famInfo(k), tipos = f.tipos.slice();
+    lista.forEach(function (p) {
+      var n = p.tipo || f.nombre;
+      if (!tipos.some(function (t) { return t.nombre === n; })) tipos.push({ nombre: n, texto: '', foto: '' });
+    });
+    return tipos.map(function (t) { return { t: t, ps: lista.filter(function (p) { return (p.tipo || f.nombre) === t.nombre; }) }; })
+      .filter(function (g) { return g.ps.length; });
+  }
+  function grupo(t, ps, mini) {
+    var fm = /^img\/c-([\w-]+)-768\.webp$/.exec(t.foto || ''), h = mini ? 'h3' : 'h2', id = 'tipo-' + slug(t.nombre);
+    var cols = '<div class="rg__cols" aria-hidden="true"><span>Medida</span><span>Presentación</span>' + (SIN ? '' : '<span>Precio + IVA</span>') + '<span></span></div>';
+    return '<section class="rgrupo' + (mini ? ' rgrupo--mini' : '') + '" id="' + id + '" aria-labelledby="' + id + '-t"><div class="rgrupo__cab">' +
+      (fm && !mini ? '<img class="rgrupo__foto" src="img/g-c-' + fm[1] + '-192.webp" width="192" height="192" alt="' + esc(t.nombre) + '" loading="lazy" decoding="async">' : '') +
+      '<div><' + h + ' class="rgrupo__nom" id="' + id + '-t">' + esc(t.nombre) + '</' + h + '>' + (t.texto && !mini ? '<p class="rgrupo__txt">' + esc(t.texto) + '</p>' : '') +
+      '</div></div>' + cols + '<ul class="rgrupo__lista">' + renglones(ps).map(renglon).join('') + '</ul></section>';
+  }
+  function vistaFamilia(k) {
+    var f = famInfo(k), g = gruposDe(k, cat.productos.filter(function (p) { return p.familia === k; }));
+    var atajos = g.length > 1 ? '<nav class="atajos" aria-label="Ir a un tipo">' + g.map(function (x) {
+      return '<a class="atajo" href="#tipo-' + slug(x.t.nombre) + '">' + esc(x.t.nombre.replace('Transparente económica', 'Económica')) + '</a>'; }).join('') + '</nav>' : '';
+    var nombre = f.nombre.toLowerCase();
+    return atajos + g.map(function (x) { return grupo(x.t, x.ps, false); }).join('') +
+      '<div class="no-medida"><h2>¿No ves tu medida?</h2><p>Te la buscamos.</p><a class="btn btn--contorno" href="' +
+      esc(wa('Hola PAKZA, busco ' + nombre + ' en otra medida [WEB]')) + '" target="_blank" rel="noopener">Pregúntanos por WhatsApp</a></div>';
+  }
+  function pintarCabFamilia(k) {
+    var f = famInfo(k);
+    $('[data-fam-h1]').textContent = f.nombre;
+    $('[data-fam-linea]').textContent = nMedidas(f.modelos) + ' · ' + (SIN ? COTIZA : 'Precios + IVA');
+    $('[data-fam-tabla]').innerHTML = f.tabla.filter(function (r) { return r[0] !== 'Viene en'; }).map(filaTabla).join('');
+    d.title = f.nombre + ' para empaque en Guadalajara | PAKZA';
+  }
+  function render(sinUrl) {
+    var toks = tokens(est.q), modo = est.fam ? 'fam' : est.q ? 'busca' : 'general', n = 0, lista;
+    $('[data-barra-fam]').hidden = modo !== 'fam';
+    $('[data-cab-general]').hidden = modo === 'fam';
+    $('[data-cab-fam]').hidden = modo !== 'fam';
+    $('[data-busqueda]').hidden = modo === 'fam';
+    $('[data-familias]').hidden = modo !== 'general';
+    $('[data-resultados]').hidden = modo !== 'busca';
+    $('[data-vista-fam]').hidden = modo !== 'fam';
+    $('[data-kits-cat]').hidden = modo === 'fam';
+    d.title = tituloBase;
+    if (modo === 'fam') {
+      pintarCabFamilia(est.fam);
+      $('[data-vista-fam]').innerHTML = vistaFamilia(est.fam);
+    } else if (modo === 'busca') {
+      lista = cat.productos.filter(function (p) { return coincide(p, toks); });
+      n = lista.length;
+      $('[data-conteo]').textContent = n === 1 ? '1 producto' : n + ' productos';
+      $('[data-resultados-lista]').innerHTML = claves().map(function (k) {
+        var l = lista.filter(function (p) { return p.familia === k; });
+        return l.length ? '<section class="res-fam"><h2 class="res-fam__nom">' + esc(famInfo(k).nombre) + '</h2>' +
+          gruposDe(k, l).map(function (g) { return grupo(g.t, g.ps, true); }).join('') + '</section>' : '';
+      }).join('');
       $('[data-sin-txt]').textContent = 'No encontramos "' + est.q + '". Escríbenos: si no está en el catálogo, lo buscamos por ti.';
       $('[data-sin-wa]').href = wa('Hola PAKZA, busco "' + est.q + '" y no lo encontré en su página [WEB]');
     }
-    $$('[data-fam]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-fam') === est.fam)); });
-    $('[data-familia-cab]').hidden = !est.fam;
-    if (est.fam) {
-      $('[data-familia-titulo]').textContent = FAM[est.fam] ? FAM[est.fam][1] : nombreFam(est.fam);
-      $('[data-familia-ayuda]').textContent = FAM[est.fam] ? FAM[est.fam][2] : '';
-      var ff = $('[data-familia-foto]'); // familia nueva sin mosaico propio: sin miniatura (nunca la de otra familia)
-      ff.hidden = !FAM[est.fam];
-      if (FAM[est.fam]) ff.src = BASE + 'img/f-' + est.fam + '-192.webp';
-    }
+    $('[data-sin]').hidden = !(modo === 'busca' && !n);
+    $$('[data-fam]', barraFam).forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-fam') === est.fam)); });
+    cuerpo.classList.toggle('en-familia', modo === 'fam');
     if (!sinUrl) {
       var u = new URL(location.href);
       if (est.fam) u.searchParams.set('familia', est.fam); else u.searchParams.delete('familia');
-      if (est.q) u.searchParams.set('buscar', est.q); else u.searchParams.delete('buscar');
-      history.replaceState(null, '', u.pathname + u.search);
+      if (est.q && !est.fam) u.searchParams.set('buscar', est.q); else u.searchParams.delete('buscar');
+      history.replaceState(null, '', u.pathname + u.search + u.hash);
     }
+  }
+  function alInicio() {
+    var y = $('main').getBoundingClientRect().top + scrollY - (escritorio.matches ? 72 : 0);
+    raiz.style.scrollBehavior = 'auto';
+    scrollTo(0, Math.max(0, y));
+    raiz.style.scrollBehavior = '';
+  }
+  function irFamilia(k) {
+    est.fam = k || ''; est.q = ''; buscar.value = ''; $('[data-borrar-busqueda]').hidden = true;
+    if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+    render();
+    alInicio();
   }
   function senalar() {
-    var id, el;
-    try { id = decodeURIComponent(location.hash.slice(1)); } catch (e) { return; } // liga con "%" suelto: se ignora (QA 10)
+    var id, el, p;
+    try { id = decodeURIComponent(location.hash.slice(1)); } catch (e) { return; } // liga con "%" suelto: se ignora
     if (!id || !porId[id]) return;
-    if (!d.getElementById(id)) { est.fam = ''; est.q = ''; buscar.value = ''; filtrar(true); }
-    $$('.fila.senalada').forEach(function (x) { x.classList.remove('senalada'); });
-    if ((el = d.getElementById(id))) { // salto directo (sin desplazamiento suave) a la fila señalada
+    p = porId[id];
+    if (est.fam !== p.familia || est.q) { est.fam = p.familia; est.q = ''; buscar.value = ''; render(true); }
+    $$('.rgl.senalada').forEach(function (x) { x.classList.remove('senalada'); });
+    if ((el = d.getElementById(id))) {
       el.classList.add('senalada');
       raiz.style.scrollBehavior = 'auto';
-      el.scrollIntoView({ block: 'start' });
+      el.scrollIntoView({ block: 'center' });
       raiz.style.scrollBehavior = '';
+      clearTimeout(tSenal);
+      tSenal = setTimeout(function () { el.classList.remove('senalada'); }, 2500);
     }
   }
-  function alInicioDeLista() {
-    var c = $('.conteo-fila'), y = c.getBoundingClientRect().top + scrollY - (escritorio.matches ? 140 : 72);
-    if (scrollY > y) scrollTo(0, y);
-  }
   function iniciarCatalogo() {
-    var q = new URLSearchParams(location.search), f = (q.get('familia') || '').toLowerCase(), chips = $('[data-chips]'), borrar = $('[data-borrar-busqueda]');
+    var q = new URLSearchParams(location.search), f = (q.get('familia') || '').toLowerCase(), borrar = $('[data-borrar-busqueda]');
     buscar = d.getElementById('buscar');
-    Object.keys(cat.familias || {}).concat(cat.productos.map(function (p) { return p.familia; })).forEach(function (k) {
-      if (k && !$('[data-fam="' + k + '"]', chips)) chips.insertAdjacentHTML('beforeend', '<button type="button" class="chip" data-fam="' + esc(k) + '" aria-pressed="false">' + esc(nombreFam(k)) + '</button>');
-    });
-    $$('[data-fam]', chips).forEach(function (b) {
-      var k = b.getAttribute('data-fam');
-      if (k && !cat.productos.some(function (p) { return p.familia === k; })) b.remove();
-    });
+    barraFam = $('[data-chips]');
+    tituloBase = d.title;
+    barraFam.innerHTML = '<a class="chip chip--todas" href="catalogo.html" data-ir-todas>← Todas</a>' + claves().map(function (k) {
+      return '<button type="button" class="chip" data-fam="' + esc(k) + '" aria-pressed="false">' + esc(CORTO[k] || nombreFam(k)) + '</button>'; }).join('') +
+      '<button type="button" class="chip chip--lupa" data-ir-buscar aria-label="Buscar">' + ico('buscar') + '</button>';
     est.fam = cat.productos.some(function (p) { return p.familia === f; }) ? f : '';
-    est.q = (q.get('buscar') || '').trim().slice(0, 80);
+    est.q = est.fam ? '' : (q.get('buscar') || '').trim().slice(0, 80);
     buscar.value = est.q;
     borrar.hidden = !est.q;
-    filtrar(true);
+    pintarFamilias();
+    render(true);
     senalar();
     addEventListener('hashchange', senalar);
     buscar.addEventListener('input', function () {
       borrar.hidden = !buscar.value;
       clearTimeout(tBusca);
-      tBusca = setTimeout(function () { est.q = buscar.value.trim().slice(0, 80); filtrar(); }, 150);
+      tBusca = setTimeout(function () { est.q = buscar.value.trim().slice(0, 80); render(); }, 150);
     });
     buscar.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter') { e.preventDefault(); clearTimeout(tBusca); est.q = buscar.value.trim().slice(0, 80); filtrar(); buscar.blur(); }
+      if (e.key === 'Enter') { e.preventDefault(); clearTimeout(tBusca); est.q = buscar.value.trim().slice(0, 80); render(); buscar.blur(); }
     });
-    borrar.addEventListener('click', function () { buscar.value = ''; borrar.hidden = true; est.q = ''; filtrar(); buscar.focus(); });
-    $('[data-orden]').addEventListener('change', function (e) { est.orden = e.target.value; filtrar(); });
+    borrar.addEventListener('click', function () { buscar.value = ''; borrar.hidden = true; est.q = ''; render(); buscar.focus(); });
   }
 
   /* ---------- Paneles (pedido y menú): foco atrapado, Esc y fondo quieto ---------- */
@@ -604,9 +724,16 @@
       clearTimeout(tDeshacer);
       d.getElementById('pedido-titulo').focus();
     } else if (t.hasAttribute('data-fam')) {
-      est.fam = a('data-fam');
-      filtrar();
-      alInicioDeLista();
+      irFamilia(a('data-fam'));
+    } else if (esCatalogo && t.hasAttribute('data-ir-todas')) {
+      e.preventDefault();
+      irFamilia('');
+    } else if (esCatalogo && t.hasAttribute('data-ir-buscar')) {
+      irFamilia('');
+      buscar.focus();
+    } else if (esCatalogo && t.hasAttribute('data-fam-card')) {
+      e.preventDefault();
+      irFamilia(a('data-fam-card'));
     } else if (modal && t.tagName === 'A' && (a('href') || '').charAt(0) === '#') {
       cerrar(true);
     }
@@ -637,7 +764,7 @@
 
   /* ---------- Arranque ---------- */
   function fallo() { // sin precios no se muestra ningún monto: se invita a cotizar por WhatsApp
-    if (esCatalogo) { $('[data-lista-caja]').hidden = true; $('[data-error]').hidden = false; }
+    if (esCatalogo) { $('[data-familias]').hidden = true; $('[data-error]').hidden = false; }
     $$('[data-precio-bloque]').forEach(function (el) { el.innerHTML = '<p class="precio__iva">Cotiza por WhatsApp</p>'; });
     $$('.tprecio,#kits,.kits-cat,[data-accion],[data-requiere]').forEach(function (el) { el.hidden = true; });
     $$('[data-m]').forEach(function (el) {
@@ -670,7 +797,7 @@
     llenarMontos();
     pintarFijos();
     pintarKits();
-    if (esCatalogo) iniciarCatalogo();
+    if (esCatalogo) iniciarCatalogo(); else pintarFamilias();
     datosEstructurados(esCatalogo ? cat.productos : kits.destacados.map(function (i) { return porId[i]; }).filter(Boolean));
     pintarPedido();
     raiz.classList.add('listo');
