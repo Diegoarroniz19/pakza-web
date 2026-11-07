@@ -842,3 +842,26 @@
     return abrir.apply(window, arguments);
   };
 })();
+
+/* Conversión de Google Ads «Clic a WhatsApp (pakza.com.mx)» (07/11/2026). Diego: que Google mida clics de valor, no basura.
+   Cada clic a WhatsApp (o a llamar) avisa a Google Ads; así se ve qué palabras traen clientes que escriben, no solo visitas.
+   Un mismo clic no se cuenta dos veces (el enlace y el carrito pueden disparar a la vez). */
+(function () {
+  var ENVIO = 'AW-18561039715/WqjZCJ-WjLQdEOP6y5JF', ultimo = 0;
+  function esContacto(u) { return typeof u === 'string' && /wa\.me\/|api\.whatsapp\.com|whatsapp:\/\/|^tel:/i.test(u); }
+  function avisa() {
+    var ahora = Date.now();
+    if (ahora - ultimo < 1500 || typeof window.gtag !== 'function') return;
+    ultimo = ahora;
+    try { window.gtag('event', 'conversion', { send_to: ENVIO, transport_type: 'beacon' }); } catch (e) {}
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('a') : null;
+    if (a && esContacto(a.getAttribute('href') || a.href)) avisa();
+  }, true);
+  var abrir = window.open;
+  window.open = function (u) {
+    if (esContacto(u)) avisa();
+    return abrir.apply(window, arguments);
+  };
+})();
