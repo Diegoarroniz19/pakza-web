@@ -104,6 +104,7 @@
    y la cifra se ve arriba con column-reverse */
 .pz-cifras{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin-top:28px;padding:0;list-style:none;border:1px solid var(--linea);border-radius:20px;background:var(--celda);overflow:hidden}
 .pz-cifra{display:flex;flex-direction:column-reverse;justify-content:flex-end;gap:4px;padding:14px;box-shadow:-1px -1px 0 var(--linea)}
+.pz-cifra--marca{background:var(--tinte)} /* 07/11/2026 (Diego: "lo de medidas de caja no es llamativo"): "Con tu logo" */
 .pz-cifra__num{display:block;min-height:1.1em;font-size:clamp(1.25rem,8.6vw - 8px,2.25rem);font-weight:800;line-height:1.1;letter-spacing:-.04em;font-variant-numeric:tabular-nums;white-space:nowrap}
 .pz-cifra__txt{font-size:14px;line-height:1.4;color:var(--gris)}
 .pz-cifra__txt .pz-vivo{margin-right:6px;vertical-align:1px}
