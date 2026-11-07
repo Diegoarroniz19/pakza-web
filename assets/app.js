@@ -319,6 +319,7 @@
     if (k[0] === 'gratis') return dinero(cat.envio_gratis_desde);
     if (k[0] === 'efectivo') return dinero(cat.efectivo_hasta || EFECTIVO_HASTA);
     if (k[0] === 'n') return String(cat.productos.length);
+    if (k[0] === 'cajas') return cat.familias_web && cat.familias_web.cajas && cat.familias_web.cajas.modelos > 0 ? String(cat.familias_web.cajas.modelos) : '';
     if (SIN) return ''; // sin precios: nunca el monto de un producto, el total de un kit ni "precios del <fecha>"
     if (k[0] === 'actualizado') return fecha(cat.actualizado);
     if (k[0] === 'P' && porId[k[1]]) return dinero(porId[k[1]].precio);
@@ -755,11 +756,21 @@
   if (escritorio.addEventListener) escritorio.addEventListener('change', modoPanel); else if (escritorio.addListener) escritorio.addListener(modoPanel); // iOS 13 o anterior
   addEventListener('storage', function (e) { if (e.key === CLAVE && cat) { items = leer(); pintarPedido(); } });
 
-  /* Botón flotante: en la portada se esconde mientras se ve el "Cotiza por WhatsApp" del héroe */
-  var flota = $('.wa-flota'), heroeWa = d.getElementById('heroe-wa');
-  if (flota && heroeWa) {
-    if ('IntersectionObserver' in window) new IntersectionObserver(function (e) { flota.classList.toggle('oculto', e[e.length - 1].isIntersecting); }).observe(heroeWa);
-    else flota.classList.remove('oculto');
+  /* Botón flotante: en la portada se esconde mientras se ve un botón principal de WhatsApp ([data-oculta-flota]) */
+  var flota = $('.wa-flota'), ocultan = $$('[data-oculta-flota]');
+  if (flota && ocultan.length) {
+    if ('IntersectionObserver' in window) {
+      var vistos = [];
+      var obsFlota = new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          var i = vistos.indexOf(e.target);
+          if (e.isIntersecting && i < 0) vistos.push(e.target);
+          else if (!e.isIntersecting && i >= 0) vistos.splice(i, 1);
+        });
+        flota.classList.toggle('oculto', vistos.length > 0);
+      });
+      ocultan.forEach(function (el) { obsFlota.observe(el); });
+    } else flota.classList.remove('oculto');
   }
 
   /* ---------- Arranque ---------- */
@@ -802,4 +813,32 @@
     pintarPedido();
     raiz.classList.add('listo');
   }).catch(fallo);
+})();
+
+/* Origen por campaña (06/11/2026, Google Ads): si la página se abre con ?o=GOO-CM (o GOO-PL...), todos los enlaces de
+   WhatsApp cambian el código [WEB] por [GOO-CM], así el bot sabe que el cliente llegó por el anuncio de Google.
+   El origen se recuerda mientras la pestaña siga abierta (sessionStorage). */
+(function () {
+  var o = null;
+  try {
+    var m = /[?&]o=([A-Za-z]{2,3}(?:-[A-Za-z0-9]{1,4})?)(?:&|#|$)/.exec(location.search);
+    if (m) { o = m[1].toUpperCase(); sessionStorage.setItem('pakza_origen', o); }
+    else { o = sessionStorage.getItem('pakza_origen'); }
+  } catch (e) {}
+  if (!o || o === 'WEB') return;
+  function cambia(a) {
+    if (!a || !a.href || a.href.indexOf('wa.me/') < 0) return;
+    a.href = a.href.split('%5BWEB%5D').join('%5B' + o + '%5D').split('[WEB]').join('[' + o + ']');
+  }
+  function alClic(e) { var a = e.target && e.target.closest ? e.target.closest('a') : null; cambia(a); }
+  document.addEventListener('click', alClic, false);
+  document.addEventListener('auxclick', alClic, false);
+  document.addEventListener('contextmenu', alClic, false);
+  var abrir = window.open;
+  window.open = function (u) {
+    if (typeof u === 'string' && u.indexOf('wa.me/') > -1) {
+      arguments[0] = u.split('%5BWEB%5D').join('%5B' + o + '%5D').split('[WEB]').join('[' + o + ']');
+    }
+    return abrir.apply(window, arguments);
+  };
 })();

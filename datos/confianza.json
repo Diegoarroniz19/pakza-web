@@ -1,0 +1,5 @@
+{
+  "_como_llenarlo": "Solo datos reales. Cliente: {nombre, logo (img/cl-nombre.webp o vacío), permiso: true}, y solo con el sí del cliente por escrito (WhatsApp o correo) guardado por Diego. Opinión: {texto tal cual, autor, negocio, estrellas (entero de 1 a 5), fuente: Google, url de esa opinión en Google}. Nunca inventar ni editar.",
+  "clientes": [],
+  "opiniones": []
+}

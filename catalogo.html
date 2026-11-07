@@ -35,6 +35,7 @@
 <symbol id="i-wa" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></symbol>
 <symbol id="i-fb" viewBox="0 0 24 24"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></symbol>
 <symbol id="i-buscar" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+<symbol id="i-abajo" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
 <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
 <symbol id="i-menos" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
 <symbol id="i-mas" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5v14"/></symbol>
@@ -59,9 +60,8 @@
     <a class="ficha-logo" href="index.html" aria-label="PAKZA, ir al inicio"><img src="img/logo-horizontal.webp" width="664" height="120" alt="PAKZA"></a>
     <nav class="menu" aria-label="Principal">
       <a href="catalogo.html" aria-current="page">Catálogo</a>
-      <a href="index.html#kits">Kits</a>
+      <a href="index.html#a-la-medida">Con tu marca</a>
       <a href="index.html#como-comprar">Cómo comprar</a>
-      <a href="index.html#entrega-y-pago">Entrega y pago</a>
       <a href="index.html#preguntas">Preguntas</a>
     </nav>
     <div class="acciones">
@@ -78,9 +78,8 @@
   </div>
   <nav class="contenedor menu-movil__nav" aria-label="Menú">
     <a href="catalogo.html" aria-current="page">Catálogo</a>
-    <a href="index.html#kits">Kits</a>
+    <a href="index.html#a-la-medida">Con tu marca</a>
     <a href="index.html#como-comprar">Cómo comprar</a>
-    <a href="index.html#entrega-y-pago">Entrega y pago</a>
     <a href="index.html#preguntas">Preguntas</a>
   </nav>
   <div class="contenedor menu-movil__pie">
@@ -155,8 +154,8 @@
       <div class="pedido__medio">
         <div class="vacio" data-vacio>
           <svg class="ico" aria-hidden="true"><use href="#i-bolsa"/></svg>
-          <p data-con-precios="Tu pedido está vacío. Agrega productos del catálogo o elige un kit para empezar.">Tu lista está vacía. Agrega productos del catálogo o elige un kit para empezar.</p>
-          <a class="btn btn--secundario" href="#kits-catalogo" data-ver-kits>Ver kits</a>
+          <p data-con-precios="Tu pedido está vacío. Agrega productos del catálogo para empezar.">Tu lista está vacía. Agrega productos del catálogo para empezar.</p>
+          <a class="btn btn--secundario" href="catalogo.html" data-ver-kits>Ver familias</a>
           <p class="deshacer" data-deshacer-caja hidden><span data-con-precios="Vaciaste tu pedido.">Vaciaste tu lista.</span> <button type="button" class="liga" data-deshacer>Deshacer</button></p>
         </div>
         <div data-lleno hidden>
@@ -192,7 +191,50 @@
       </div>
     </aside>
   </div>
-</main>
+    <section class="seccion" id="guia">
+      <div class="contenedor">
+        <h2>Guía rápida</h2>
+        <div class="faq">
+        <details name="guia">
+          <summary>¿Qué calibre de playo necesito?<svg class="ico" aria-hidden="true"><use href="#i-abajo"/></svg></summary>
+          <div class="faq__resp">
+            <p>El calibre es el grosor: entre más alto, más resiste.</p>
+            <ul>
+              <li>Calibre 50 y 60 (unas 13 y 15 micras): cargas ligeras y parejas.</li>
+              <li>Calibre 70 (unas 18 micras): cargas medianas.</li>
+              <li>Calibre 80 (unas 20 micras): tarimas pesadas, muebles y cargas con esquinas.</li>
+            </ul>
+            <p>Como referencia general, el 60 se usa en tarimas de hasta unos 700&nbsp;kg, el 70 hasta unos 900&nbsp;kg y el 80 hasta unos 1,100&nbsp;kg. Para tarimas y muebles, usa el ancho de 18 o 20 pulgadas. Los angostos (3, 4, 5 y 10 pulgadas) son para bultos, tubos y paquetes. ¿Dudas? Mándanos una foto de tu carga.</p>
+          </div>
+        </details>
+        <details name="guia">
+          <summary>¿Cuánto playo necesito por tarima?<svg class="ico" aria-hidden="true"><use href="#i-abajo"/></svg></summary>
+          <div class="faq__resp">
+            <p>Depende del tamaño, la altura y el peso de tu carga, y de cuánto estires el playo. Para que quede firme:</p>
+            <ul>
+              <li>da 3 vueltas en la base, amarrando la tarima;</li>
+              <li>sube en espiral, encimando la mitad de cada vuelta;</li>
+              <li>remata con 2 o 3 vueltas arriba, estirando mientras avanzas.</li>
+            </ul>
+            <p>Dinos cuántas tarimas emplayas a la semana y de qué tamaño, y te decimos cuántos rollos te conviene llevar.</p>
+          </div>
+        </details>
+        <details name="guia">
+          <summary>¿Qué caja uso para mis envíos?<svg class="ico" aria-hidden="true"><use href="#i-abajo"/></svg></summary>
+          <div class="faq__resp">
+            <p>Elige una caja un poco más grande que tu producto para poner relleno; si es frágil, deja unos 5&nbsp;cm por lado.</p>
+            <ul>
+              <li data-con-precios="Ropa y accesorios: bolsa de seguridad, que sale más barata y pesa menos.">Ropa y accesorios: bolsa de seguridad, que pesa menos.</li>
+              <li>Productos chicos y medianos: cajas para paquetería o la de 30&nbsp;×&nbsp;20&nbsp;×&nbsp;20&nbsp;cm (ECT&nbsp;32).</li>
+              <li>Pesados, frágiles o mudanza: doble corrugado, con poliburbuja o papel kraft adentro.</li>
+            </ul>
+            <p>El ECT es la resistencia del cartón: a mayor número, más aguanta.</p>
+          </div>
+        </details>
+        </div>
+      </div>
+    </section>
+  </main>
 
 <footer class="pie oscuro">
   <div class="contenedor pie__in">
@@ -214,7 +256,7 @@
     </div>
     <nav class="pie__ligas" aria-label="Pie de página">
       <a href="catalogo.html">Catálogo</a>
-      <a href="index.html#kits">Kits</a>
+      <a href="index.html#a-la-medida">Con tu marca</a>
       <a href="index.html#preguntas">Preguntas frecuentes</a>
       <a href="privacidad.html">Aviso de privacidad</a>
     </nav>

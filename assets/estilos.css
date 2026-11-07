@@ -170,6 +170,7 @@ h3{font-size:var(--fs-h3);font-weight:700;line-height:1.3;letter-spacing:-.01em}
 /* Menú del celular */
 .menu-movil{position:fixed;inset:0;z-index:var(--z-panel);display:flex;flex-direction:column;overflow-y:auto;background:var(--negro);color:var(--hueso);opacity:0;visibility:hidden;transition:opacity var(--t-rapida),visibility 0s linear var(--t-rapida)}
 .menu-movil.abierto{opacity:1;visibility:visible;transition:opacity var(--t-rapida)}
+.menu-movil>.contenedor{width:100%} /* 06/11/2026: en catálogo, privacidad y 404 el menú quedaba angosto y desalineado */
 .menu-movil__top{display:flex;align-items:center;justify-content:space-between;height:60px}
 .menu-movil__nav a{display:flex;align-items:center;min-height:60px;border-bottom:1px solid var(--negro-3);font-size:22px;font-weight:800;text-decoration:none}
 .menu-movil__pie{display:grid;gap:12px;padding-top:24px;padding-bottom:32px}
