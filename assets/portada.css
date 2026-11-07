@@ -366,6 +366,9 @@ html:not(.listo) .pz-cifra:has([data-m]:empty),html:not(.listo) p:has(>[data-m]:
   .pz-heroe__in{position:static;grid-template-columns:minmax(0,45%) 1fr}
   .pz-heroe__texto,.pz-cifras{position:relative;z-index:1}
   .pz-heroe__texto{grid-column:1}
+  /* 07/11 (portada con tequila): velo claro a la izquierda para que el texto siempre se lea sobre la foto */
+  .pz-heroe__visual::after{content:"";position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(90deg,rgba(232,231,228,.92) 0%,rgba(232,231,228,.78) 30%,rgba(232,231,228,.35) 44%,rgba(232,231,228,0) 56%)}
 }
 .pz-medida__bloque{--negro:#12302A;--negro-2:#1A3D35;--negro-3:#2E5648;--oro:#D8B56A;background:var(--negro)}
 .pz-medida .pz-h2,.pz-medida .pz-tipo__nombre{font-family:Georgia,"Times New Roman",serif;font-weight:700;letter-spacing:-.01em}
