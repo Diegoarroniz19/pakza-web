@@ -803,3 +803,31 @@
     raiz.classList.add('listo');
   }).catch(fallo);
 })();
+
+/* Origen por campaña (06/11/2026, Google Ads): si la página se abre con ?o=GOO-CM (o GOO-PL...), todos los enlaces de
+   WhatsApp cambian el código [WEB] por [GOO-CM], así el bot sabe que el cliente llegó por el anuncio de Google.
+   El origen se recuerda mientras la pestaña siga abierta (sessionStorage). */
+(function () {
+  var o = null;
+  try {
+    var m = /[?&]o=([A-Za-z]{2,3}(?:-[A-Za-z0-9]{1,4})?)(?:&|#|$)/.exec(location.search);
+    if (m) { o = m[1].toUpperCase(); sessionStorage.setItem('pakza_origen', o); }
+    else { o = sessionStorage.getItem('pakza_origen'); }
+  } catch (e) {}
+  if (!o || o === 'WEB') return;
+  function cambia(a) {
+    if (!a || !a.href || a.href.indexOf('wa.me/') < 0) return;
+    a.href = a.href.split('%5BWEB%5D').join('%5B' + o + '%5D').split('[WEB]').join('[' + o + ']');
+  }
+  function alClic(e) { var a = e.target && e.target.closest ? e.target.closest('a') : null; cambia(a); }
+  document.addEventListener('click', alClic, false);
+  document.addEventListener('auxclick', alClic, false);
+  document.addEventListener('contextmenu', alClic, false);
+  var abrir = window.open;
+  window.open = function (u) {
+    if (typeof u === 'string' && u.indexOf('wa.me/') > -1) {
+      arguments[0] = u.split('%5BWEB%5D').join('%5B' + o + '%5D').split('[WEB]').join('[' + o + ']');
+    }
+    return abrir.apply(window, arguments);
+  };
+})();
