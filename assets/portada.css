@@ -353,3 +353,27 @@ html:not(.listo) .pz-cifra:has([data-m]:empty),html:not(.listo) p:has(>[data-m]:
   .pz-fam:hover,.pz-caso:hover,.pz-tipo:hover,.pz-fam:active{transform:none}
   .pz-fam:hover .pz-fam__foto img,.pz-tipo:hover .pz-tipo__foto img{transform:none}
 }
+
+/* ---------- 07/11/2026 · Fotos de estudio (portada nueva y "cajas con tu marca" de revista) ---------- */
+.pz-heroe__visual{display:block;margin-top:24px}
+.pz-heroe__foto img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:60% center;border:0;border-radius:24px}
+@media (min-width:1024px){
+  .pz-heroe{position:relative;overflow:hidden;background:#E4E3E0}
+  .pz-heroe__visual{position:absolute;inset:0;margin:0}
+  .pz-heroe__foto,.pz-heroe__foto img{display:block;width:100%;height:100%}
+  .pz-heroe__foto img{aspect-ratio:auto;object-fit:cover;object-position:right center;border-radius:0}
+  .pz-heroe__in{position:static;grid-template-columns:minmax(0,45%) 1fr}
+  .pz-heroe__texto,.pz-cifras{position:relative;z-index:1}
+  .pz-heroe__texto{grid-column:1}
+}
+.pz-medida__bloque{--negro:#12302A;--negro-2:#1A3D35;--negro-3:#2E5648;--oro:#D8B56A;background:var(--negro)}
+.pz-medida .pz-h2,.pz-medida .pz-tipo__nombre{font-family:Georgia,"Times New Roman",serif;font-weight:700;letter-spacing:-.01em}
+.pz-medida .pz-acento{color:var(--oro);font-style:italic}
+.pz-medida__pasos li::before{background:var(--oro)}
+.pz-tipo{border-radius:20px}
+.pz-tipo__foto{margin:10px 10px 0;border-radius:999px 999px 14px 14px;background:#E4E3E0}
+.pz-tipo__foto img{aspect-ratio:4/5;object-fit:cover}
+.pz-tipo__nombre{font-size:20px}
+.pz-tipo[aria-pressed=true]{border-color:var(--oro);box-shadow:0 0 0 1px var(--oro)}
+.pz-medida__cta{border-color:var(--negro-3)}
+@media (min-width:1024px){.pz-heroe__bajada,.pz-heroe__nota{color:#262626}.pz-heroe__nota{font-weight:500}}
