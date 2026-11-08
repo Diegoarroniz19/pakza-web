@@ -178,7 +178,7 @@ html.pz-intro .pz-ov.salir{animation-name:pz-ov-b;animation-delay:0s}
       <ul class="pz-cifras" id="cifras" aria-label="Datos para pedir">
         <li class="pz-cifra"><span class="pz-cifra__txt">Pedido mínimo, con IVA</span><b class="pz-cifra__num"><span data-m="min"></span></b></li>
         <li class="pz-cifra"><span class="pz-cifra__txt">Entrega desde <span data-m="gratis"></span> con IVA en la ZMG</span><b class="pz-cifra__num">Gratis</b></li>
-        <li class="pz-cifra pz-cifra--marca"><span class="pz-cifra__txt">Cajas a tu medida, desde 100 piezas</span><b class="pz-cifra__num">Con tu <span class="pz-cinta">logo</span></b></li>
+        <li class="pz-cifra pz-cifra--marca"><span class="pz-cifra__txt">Cajas a tu medida, mínimo según el material</span><b class="pz-cifra__num">Con tu <span class="pz-cinta">logo</span></b></li>
         <li class="pz-cifra"><span class="pz-cifra__txt"><span class="pz-vivo" aria-hidden="true"></span>Te contestamos por WhatsApp</span><b class="pz-cifra__num">Al momento</b></li>
         <li class="pz-cifra pz-cifra--repuesto"><span class="pz-cifra__txt">Municipios de la ZMG con entrega a domicilio</span><b class="pz-cifra__num">6</b></li>
       </ul>
@@ -316,7 +316,7 @@ html.pz-intro .pz-ov.salir{animation-name:pz-ov-b;animation-delay:0s}
       </div></div>
 
       <div class="pz-rec__res" id="rec-marca" role="region" aria-labelledby="rec-marca-t"><div class="pz-rec__in">
-        <div class="pz-rec__txt"><h3 class="pz-h3" id="rec-marca-t">Cajas con tu marca</h3><p class="pz-rec__linea">Las hacemos a la medida de tu producto y con tu logo, desde 100 piezas.</p></div>
+        <div class="pz-rec__txt"><h3 class="pz-h3" id="rec-marca-t">Cajas con tu marca</h3><p class="pz-rec__linea">Las hacemos a la medida de tu producto y con tu logo; el mínimo de piezas depende del material.</p></div>
         <div class="pz-rec__acc"><a class="btn btn--primario" data-oculta-flota href="https://wa.me/523313673566?text=Hola%20PAKZA%2C%20quiero%20cotizar%20cajas%20con%20mi%20marca%20%5BWEB%5D%0APiezas%3A%20%0AMedidas%20(largo%20x%20ancho%20x%20alto%2C%20en%20cm)%3A%20" target="_blank" rel="noopener"><svg class="ico ico--marca" aria-hidden="true"><use href="#i-wa"/></svg><span>Cotiza tu caja<span class="pz-largo"> por WhatsApp</span></span></a><a class="liga" href="#a-la-medida">Ver ejemplos aquí abajo</a></div>
       </div></div>
 
@@ -334,7 +334,7 @@ html.pz-intro .pz-ov.salir{animation-name:pz-ov-b;animation-delay:0s}
         <div class="pz-enc">
           <span class="pz-nuevo">Nuevo</span>
           <h2 class="pz-h2" id="medida-titulo">Cajas con tu marca, a&nbsp;tu <span class="pz-acento">medida</span></h2>
-          <p class="pz-bajada">Las hacemos a la medida de tu producto y con tu logo, desde 100 piezas. <a class="pz-medida__ver" href="#minimos">Ver mínimos y tiempos</a></p>
+          <p class="pz-bajada">Las hacemos a la medida de tu producto y con tu logo. El mínimo de piezas depende del material. <a class="pz-medida__ver" href="#minimos">Ver mínimos</a></p>
           <p class="pz-medida__aviso">Imágenes ilustrativas de cómo puede verse tu marca.</p>
         </div>
         <div class="pz-galeria">
@@ -358,20 +358,19 @@ html.pz-intro .pz-ov.salir{animation-name:pz-ov-b;animation-delay:0s}
             <p class="pz-medida__nota">A más piezas, menor precio por pieza.</p>
           </div>
         </div>
-        <!-- 08/11/2026 (Diego): mínimo de piezas y tiempo de entrega por tipo de empaque. Días del fabricante, hábiles, desde que se aprueba el diseño -->
+        <!-- 08/11/2026 (Diego): mínimo de piezas según el material. Los tiempos de entrega NO van en la página ni en la publicidad: los platica Diego con el cliente -->
         <div class="pz-minimos" id="minimos">
-          <h3 class="pz-minimos__titulo">Pedido mínimo y tiempo de entrega</h3>
+          <h3 class="pz-minimos__titulo">Pedido mínimo según el material</h3>
           <table class="pz-minimos__tabla">
-            <thead><tr><th scope="col">Tipo de empaque</th><th scope="col">Pedido mínimo</th><th scope="col">Entrega</th></tr></thead>
+            <thead><tr><th scope="col">Material</th><th scope="col">Pedido mínimo</th></tr></thead>
             <tbody>
-              <tr><th scope="row"><b>Cajas de cartón corrugado</b><span>Envío, mailers y kraft impreso: micro, sencillo o doble corrugado</span></th><td data-et="Mínimo"><b>100 piezas</b></td><td data-et="Entrega">10 a 15 días hábiles</td></tr>
-              <tr><th scope="row"><b>Cajas rígidas con empalme</b><span>Prémium y de regalo, con tapa</span></th><td data-et="Mínimo"><b>300 a 500 piezas</b><span>según el tamaño</span></td><td data-et="Entrega">20 a 25 días hábiles</td></tr>
-              <tr><th scope="row"><b>Cajas magnéticas</b><span>Rígidas, con cierre de imán</span></th><td data-et="Mínimo"><b>Según el tamaño</b><span>pregúntanos</span></td><td data-et="Entrega">25 a 30 días hábiles</td></tr>
-              <tr><th scope="row"><b>Cajas plegadizas</b><span>De cartulina: caple, sulfatada, kraft o multicapa</span></th><td data-et="Mínimo"><b>1,000 a 3,000 piezas</b><span>según el tamaño</span></td><td data-et="Entrega">20 a 25 días hábiles</td></tr>
-              <tr><th scope="row"><b>Bolsas de papel kraft</b><span>Con tu logo</span></th><td data-et="Mínimo"><b>1,000 piezas</b><span>según el tamaño</span></td><td data-et="Entrega">20 a 25 días hábiles</td></tr>
+              <tr><th scope="row"><b>Cartón corrugado</b><span>Cajas de envío, mailers y kraft impreso: micro, sencillo o doble corrugado</span></th><td data-et="Mínimo"><b>100 piezas</b></td></tr>
+              <tr><th scope="row"><b>Cartón rígido con empalme</b><span>Cajas prémium y de regalo, con tapa</span></th><td data-et="Mínimo"><b>300 a 500 piezas</b><span>según el tamaño</span></td></tr>
+              <tr><th scope="row"><b>Cajas magnéticas</b><span>Rígidas, con cierre de imán</span></th><td data-et="Mínimo"><b>Según el tamaño</b><span>pregúntanos</span></td></tr>
+              <tr><th scope="row"><b>Cartulina (plegadizas)</b><span>Caple, sulfatada, kraft o multicapa</span></th><td data-et="Mínimo"><b>1,000 a 3,000 piezas</b><span>según el tamaño</span></td></tr>
+              <tr><th scope="row"><b>Bolsas de papel kraft</b><span>Con tu logo</span></th><td data-et="Mínimo"><b>1,000 piezas</b><span>según el tamaño</span></td></tr>
             </tbody>
           </table>
-          <p class="pz-minimos__nota">Días hábiles a partir de que apruebas el diseño.</p>
         </div>
       </div>
     </div>
@@ -432,7 +431,7 @@ html.pz-intro .pz-ov.salir{animation-name:pz-ov-b;animation-delay:0s}
           </details>
           <details name="preguntas">
             <summary>¿Cuál es el mínimo para cajas con mi marca?<svg class="ico" aria-hidden="true"><use href="#i-abajo"/></svg></summary>
-            <div class="faq__resp"><p>Desde 100 piezas en cajas de cartón corrugado, con entrega de 10 a 15 días hábiles a partir de que apruebas el diseño. Las cajas rígidas, magnéticas, plegadizas y las bolsas kraft tienen otros mínimos y tiempos: <a href="#minimos">ve la tabla</a>.</p></div>
+            <div class="faq__resp"><p>Depende del material: cartón corrugado desde 100 piezas; cartón rígido con empalme, de 300 a 500; cartulina (plegadizas), de 1,000 a 3,000; y bolsas kraft, desde 1,000. En cajas magnéticas depende del tamaño. <a href="#minimos">Ve la tabla</a>.</p></div>
           </details>
           <details name="preguntas">
             <summary>¿No sabes qué medida o calibre necesitas?<svg class="ico" aria-hidden="true"><use href="#i-abajo"/></svg></summary>

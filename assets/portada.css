@@ -461,15 +461,15 @@ html.pz-cv-off :is(.pz-productos,.pz-rec,.pz-medida,.pz-pasos-sec,.pz-opiniones,
 .pz main section[id]{scroll-margin-top:12px}
 @media (min-width:1024px){.pz main section[id]{scroll-margin-top:84px}}
 
-/* ---------- 08/11/2026 · Pedido mínimo y tiempo de entrega (dentro de "Cajas con tu marca") ----------
-   Celular: cada renglón es una tarjeta (el encabezado de la tabla solo lo leen los lectores de pantalla y cada dato trae su
-   etiqueta de data-et). Desde 768 px: tabla normal de 3 columnas. */
+/* ---------- 08/11/2026 · Pedido mínimo según el material (dentro de "Cajas con tu marca"; sin tiempos de entrega, Diego) ----------
+   Celular: cada renglón es una tarjeta (el encabezado de la tabla solo lo leen los lectores de pantalla y el dato trae su
+   etiqueta de data-et). Desde 768 px: tabla normal de 2 columnas. */
 .pz-medida__ver{display:inline-block;margin-left:4px;color:var(--oro);font-weight:600;text-decoration:underline;text-underline-offset:3px}
 .pz-minimos{margin-top:28px;padding:22px 16px 18px;border:1px solid var(--negro-3);border-radius:20px;background:var(--negro-2);scroll-margin-top:16px}
 .pz-minimos__titulo{font-family:Georgia,"Times New Roman",serif;font-size:22px;font-weight:700;line-height:1.25;color:var(--hueso)}
 .pz-minimos__tabla{width:100%;margin-top:14px;border-collapse:collapse;color:var(--hueso)}
 .pz-minimos__tabla thead{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.pz-minimos__tabla tbody tr{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px 14px;padding:14px 0;border-top:1px solid var(--negro-3)}
+.pz-minimos__tabla tbody tr{display:grid;grid-template-columns:minmax(0,1fr);gap:8px;padding:14px 0;border-top:1px solid var(--negro-3)}
 .pz-minimos__tabla tbody tr:first-child{border-top:0;padding-top:4px}
 .pz-minimos__tabla th[scope=row]{grid-column:1/-1;font-weight:400;text-align:left}
 .pz-minimos__tabla th[scope=row] b{display:block;font-size:18px;font-weight:700;line-height:1.3}
@@ -477,7 +477,6 @@ html.pz-cv-off :is(.pz-productos,.pz-rec,.pz-medida,.pz-pasos-sec,.pz-opiniones,
 .pz-minimos__tabla td{font-size:16px;line-height:1.4}
 .pz-minimos__tabla td::before{content:attr(data-et);display:block;margin-bottom:2px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--oro)}
 .pz-minimos__tabla td b{font-weight:700}
-.pz-minimos__nota{margin-top:10px;font-size:15px;line-height:1.45;color:var(--gris-claro)}
 @media (min-width:768px){
   .pz-minimos{padding:28px 28px 22px}
   .pz-minimos__tabla thead{position:static;width:auto;height:auto;margin:0;overflow:visible;clip:auto;white-space:normal}
@@ -486,7 +485,7 @@ html.pz-cv-off :is(.pz-productos,.pz-rec,.pz-medida,.pz-pasos-sec,.pz-opiniones,
   .pz-minimos__tabla tbody tr:first-child{border-top:0}
   .pz-minimos__tabla th[scope=row],.pz-minimos__tabla td{padding:14px 16px 14px 0;vertical-align:top}
   .pz-minimos__tabla td::before{display:none}
-  .pz-minimos__tabla th[scope=row]{width:46%}
+  .pz-minimos__tabla th[scope=row]{width:62%}
 }
 @media (min-width:1024px){.pz-minimos{margin-top:32px;scroll-margin-top:96px}.pz-minimos__titulo{font-size:26px}}
 
