@@ -13,6 +13,71 @@
   function wa(lineas) { return 'https://wa.me/' + TEL + '?text=' + encodeURIComponent(lineas.join('\n')); }
   function texto(s) { return String(s == null ? '' : s).trim(); }
 
+  /* 0. Intro del logo + entrada del héroe (WOW). Las clases las pone el <head>: pz-prep (héroe escondido), pz-intro (pantalla de entrada).
+        Seguros: la pantalla sale sola por CSS a los 3.4 s, el <head> quita pz-intro a los 3.7 s y el héroe se revela solo a los 4.5 s. */
+  var ov = $('.pz-ov'), tSalir = 0, tFin = 0;
+  function dividir(el) { // parte un título en palabras (.pw con --w); la puntuación pegada a un elemento viaja con él
+    var n = 0, prev = null;
+    Array.prototype.slice.call(el.childNodes).forEach(function (nodo) {
+      if (nodo.nodeType === 1) { prev = nodo; return; }
+      if (nodo.nodeType !== 3) return;
+      var fr = d.createDocumentFragment();
+      nodo.nodeValue.split(/([ \t\n\r]+)/).forEach(function (p, k) {
+        if (!p) return;
+        if (/^[ \t\n\r]+$/.test(p)) { fr.appendChild(d.createTextNode(' ')); return; }
+        if (k === 0 && prev) { // ej. el punto después de <span>WhatsApp</span>
+          var g = d.createElement('span'); g.className = 'pw pwg'; g.style.setProperty('--w', n++);
+          prev.parentNode.insertBefore(g, prev); g.appendChild(prev); g.appendChild(d.createTextNode(p)); prev = null; return;
+        }
+        var s = d.createElement('span'); s.className = 'pw'; s.style.setProperty('--w', n++); s.textContent = p; fr.appendChild(s);
+      });
+      nodo.parentNode.replaceChild(fr, nodo);
+      prev = null;
+    });
+    $$(':scope > :not(.pw)', el).forEach(function (x) { x.classList.add('pw'); x.style.setProperty('--w', n++); });
+  }
+  var h1 = $('.pz-heroe .pz-h1');
+  if (h1 && !quieto) try { dividir(h1); } catch (e) { /* si falla, el título entra completo */ }
+  var huboIntro = raiz.classList.contains('pz-intro');
+  function heroIn() {
+    if (quieto || raiz.classList.contains('pz-hero-in')) return;
+    if (!huboIntro) raiz.classList.add('pz-rapido');
+    raiz.classList.remove('pz-prep');
+    raiz.classList.add('pz-hero-in');
+  }
+  function finIntro() { clearTimeout(tFin); raiz.classList.remove('pz-intro'); if (ov) ov.classList.remove('salir'); }
+  function salirIntro() {
+    clearTimeout(tSalir);
+    if (!ov || !raiz.classList.contains('pz-intro')) return;
+    ov.classList.add('salir');
+    heroIn();
+    tFin = setTimeout(finIntro, 750);
+  }
+  function mostrarIntro() { // repetir la intro al tocar el logo del encabezado
+    if (!ov || quieto) return;
+    clearTimeout(tSalir); clearTimeout(tFin);
+    raiz.classList.remove('pz-intro'); ov.classList.remove('salir');
+    void ov.offsetWidth; // reinicia las animaciones
+    raiz.classList.add('pz-intro');
+    tSalir = setTimeout(salirIntro, 2600);
+  }
+  if (ov && !quieto) {
+    ov.addEventListener('pointerdown', salirIntro);
+    d.addEventListener('keydown', function (e) { if (e.key === 'Escape') salirIntro(); });
+    var logoEnc = $('.encabezado .ficha-logo');
+    if (logoEnc) logoEnc.addEventListener('click', function (e) {
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button) return;
+      e.preventDefault();
+      window.scrollTo(0, 0);
+      mostrarIntro();
+    });
+  }
+  if (huboIntro) {
+    var corrido = Date.now() - (window.pzT0 || Date.now());
+    if (corrido >= 3300) { raiz.classList.remove('pz-intro'); heroIn(); }
+    else tSalir = setTimeout(salirIntro, Math.max(0, 2600 - corrido));
+  } else heroIn();
+
   /* 1. Barra que se asienta (solo se nota en escritorio, donde la barra es fija) */
   var cab = $('.encabezado'), centinela = $('[data-centinela]');
   if (cab && centinela && IO) new IntersectionObserver(function (e) { cab.classList.toggle('pz-asentada', !e[0].isIntersecting); }).observe(centinela);
@@ -209,4 +274,93 @@
       if (clientes.length) pintarClientes(clientes);
       if (opiniones.length) pintarOpiniones(opiniones);
     });
+
+  /* 9. Secciones bajo el pliegue con content-visibility: al ir a un ancla se desactiva un momento para que el salto caiga exacto */
+  function sinCv() {
+    raiz.classList.add('pz-cv-off');
+    clearTimeout(sinCv.t);
+    sinCv.t = setTimeout(function () { raiz.classList.remove('pz-cv-off'); }, 1800);
+  }
+  if (location.hash) sinCv();
+  d.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="#"]');
+    if (a && a.getAttribute('href').length > 1) sinCv();
+  });
+  addEventListener('hashchange', sinCv);
+
+  /* 10. Interacciones (todo apagado con movimiento reducido; solo transform/opacity; listeners passive; rAF) */
+  if (quieto) return;
+  var fino = window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+  var escritorio = window.matchMedia('(min-width: 1024px)').matches;
+
+  // 10a. Títulos de sección: las palabras suben escalonadas al aparecer
+  if (IO) {
+    var obsH = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('pz-hv'); obsH.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -12% 0px' });
+    $$('.pz-h2').forEach(function (h) {
+      if (h.hasAttribute('data-tit-clientes') || h.hasAttribute('data-tit-opiniones')) return; // los llena portada.js después
+      try { dividir(h); h.classList.add('pz-pal'); obsH.observe(h); } catch (e) { /* queda el título entero */ }
+    });
+  }
+
+  // 10b. Barra de lectura y parallax del héroe (un solo listener de scroll, un solo rAF)
+  var barra = d.createElement('div');
+  barra.className = 'pz-prog'; barra.setAttribute('aria-hidden', 'true');
+  d.body.appendChild(barra);
+  var heroe = $('.pz-heroe'), visual = $('.pz-heroe__visual'), par = !!(escritorio && visual && heroe), altoHeroe = 0, espera = false;
+  if (par) raiz.classList.add('pz-par');
+  function medir() { altoHeroe = heroe ? heroe.offsetHeight : 0; }
+  function pintarScroll() {
+    espera = false;
+    var y = window.pageYOffset || raiz.scrollTop, max = raiz.scrollHeight - window.innerHeight;
+    barra.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, y / max) : 0).toFixed(4) + ')';
+    if (par && y < altoHeroe + 120) visual.style.transform = 'translate3d(0,' + Math.min(50, y * 0.22).toFixed(1) + 'px,0)';
+  }
+  function pedir() { if (!espera) { espera = true; requestAnimationFrame(pintarScroll); } }
+  medir(); pintarScroll();
+  addEventListener('scroll', pedir, { passive: true });
+  addEventListener('resize', function () { medir(); pedir(); }, { passive: true });
+
+  // 10c. Tarjetas: inclinación 3D suave (máx. 6°) con brillo que sigue al cursor
+  if (fino) {
+    $$('.pz-fam, .pz-tipo').forEach(function (c) {
+      var r = null, sy0 = 0, px = .5, py = .5, raf = 0;
+      c.classList.add('pz-tilt');
+      function pintar() {
+        raf = 0;
+        c.style.setProperty('--ry', ((px - .5) * 12).toFixed(2) + 'deg');
+        c.style.setProperty('--rx', ((.5 - py) * 12).toFixed(2) + 'deg');
+        c.style.setProperty('--mx', (px * 100).toFixed(1) + '%');
+        c.style.setProperty('--my', (py * 100).toFixed(1) + '%');
+      }
+      c.addEventListener('pointerenter', function () { r = c.getBoundingClientRect(); sy0 = window.pageYOffset; }, { passive: true });
+      c.addEventListener('pointermove', function (e) {
+        if (!r) { r = c.getBoundingClientRect(); sy0 = window.pageYOffset; }
+        var top = r.top - (window.pageYOffset - sy0); // el rectángulo se guarda una vez: sin leer el layout en cada movimiento
+        px = Math.min(1, Math.max(0, (e.clientX - r.left) / r.width));
+        py = Math.min(1, Math.max(0, (e.clientY - top) / r.height));
+        if (!raf) raf = requestAnimationFrame(pintar);
+      }, { passive: true });
+      c.addEventListener('pointerleave', function () {
+        r = null; px = .5; py = .5;
+        if (!raf) raf = requestAnimationFrame(pintar);
+      }, { passive: true });
+    });
+
+    // 10d. Botones principales de WhatsApp: efecto magnético leve y destello (el destello es CSS)
+    $$('#heroe-wa, .pz-cierre .btn--primario, .btn--enc').forEach(function (b) {
+      var rb = null, raf = 0, tx = 0, ty = 0;
+      b.classList.add('pz-mag');
+      function mover() { raf = 0; b.style.setProperty('--tx', tx.toFixed(1) + 'px'); b.style.setProperty('--ty', ty.toFixed(1) + 'px'); }
+      b.addEventListener('pointerenter', function () { rb = b.getBoundingClientRect(); }, { passive: true });
+      b.addEventListener('pointermove', function (e) {
+        if (!rb) rb = b.getBoundingClientRect();
+        tx = Math.max(-7, Math.min(7, (e.clientX - rb.left - rb.width / 2) * .16));
+        ty = Math.max(-5, Math.min(5, (e.clientY - rb.top - rb.height / 2) * .22));
+        if (!raf) raf = requestAnimationFrame(mover);
+      }, { passive: true });
+      b.addEventListener('pointerleave', function () { rb = null; tx = 0; ty = 0; if (!raf) raf = requestAnimationFrame(mover); }, { passive: true });
+    });
+  }
 })();

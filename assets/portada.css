@@ -381,3 +381,93 @@ html:not(.listo) .pz-cifra:has([data-m]:empty),html:not(.listo) p:has(>[data-m]:
 .pz-tipo[aria-pressed=true]{border-color:var(--oro);box-shadow:0 0 0 1px var(--oro)}
 .pz-medida__cta{border-color:var(--negro-3)}
 @media (min-width:1024px){.pz-heroe__bajada,.pz-heroe__nota{color:#262626}.pz-heroe__nota{font-weight:500}}
+
+/* ============================================================
+   08/11/2026 · WOW: entrada del héroe, interacciones y velocidad
+   Todo con solo transform/opacity; apagado con prefers-reduced-motion al final de este bloque.
+   ============================================================ */
+html{scroll-behavior:smooth}
+
+/* ---------- Entrada del héroe (portada.js: pz-prep escondido -> pz-hero-in animado; pz-rapido = sin intro) ---------- */
+.js.pz-prep .pz-heroe :is(.pz-ceja,.pz-h1,.pz-heroe__bajada,.pz-heroe__acciones,.pz-heroe__nota,.pz-cifra){opacity:0;transform:translateY(26px);animation:pz-sube .01s 4.5s forwards}
+.js.pz-prep .pz-heroe__foto img{opacity:0;transform:scale(1.06);animation:pz-sube .01s 4.5s forwards}
+.js.pz-prep .pz-heroe .pz-cinta::before{animation:none}
+.js.pz-hero-in .pz-heroe{--f:1}
+.js.pz-hero-in.pz-rapido .pz-heroe{--f:.55}
+.js.pz-hero-in .pz-heroe :is(.pz-ceja,.pz-heroe__bajada,.pz-heroe__acciones,.pz-heroe__nota,.pz-cifra){animation:pz-sube .8s cubic-bezier(.2,.8,.2,1) calc(var(--hd,0ms) * var(--f)) both}
+.js.pz-hero-in .pz-heroe .pz-h1 .pw{display:inline-block;animation:pz-sube .85s cubic-bezier(.2,.8,.2,1) calc((120ms + var(--w,0) * 75ms) * var(--f)) both}
+.js.pz-hero-in .pz-heroe__foto img{animation:pz-foto 1.4s cubic-bezier(.2,.8,.2,1) calc(60ms * var(--f)) both}
+.js.pz-hero-in .pz-heroe .pz-cinta::before{animation:pz-pegar .7s cubic-bezier(.2,.8,.2,1) calc(950ms * var(--f)) forwards}
+.pz-heroe .pz-heroe__bajada{--hd:420ms}.pz-heroe .pz-heroe__acciones{--hd:540ms}.pz-heroe .pz-heroe__nota{--hd:640ms}
+.pz-heroe .pz-cifra:nth-child(1){--hd:700ms}.pz-heroe .pz-cifra:nth-child(2){--hd:780ms}.pz-heroe .pz-cifra:nth-child(3){--hd:860ms}.pz-heroe .pz-cifra:nth-child(4){--hd:940ms}.pz-heroe .pz-cifra:nth-child(5){--hd:1020ms}
+@keyframes pz-sube{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes pz-foto{from{opacity:0;transform:scale(1.06)}to{opacity:1;transform:none}}
+.pz-h1 .pw.pwg{white-space:nowrap}
+
+/* ---------- Títulos h2: palabras que suben escalonadas ---------- */
+.js .pz-pal .pw{display:inline-block;opacity:0;transform:translateY(.55em);transition:opacity .6s cubic-bezier(.2,.8,.2,1),transform .6s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--w,0) * 55ms)}
+.js .pz-pal.pz-hv .pw{opacity:1;transform:none}
+.pz-pal .pw.pwg{white-space:nowrap}
+
+/* ---------- Barra de progreso de lectura ---------- */
+.pz-prog{position:fixed;top:0;left:0;right:0;z-index:1000;height:3px;background:var(--coral);transform:scaleX(0);transform-origin:left center;pointer-events:none;will-change:transform}
+
+/* ---------- Parallax de la foto del héroe (solo escritorio) ---------- */
+@media (min-width:1024px){
+  .pz-par .pz-heroe__visual{inset:-52px 0 0 0;will-change:transform}
+}
+
+/* ---------- Encabezado: al bajar se compacta con fondo translúcido ---------- */
+@media (min-width:1024px){
+  .pz .encabezado{transition:background-color .25s,border-color .25s,box-shadow .25s,margin-bottom .28s cubic-bezier(.2,.8,.2,1)}
+  .pz .encabezado__in{transition:height .28s cubic-bezier(.2,.8,.2,1)}
+  /* el encabezado es sticky: al compactarse (72 -> 60 px) el espacio de abajo repone los 12 px para que la página no brinque */
+  .pz .encabezado.pz-asentada{margin-bottom:calc(var(--alto-header) - 60px);background:rgba(245,243,239,.82);-webkit-backdrop-filter:saturate(1.5) blur(14px);backdrop-filter:saturate(1.5) blur(14px);box-shadow:0 8px 28px rgba(23,23,23,.07)}
+  .pz .encabezado.pz-asentada .encabezado__in{height:60px}
+  .pz .encabezado.pz-asentada .ficha-logo img{height:24px}
+  .pz .encabezado .ficha-logo img{transition:height .28s cubic-bezier(.2,.8,.2,1)}
+}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.pz .encabezado.pz-asentada{background:var(--hueso)}}
+
+/* ---------- Tarjetas: inclinación 3D con brillo (escritorio con puntero fino) ---------- */
+.pz-fam::after,.pz-tipo::after{content:"";position:absolute;inset:0;z-index:2;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .25s;background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.28),transparent 65%)}
+.pz-fam:not(.pz-tipo)::after{background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(255,90,54,.13),transparent 65%)}
+@media (hover:hover) and (pointer:fine){
+  .pz-fam.pz-tilt,.pz-tipo.pz-tilt{will-change:transform;transition:transform .22s cubic-bezier(.2,.8,.2,1),border-color .15s,box-shadow .2s}
+  .pz-fam.pz-tilt:hover,.pz-tipo.pz-tilt:hover{transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(-4px);box-shadow:0 16px 38px rgba(23,23,23,.14)}
+  .pz-fam.pz-tilt:hover::after,.pz-tipo.pz-tilt:hover::after{opacity:1}
+  .pz-fam:hover .pz-fam__foto img,.pz-tipo:hover .pz-tipo__foto img{transform:scale(1.07)}
+}
+/* celular: ligera presión al tocar */
+@media (hover:none){
+  .pz-fam,.pz-tipo,.pz-caso{transition:transform .12s cubic-bezier(.2,.8,.2,1),border-color .15s,box-shadow .15s}
+  .pz-fam:active,.pz-tipo:active,.pz-caso:active{transform:scale(.97)}
+}
+
+/* ---------- Botones de WhatsApp: magnético y destello ---------- */
+.pz-mag{position:relative;overflow:hidden}
+@media (hover:hover) and (pointer:fine){
+  .pz-mag{transform:translate(var(--tx,0px),var(--ty,0px));transition:transform .2s cubic-bezier(.2,.8,.2,1),background-color var(--t-rapida),color var(--t-rapida),border-color var(--t-rapida),box-shadow var(--t-rapida)}
+  .pz-mag::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.5),transparent);transform:translateX(0) skewX(-18deg);opacity:0;pointer-events:none}
+  .pz-mag:hover::after{animation:pz-destello .75s cubic-bezier(.4,0,.2,1)}
+}
+@keyframes pz-destello{0%{opacity:1;transform:translateX(0) skewX(-18deg)}100%{opacity:1;transform:translateX(420%) skewX(-18deg)}}
+
+/* ---------- Velocidad: secciones bajo el pliegue se pintan al acercarse (el JS lo apaga un momento al ir a un ancla) ---------- */
+.pz-productos,.pz-rec,.pz-medida,.pz-pasos-sec,.pz-opiniones,.pz-preguntas,.pz-cierre{content-visibility:auto}
+.pz-productos{contain-intrinsic-size:auto 1500px}.pz-rec{contain-intrinsic-size:auto 560px}.pz-medida{contain-intrinsic-size:auto 1100px}
+.pz-pasos-sec{contain-intrinsic-size:auto 560px}.pz-opiniones{contain-intrinsic-size:auto 380px}.pz-preguntas{contain-intrinsic-size:auto 700px}.pz-cierre{contain-intrinsic-size:auto 520px}
+html.pz-cv-off :is(.pz-productos,.pz-rec,.pz-medida,.pz-pasos-sec,.pz-opiniones,.pz-preguntas,.pz-cierre){content-visibility:visible}
+.pz main section[id]{scroll-margin-top:12px}
+@media (min-width:1024px){.pz main section[id]{scroll-margin-top:84px}}
+
+/* ---------- Movimiento reducido: nada de lo anterior se mueve ---------- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .pz-heroe *,.js .pz-heroe__foto img{animation:none!important}
+  .pz-heroe :is(.pz-ceja,.pz-h1,.pz-heroe__bajada,.pz-heroe__acciones,.pz-heroe__nota,.pz-cifra),.pz-heroe__foto img{opacity:1!important;transform:none!important}
+  .js .pz-pal .pw{opacity:1;transform:none;transition:none}
+  .pz-prog{display:none}
+  .pz-fam::after,.pz-tipo::after,.pz-mag::after{display:none}
+  .pz-mag{transform:none!important}
+}
