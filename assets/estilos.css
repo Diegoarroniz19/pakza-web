@@ -670,3 +670,20 @@ html.modal{overflow:hidden}
 /* 'Vaciar lista': un solo subrayado (en flex salían dos pedazos) */
 .liga[data-vaciar]{display:inline-block;padding:10px 0;line-height:24px}
 
+
+/* 09/11/2026 · "Todos nuestros productos": lista fija en el HTML para que Google lea el catálogo (herramientas/lista_estatica.py) */
+.todos{border-top:1px solid var(--linea,#e5e1da)}
+.todos p{max-width:62ch;color:var(--gris,#555)}
+.todos__rejilla{display:grid;gap:20px 32px;margin-top:20px}
+.todos__fam h3{font-size:18px;font-weight:700;margin:0 0 6px}
+.todos__fam h3 small{font-weight:400;color:var(--gris,#555)}
+.todos__fam ul{margin:0;padding:0;list-style:none;font-size:15px;line-height:1.5}
+.todos__fam li{padding:3px 0;border-bottom:1px solid rgba(0,0,0,.05);color:var(--gris,#555)}
+.todos__fam a{color:inherit;text-decoration:none}
+.todos__fam a:hover{color:var(--coral,#FF5A36);text-decoration:underline}
+@media (min-width:768px){.todos__rejilla{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1024px){.todos__rejilla{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.todos__mas{margin-top:16px;border:1px solid var(--linea,#e5e1da);border-radius:14px;background:#fff}
+.todos__mas>summary{cursor:pointer;min-height:48px;display:flex;align-items:center;padding:0 18px;font-weight:700;color:var(--coral-osc,#C2401F)}
+.todos__mas[open]>summary{border-bottom:1px solid var(--linea,#e5e1da)}
+.todos__mas .todos__rejilla{margin:0;padding:18px}
