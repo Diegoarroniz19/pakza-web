@@ -1,0 +1,1831 @@
+{
+ "actualizado": "2026-11-18",
+ "whatsapp": "523313673566",
+ "grupos": [
+  {
+   "clave": "cs",
+   "prefijo": "CS",
+   "nombre": "Cajas regulares, corrugado sencillo",
+   "texto": "Cajas ranuradas para enviar, empacar o almacenar. Sin suaje: la medida a tu gusto tampoco lo lleva.",
+   "minimo": 300,
+   "ahorra_suaje": false,
+   "total": 42
+  },
+  {
+   "clave": "cd",
+   "prefijo": "CD",
+   "nombre": "Cajas regulares, doble corrugado",
+   "texto": "Más resistentes, para lo pesado o lo frágil. Sin suaje: la medida a tu gusto tampoco lo lleva.",
+   "minimo": 300,
+   "ahorra_suaje": false,
+   "total": 31
+  },
+  {
+   "clave": "tc",
+   "prefijo": "TC",
+   "nombre": "Troqueladas, corrugado sencillo",
+   "texto": "Cajas de armado automático, charolas y cajas largas. Con una medida de línea te ahorras el suaje.",
+   "minimo": 300,
+   "ahorra_suaje": true,
+   "total": 6
+  },
+  {
+   "clave": "tm",
+   "prefijo": "TM",
+   "nombre": "Troqueladas, microcorrugado (mailers)",
+   "texto": "Mailers, cajas con funda deslizable y cajas para huevo. Con una medida de línea te ahorras el suaje.",
+   "minimo": 300,
+   "ahorra_suaje": true,
+   "total": 18
+  },
+  {
+   "clave": "pl",
+   "prefijo": "PL",
+   "nombre": "Plegadizas, caple y sulfatado",
+   "texto": "Cajitas de cartulina para cosméticos, alimentos y productos chicos. Con una medida de línea te ahorras el suaje.",
+   "minimo": 1000,
+   "ahorra_suaje": true,
+   "total": 30
+  }
+ ],
+ "medidas": [
+  {
+   "codigo": "CS-001",
+   "nombre": "Caja con separadores para 6 botellas",
+   "tipo": "Caja regular corrugado sencillo",
+   "grupo": "cs",
+   "medida_cm": [
+    23.5,
+    16,
+    34.5
+   ],
+   "medida": "23.5 × 16 × 34.5 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CS-002",
+   "nombre": "Caja con separadores para 6 botellas",
+   "tipo": "Caja regular corrugado sencillo",
+   "grupo": "cs",
+   "medida_cm": [
+    55,
+    16.5,
+    24
+   ],
+   "medida": "55 × 16.5 × 24 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CS-003",
+   "nombre": "Caja con separadores para 6 botellas",
+   "tipo": "Caja regular corrugado sencillo",
+   "grupo": "cs",
+   "medida_cm": [
+    37.6,
+    19.1,
+    22.8
+   ],
+   "medida": "37.6 × 19.1 × 22.8 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CS-004",
+   "nombre": "Caja con separadores para 6 botellas",
+   "tipo": "Caja regular corrugado sencillo",
+   "grupo": "cs",
+   "medida_cm": [
+    23,
+    15.5,
+    33.5
+   ],
+   "medida": "23 × 15.5 × 33.5 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CS-005",
+   "nombre": "Caja con separadores para 6 botellas",
+   "tipo": "Caja regular corrugado sencillo",
+   "grupo": "cs",
+   "medida_cm": [
+    52.6,
+    13.5,
+    21.3
+   ],
+   "medida": "52.6 × 13.5 × 21.3 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CS-006",
+   "nombre": "Caja con separadores para 6 botellas",
+   "tipo": "Caja regular corrugado sencillo",
+   "grupo": "cs",
+   "medida_cm": [
+    28.5,
+    19.1,
+    25.5
+   ],
+   "medida": "28.5 × 19.1 × 25.5 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CS-007",
+   "nombre": "Caja con separadores para 6 botellas",
+   "tipo": "Caja regular corrugado sencillo",
+   "grupo": "cs",
+   "medida_cm": [
+    26.8,
+    17.7,
+    25
+   ],
+   "medida": "26.8 × 17.7 × 25 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CS-008",
+   "nombre": "Caja con separadores para 6 botellas",
+   "tipo": "Caja regular corrugado sencillo",
+   "grupo": "cs",
+   "medida_cm": [
+    22.6,
+    15,
+    36
+   ],
+   "medida": "22.6 × 15 × 36 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CS-009",
+   "nombre": "Caja regular corrugado sencillo",
+   "tipo": "Caja regular corrugado sencillo",
+   "grupo": "cs",
+   "medida_cm": [
+    46,
+    25,
+    25
+   ],
+   "medida": "46 × 25 × 25 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CS-010",
+   "nombre": "Caja regular corrugado sencillo",
+   "tipo": "Caja regular corrugado sencillo",
+   "grupo": "cs",
+   "medida_cm": [
+    40,
+    20.5,
+    19
+   ],
+   "medida": "40 × 20.5 × 19 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CS-011",
+   "nombre": "Caja regular corrugado sencillo",
+   "tipo": "Caja regular corrugado sencillo",
+   "grupo": "cs",
+   "medida_cm": [
+    40,
+    20,
+    25
+   ],
+   "medida": "40 × 20 × 25 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CS-012",
+   "nombre": "Caja regular corrugado sencillo",
+   "tipo": "Caja regular corrugado sencillo",
+   "grupo": "cs",
+   "medida_cm": [
+    51,
+    25.7,
+    17.5
+   ],
+   "medida": "51 × 25.7 × 17.5 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CS-013",
+   "nombre": "Caja regular corrugado sencillo",
+   "tipo": "Caja regular corrugado sencillo",
+   "grupo": "cs",
+   "medida_cm": [
+    40.8,
+    34,
+    13.8
+   ],
+   "medida": "40.8 × 34 × 13.8 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CS-014",
+   "nombre": "Caja regular corrugado sencillo",
+   "tipo": "Caja regular corrugado sencillo",
+   "grupo": "cs",
+   "medida_cm": [
+    33.6,
+    27.5,
+    10.3
+   ],
+   "medida": "33.6 × 27.5 × 10.3 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CS-015",
+   "nombre": "Caja regular corrugado sencillo",
+   "tipo": "Caja regular corrugado sencillo",
+   "grupo": "cs",
+   "medida_cm": [
+    30,
+    20,
+    20
+   ],
+   "medida": "30 × 20 × 20 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CS-016",
+   "nombre": "Caja regular corrugado sencillo",
+   "tipo": "Caja regular corrugado sencillo",
+   "grupo": "cs",
+   "medida_cm": [
+    35,
+    35,
+    37
+   ],
+   "medida": "35 × 35 × 37 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CS-017",
+   "nombre": "Caja regular corrugado sencillo",
+   "tipo": "Caja regular corrugado sencillo",
+   "grupo": "cs",
+   "medida_cm": [
+    20,
+    20,
+    15
+   ],
+   "medida": "20 × 20 × 15 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CS-018",
+   "nombre": "Caja regular corrugado sencillo",
+   "tipo": "Caja regular corrugado sencillo",
+   "grupo": "cs",
+   "medida_cm": [
+    22,
+    18,
+    15
+   ],
+   "medida": "22 × 18 × 15 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CS-019",
+   "nombre": "Caja regular corrugado sencillo",
+   "tipo": "Caja regular corrugado sencillo",
+   "grupo": "cs",
+   "medida_cm": [
+    29,
+    22,
+    10
+   ],
+   "medida": "29 × 22 × 10 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CS-020",
+   "nombre": "Caja regular corrugado sencillo",
+   "tipo": "Caja regular corrugado sencillo",
+   "grupo": "cs",
+   "medida_cm": [
+    35,
+    35,
+    15
+   ],
+   "medida": "35 × 35 × 15 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CS-021",
+   "nombre": "Caja regular corrugado sencillo",
+   "tipo": "Caja regular corrugado sencillo",
+   "grupo": "cs",
+   "medida_cm": [
+    59,
+    42,
+    17
+   ],
+   "medida": "59 × 42 × 17 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CS-022",
+   "nombre": "Caja regular corrugado sencillo",
+   "tipo": "Caja regular corrugado sencillo",
+   "grupo": "cs",
+   "medida_cm": [
+    31.4,
+    15.7,
+    20
+   ],
+   "medida": "31.4 × 15.7 × 20 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CS-023",
+   "nombre": "Caja regular corrugado sencillo",
+   "tipo": "Caja regular corrugado sencillo",
+   "grupo": "cs",
+   "medida_cm": [
+    34.7,
+    26,
+    30.7
+   ],
+   "medida": "34.7 × 26 × 30.7 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CS-024",
+   "nombre": "Caja regular corrugado sencillo",
+   "tipo": "Caja regular corrugado sencillo",
+   "grupo": "cs",
+   "medida_cm": [
+    30,
+    20,
+    10
+   ],
+   "medida": "30 × 20 × 10 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CS-025",
+   "nombre": "Caja regular corrugado sencillo",
+   "tipo": "Caja regular corrugado sencillo",
+   "grupo": "cs",
+   "medida_cm": [
+    25,
+    25,
+    25
+   ],
+   "medida": "25 × 25 × 25 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CS-026",
+   "nombre": "Caja regular corrugado sencillo",
+   "tipo": "Caja regular corrugado sencillo",
+   "grupo": "cs",
+   "medida_cm": [
+    23,
+    15,
+    10
+   ],
+   "medida": "23 × 15 × 10 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CS-027",
+   "nombre": "Caja regular corrugado sencillo",
+   "tipo": "Caja regular corrugado sencillo",
+   "grupo": "cs",
+   "medida_cm": [
+    20,
+    11,
+    10
+   ],
+   "medida": "20 × 11 × 10 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CS-028",
+   "nombre": "Caja regular corrugado sencillo",
+   "tipo": "Caja regular corrugado sencillo",
+   "grupo": "cs",
+   "medida_cm": [
+    30.8,
+    27.8,
+    13.5
+   ],
+   "medida": "30.8 × 27.8 × 13.5 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CS-029",
+   "nombre": "Caja regular corrugado sencillo",
+   "tipo": "Caja regular corrugado sencillo",
+   "grupo": "cs",
+   "medida_cm": [
+    22,
+    18,
+    18
+   ],
+   "medida": "22 × 18 × 18 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CS-030",
+   "nombre": "Caja regular corrugado sencillo",
+   "tipo": "Caja regular corrugado sencillo",
+   "grupo": "cs",
+   "medida_cm": [
+    30,
+    20,
+    13.5
+   ],
+   "medida": "30 × 20 × 13.5 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CS-031",
+   "nombre": "Caja regular corrugado sencillo",
+   "tipo": "Caja regular corrugado sencillo",
+   "grupo": "cs",
+   "medida_cm": [
+    37.5,
+    28,
+    12.5
+   ],
+   "medida": "37.5 × 28 × 12.5 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CS-032",
+   "nombre": "Caja regular corrugado sencillo",
+   "tipo": "Caja regular corrugado sencillo",
+   "grupo": "cs",
+   "medida_cm": [
+    33.5,
+    19.5,
+    10.5
+   ],
+   "medida": "33.5 × 19.5 × 10.5 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CS-033",
+   "nombre": "Caja regular corrugado sencillo",
+   "tipo": "Caja regular corrugado sencillo",
+   "grupo": "cs",
+   "medida_cm": [
+    25.7,
+    14.6,
+    8.7
+   ],
+   "medida": "25.7 × 14.6 × 8.7 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CS-034",
+   "nombre": "Caja regular corrugado sencillo",
+   "tipo": "Caja regular corrugado sencillo",
+   "grupo": "cs",
+   "medida_cm": [
+    20.5,
+    20.5,
+    15.5
+   ],
+   "medida": "20.5 × 20.5 × 15.5 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CS-035",
+   "nombre": "Caja regular corrugado sencillo",
+   "tipo": "Caja regular corrugado sencillo",
+   "grupo": "cs",
+   "medida_cm": [
+    30.4,
+    23.4,
+    25.8
+   ],
+   "medida": "30.4 × 23.4 × 25.8 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CS-036",
+   "nombre": "Caja regular corrugado sencillo",
+   "tipo": "Caja regular corrugado sencillo",
+   "grupo": "cs",
+   "medida_cm": [
+    71,
+    30,
+    30
+   ],
+   "medida": "71 × 30 × 30 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CS-037",
+   "nombre": "Caja regular corrugado sencillo",
+   "tipo": "Caja regular corrugado sencillo",
+   "grupo": "cs",
+   "medida_cm": [
+    19,
+    12.5,
+    11
+   ],
+   "medida": "19 × 12.5 × 11 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CS-038",
+   "nombre": "Caja regular corrugado sencillo",
+   "tipo": "Caja regular corrugado sencillo",
+   "grupo": "cs",
+   "medida_cm": [
+    20,
+    15,
+    20
+   ],
+   "medida": "20 × 15 × 20 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CS-039",
+   "nombre": "Caja regular corrugado sencillo",
+   "tipo": "Caja regular corrugado sencillo",
+   "grupo": "cs",
+   "medida_cm": [
+    30,
+    30,
+    20
+   ],
+   "medida": "30 × 30 × 20 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CS-040",
+   "nombre": "Caja regular corrugado sencillo",
+   "tipo": "Caja regular corrugado sencillo",
+   "grupo": "cs",
+   "medida_cm": [
+    45,
+    30,
+    20
+   ],
+   "medida": "45 × 30 × 20 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CS-041",
+   "nombre": "Caja regular corrugado sencillo",
+   "tipo": "Caja regular corrugado sencillo",
+   "grupo": "cs",
+   "medida_cm": [
+    27,
+    22,
+    19
+   ],
+   "medida": "27 × 22 × 19 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CS-042",
+   "nombre": "Caja regular corrugado sencillo",
+   "tipo": "Caja regular corrugado sencillo",
+   "grupo": "cs",
+   "medida_cm": [
+    44,
+    17.3,
+    43.5
+   ],
+   "medida": "44 × 17.3 × 43.5 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CD-001",
+   "nombre": "Caja regular doble corrugado",
+   "tipo": "Caja regular doble corrugado",
+   "grupo": "cd",
+   "medida_cm": [
+    32.5,
+    22.5,
+    33
+   ],
+   "medida": "32.5 × 22.5 × 33 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CD-002",
+   "nombre": "Caja regular doble corrugado",
+   "tipo": "Caja regular doble corrugado",
+   "grupo": "cd",
+   "medida_cm": [
+    23,
+    15.5,
+    33.5
+   ],
+   "medida": "23 × 15.5 × 33.5 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CD-003",
+   "nombre": "Caja regular doble corrugado",
+   "tipo": "Caja regular doble corrugado",
+   "grupo": "cd",
+   "medida_cm": [
+    26,
+    17.4,
+    31.5
+   ],
+   "medida": "26 × 17.4 × 31.5 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CD-004",
+   "nombre": "Caja regular doble corrugado",
+   "tipo": "Caja regular doble corrugado",
+   "grupo": "cd",
+   "medida_cm": [
+    26,
+    17.4,
+    29
+   ],
+   "medida": "26 × 17.4 × 29 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CD-005",
+   "nombre": "Caja regular doble corrugado",
+   "tipo": "Caja regular doble corrugado",
+   "grupo": "cd",
+   "medida_cm": [
+    28,
+    18.5,
+    24.2
+   ],
+   "medida": "28 × 18.5 × 24.2 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CD-006",
+   "nombre": "Caja regular doble corrugado",
+   "tipo": "Caja regular doble corrugado",
+   "grupo": "cd",
+   "medida_cm": [
+    26,
+    17.4,
+    29
+   ],
+   "medida": "26 × 17.4 × 29 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CD-007",
+   "nombre": "Caja regular doble corrugado",
+   "tipo": "Caja regular doble corrugado",
+   "grupo": "cd",
+   "medida_cm": [
+    23.5,
+    16,
+    34.5
+   ],
+   "medida": "23.5 × 16 × 34.5 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CD-008",
+   "nombre": "Caja regular doble corrugado",
+   "tipo": "Caja regular doble corrugado",
+   "grupo": "cd",
+   "medida_cm": [
+    40,
+    13.5,
+    24.5
+   ],
+   "medida": "40 × 13.5 × 24.5 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CD-009",
+   "nombre": "Caja regular doble corrugado",
+   "tipo": "Caja regular doble corrugado",
+   "grupo": "cd",
+   "medida_cm": [
+    55,
+    16.5,
+    24
+   ],
+   "medida": "55 × 16.5 × 24 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CD-010",
+   "nombre": "Caja regular doble corrugado",
+   "tipo": "Caja regular doble corrugado",
+   "grupo": "cd",
+   "medida_cm": [
+    29,
+    15.5,
+    30.8
+   ],
+   "medida": "29 × 15.5 × 30.8 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CD-011",
+   "nombre": "Caja regular doble corrugado",
+   "tipo": "Caja regular doble corrugado",
+   "grupo": "cd",
+   "medida_cm": [
+    28.5,
+    19.1,
+    25.5
+   ],
+   "medida": "28.5 × 19.1 × 25.5 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CD-012",
+   "nombre": "Caja regular doble corrugado",
+   "tipo": "Caja regular doble corrugado",
+   "grupo": "cd",
+   "medida_cm": [
+    22.6,
+    15,
+    36
+   ],
+   "medida": "22.6 × 15 × 36 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CD-013",
+   "nombre": "Caja regular doble corrugado",
+   "tipo": "Caja regular doble corrugado",
+   "grupo": "cd",
+   "medida_cm": [
+    66,
+    33,
+    33
+   ],
+   "medida": "66 × 33 × 33 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CD-014",
+   "nombre": "Caja regular doble corrugado",
+   "tipo": "Caja regular doble corrugado",
+   "grupo": "cd",
+   "medida_cm": [
+    68,
+    24,
+    29
+   ],
+   "medida": "68 × 24 × 29 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CD-015",
+   "nombre": "Caja regular doble corrugado",
+   "tipo": "Caja regular doble corrugado",
+   "grupo": "cd",
+   "medida_cm": [
+    60,
+    50,
+    48
+   ],
+   "medida": "60 × 50 × 48 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CD-016",
+   "nombre": "Caja regular doble corrugado",
+   "tipo": "Caja regular doble corrugado",
+   "grupo": "cd",
+   "medida_cm": [
+    100,
+    40,
+    35
+   ],
+   "medida": "100 × 40 × 35 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CD-017",
+   "nombre": "Caja regular doble corrugado",
+   "tipo": "Caja regular doble corrugado",
+   "grupo": "cd",
+   "medida_cm": [
+    47,
+    47,
+    36
+   ],
+   "medida": "47 × 47 × 36 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CD-018",
+   "nombre": "Caja regular doble corrugado",
+   "tipo": "Caja regular doble corrugado",
+   "grupo": "cd",
+   "medida_cm": [
+    47,
+    46.7,
+    42
+   ],
+   "medida": "47 × 46.7 × 42 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CD-019",
+   "nombre": "Caja regular doble corrugado",
+   "tipo": "Caja regular doble corrugado",
+   "grupo": "cd",
+   "medida_cm": [
+    58,
+    58,
+    51
+   ],
+   "medida": "58 × 58 × 51 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CD-020",
+   "nombre": "Caja regular doble corrugado",
+   "tipo": "Caja regular doble corrugado",
+   "grupo": "cd",
+   "medida_cm": [
+    53,
+    47.5,
+    42.2
+   ],
+   "medida": "53 × 47.5 × 42.2 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CD-021",
+   "nombre": "Caja regular doble corrugado",
+   "tipo": "Caja regular doble corrugado",
+   "grupo": "cd",
+   "medida_cm": [
+    52,
+    42,
+    33.7
+   ],
+   "medida": "52 × 42 × 33.7 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CD-022",
+   "nombre": "Caja regular doble corrugado",
+   "tipo": "Caja regular doble corrugado",
+   "grupo": "cd",
+   "medida_cm": [
+    37.5,
+    32,
+    13
+   ],
+   "medida": "37.5 × 32 × 13 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CD-023",
+   "nombre": "Caja regular doble corrugado",
+   "tipo": "Caja regular doble corrugado",
+   "grupo": "cd",
+   "medida_cm": [
+    75.2,
+    40,
+    45.5
+   ],
+   "medida": "75.2 × 40 × 45.5 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CD-024",
+   "nombre": "Caja regular doble corrugado",
+   "tipo": "Caja regular doble corrugado",
+   "grupo": "cd",
+   "medida_cm": [
+    55,
+    54,
+    40
+   ],
+   "medida": "55 × 54 × 40 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CD-026",
+   "nombre": "Caja regular doble corrugado",
+   "tipo": "Caja regular doble corrugado",
+   "grupo": "cd",
+   "medida_cm": [
+    30.5,
+    27,
+    17.8
+   ],
+   "medida": "30.5 × 27 × 17.8 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CD-027",
+   "nombre": "Caja regular doble corrugado",
+   "tipo": "Caja regular doble corrugado",
+   "grupo": "cd",
+   "medida_cm": [
+    29,
+    25.5,
+    16
+   ],
+   "medida": "29 × 25.5 × 16 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CD-028",
+   "nombre": "Caja regular doble corrugado",
+   "tipo": "Caja regular doble corrugado",
+   "grupo": "cd",
+   "medida_cm": [
+    30,
+    27,
+    14
+   ],
+   "medida": "30 × 27 × 14 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CD-029",
+   "nombre": "Caja regular doble corrugado",
+   "tipo": "Caja regular doble corrugado",
+   "grupo": "cd",
+   "medida_cm": [
+    40,
+    33,
+    31
+   ],
+   "medida": "40 × 33 × 31 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CD-031",
+   "nombre": "Caja regular doble corrugado",
+   "tipo": "Caja regular doble corrugado",
+   "grupo": "cd",
+   "medida_cm": [
+    40,
+    40,
+    17
+   ],
+   "medida": "40 × 40 × 17 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CD-032",
+   "nombre": "Caja regular doble corrugado",
+   "tipo": "Caja regular doble corrugado",
+   "grupo": "cd",
+   "medida_cm": [
+    44.2,
+    28.5,
+    32.1
+   ],
+   "medida": "44.2 × 28.5 × 32.1 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "CD-033",
+   "nombre": "Caja regular doble corrugado",
+   "tipo": "Caja regular doble corrugado",
+   "grupo": "cd",
+   "medida_cm": [
+    43,
+    33,
+    23
+   ],
+   "medida": "43 × 33 × 23 cm",
+   "ahorra_suaje": false,
+   "minimo": 300
+  },
+  {
+   "codigo": "TC-001",
+   "nombre": "Caja para hojas tamaño oficio",
+   "tipo": "Troquelada corrugado sencillo",
+   "grupo": "tc",
+   "medida_cm": [
+    35.5,
+    10.1,
+    26
+   ],
+   "medida": "35.5 × 10.1 × 26 cm",
+   "ahorra_suaje": true,
+   "minimo": 300
+  },
+  {
+   "codigo": "TC-002",
+   "nombre": "Caja de armado automático",
+   "tipo": "Troquelada corrugado sencillo",
+   "grupo": "tc",
+   "medida_cm": [
+    39,
+    32,
+    19
+   ],
+   "medida": "39 × 32 × 19 cm",
+   "ahorra_suaje": true,
+   "minimo": 300
+  },
+  {
+   "codigo": "TC-003",
+   "nombre": "Caja de armado automático",
+   "tipo": "Troquelada corrugado sencillo",
+   "grupo": "tc",
+   "medida_cm": [
+    40,
+    26,
+    18
+   ],
+   "medida": "40 × 26 × 18 cm",
+   "ahorra_suaje": true,
+   "minimo": 300
+  },
+  {
+   "codigo": "TC-006",
+   "nombre": "Caja de armado automático",
+   "tipo": "Troquelada corrugado sencillo",
+   "grupo": "tc",
+   "medida_cm": [
+    28.5,
+    25.5,
+    10.5
+   ],
+   "medida": "28.5 × 25.5 × 10.5 cm",
+   "ahorra_suaje": true,
+   "minimo": 300
+  },
+  {
+   "codigo": "TC-004",
+   "nombre": "Charola",
+   "tipo": "Troquelada corrugado sencillo",
+   "grupo": "tc",
+   "medida_cm": [
+    47.3,
+    35.2,
+    8.5
+   ],
+   "medida": "47.3 × 35.2 × 8.5 cm",
+   "ahorra_suaje": true,
+   "minimo": 300
+  },
+  {
+   "codigo": "TC-005",
+   "nombre": "Caja larga",
+   "tipo": "Troquelada corrugado sencillo",
+   "grupo": "tc",
+   "medida_cm": [
+    217.5,
+    9,
+    9
+   ],
+   "medida": "217.5 × 9 × 9 cm",
+   "ahorra_suaje": true,
+   "minimo": 300
+  },
+  {
+   "codigo": "TM-001",
+   "nombre": "Caja troquelada microcorrugado",
+   "tipo": "Troquelada microcorrugado",
+   "grupo": "tm",
+   "medida_cm": [
+    34,
+    22,
+    7.5
+   ],
+   "medida": "34 × 22 × 7.5 cm",
+   "ahorra_suaje": true,
+   "minimo": 300
+  },
+  {
+   "codigo": "TM-002",
+   "nombre": "Caja troquelada microcorrugado",
+   "tipo": "Troquelada microcorrugado",
+   "grupo": "tm",
+   "medida_cm": [
+    25.8,
+    14.5,
+    14.5
+   ],
+   "medida": "25.8 × 14.5 × 14.5 cm",
+   "ahorra_suaje": true,
+   "minimo": 300
+  },
+  {
+   "codigo": "TM-003",
+   "nombre": "Caja troquelada microcorrugado",
+   "tipo": "Troquelada microcorrugado",
+   "grupo": "tm",
+   "medida_cm": [
+    13.5,
+    12.8,
+    7.5
+   ],
+   "medida": "13.5 × 12.8 × 7.5 cm",
+   "ahorra_suaje": true,
+   "minimo": 300
+  },
+  {
+   "codigo": "TM-004",
+   "nombre": "Caja troquelada microcorrugado",
+   "tipo": "Troquelada microcorrugado",
+   "grupo": "tm",
+   "medida_cm": [
+    26,
+    8,
+    8
+   ],
+   "medida": "26 × 8 × 8 cm",
+   "ahorra_suaje": true,
+   "minimo": 300
+  },
+  {
+   "codigo": "TM-005",
+   "nombre": "Caja troquelada microcorrugado",
+   "tipo": "Troquelada microcorrugado",
+   "grupo": "tm",
+   "medida_cm": [
+    13,
+    8,
+    10
+   ],
+   "medida": "13 × 8 × 10 cm",
+   "ahorra_suaje": true,
+   "minimo": 300
+  },
+  {
+   "codigo": "TM-006",
+   "nombre": "Caja troquelada microcorrugado",
+   "tipo": "Troquelada microcorrugado",
+   "grupo": "tm",
+   "medida_cm": [
+    13,
+    8,
+    8.3
+   ],
+   "medida": "13 × 8 × 8.3 cm",
+   "ahorra_suaje": true,
+   "minimo": 300
+  },
+  {
+   "codigo": "TM-007",
+   "nombre": "Caja troquelada microcorrugado",
+   "tipo": "Troquelada microcorrugado",
+   "grupo": "tm",
+   "medida_cm": [
+    13,
+    8,
+    8
+   ],
+   "medida": "13 × 8 × 8 cm",
+   "ahorra_suaje": true,
+   "minimo": 300
+  },
+  {
+   "codigo": "TM-008",
+   "nombre": "Caja troquelada microcorrugado",
+   "tipo": "Troquelada microcorrugado",
+   "grupo": "tm",
+   "medida_cm": [
+    47,
+    33.5,
+    8
+   ],
+   "medida": "47 × 33.5 × 8 cm",
+   "ahorra_suaje": true,
+   "minimo": 300
+  },
+  {
+   "codigo": "TM-009",
+   "nombre": "Caja troquelada microcorrugado",
+   "tipo": "Troquelada microcorrugado",
+   "grupo": "tm",
+   "medida_cm": [
+    68,
+    48,
+    8
+   ],
+   "medida": "68 × 48 × 8 cm",
+   "ahorra_suaje": true,
+   "minimo": 300
+  },
+  {
+   "codigo": "TM-010",
+   "nombre": "Caja troquelada microcorrugado",
+   "tipo": "Troquelada microcorrugado",
+   "grupo": "tm",
+   "medida_cm": [
+    6.5,
+    6.5,
+    5
+   ],
+   "medida": "6.5 × 6.5 × 5 cm",
+   "ahorra_suaje": true,
+   "minimo": 300
+  },
+  {
+   "codigo": "TM-011",
+   "nombre": "Caja troquelada microcorrugado",
+   "tipo": "Troquelada microcorrugado",
+   "grupo": "tm",
+   "medida_cm": [
+    27.5,
+    10,
+    35
+   ],
+   "medida": "27.5 × 10 × 35 cm",
+   "ahorra_suaje": true,
+   "minimo": 300
+  },
+  {
+   "codigo": "TM-012",
+   "nombre": "Caja troquelada microcorrugado",
+   "tipo": "Troquelada microcorrugado",
+   "grupo": "tm",
+   "medida_cm": [
+    29,
+    22.2,
+    5.6
+   ],
+   "medida": "29 × 22.2 × 5.6 cm",
+   "ahorra_suaje": true,
+   "minimo": 300
+  },
+  {
+   "codigo": "TM-013",
+   "nombre": "Caja troquelada microcorrugado",
+   "tipo": "Troquelada microcorrugado",
+   "grupo": "tm",
+   "medida_cm": [
+    35.3,
+    12,
+    19
+   ],
+   "medida": "35.3 × 12 × 19 cm",
+   "ahorra_suaje": true,
+   "minimo": 300
+  },
+  {
+   "codigo": "TM-014",
+   "nombre": "Caja troquelada microcorrugado",
+   "tipo": "Troquelada microcorrugado",
+   "grupo": "tm",
+   "medida_cm": [
+    18,
+    11.2,
+    5
+   ],
+   "medida": "18 × 11.2 × 5 cm",
+   "ahorra_suaje": true,
+   "minimo": 300
+  },
+  {
+   "codigo": "TM-015",
+   "nombre": "Caja con funda deslizable",
+   "tipo": "Troquelada microcorrugado",
+   "grupo": "tm",
+   "medida_cm": [
+    39.5,
+    25.5,
+    7.5
+   ],
+   "medida": "39.5 × 25.5 × 7.5 cm",
+   "ahorra_suaje": true,
+   "minimo": 300
+  },
+  {
+   "codigo": "TM-016",
+   "nombre": "Caja con funda deslizable",
+   "tipo": "Troquelada microcorrugado",
+   "grupo": "tm",
+   "medida_cm": [
+    19.3,
+    19,
+    8.1
+   ],
+   "medida": "19.3 × 19 × 8.1 cm",
+   "ahorra_suaje": true,
+   "minimo": 300
+  },
+  {
+   "codigo": "TM-017",
+   "nombre": "Caja para huevo (18 piezas)",
+   "tipo": "Troquelada microcorrugado",
+   "grupo": "tm",
+   "medida_cm": [
+    29.8,
+    13.8,
+    6
+   ],
+   "medida": "29.8 × 13.8 × 6 cm",
+   "ahorra_suaje": true,
+   "minimo": 300
+  },
+  {
+   "codigo": "TM-018",
+   "nombre": "Caja para huevo (12 piezas)",
+   "tipo": "Troquelada microcorrugado",
+   "grupo": "tm",
+   "medida_cm": [
+    29.8,
+    10,
+    6.5
+   ],
+   "medida": "29.8 × 10 × 6.5 cm",
+   "ahorra_suaje": true,
+   "minimo": 300
+  },
+  {
+   "codigo": "PL-001",
+   "nombre": "Caja plegadiza",
+   "tipo": "Plegadiza caple/sulfatado",
+   "grupo": "pl",
+   "medida_cm": [
+    4.5,
+    4,
+    4
+   ],
+   "medida": "4.5 × 4 × 4 cm",
+   "ahorra_suaje": true,
+   "minimo": 1000
+  },
+  {
+   "codigo": "PL-002",
+   "nombre": "Caja plegadiza",
+   "tipo": "Plegadiza caple/sulfatado",
+   "grupo": "pl",
+   "medida_cm": [
+    5.9,
+    5,
+    2
+   ],
+   "medida": "5.9 × 5 × 2 cm",
+   "ahorra_suaje": true,
+   "minimo": 1000
+  },
+  {
+   "codigo": "PL-003",
+   "nombre": "Caja plegadiza",
+   "tipo": "Plegadiza caple/sulfatado",
+   "grupo": "pl",
+   "medida_cm": [
+    5.6,
+    4.5,
+    4
+   ],
+   "medida": "5.6 × 4.5 × 4 cm",
+   "ahorra_suaje": true,
+   "minimo": 1000
+  },
+  {
+   "codigo": "PL-004",
+   "nombre": "Caja plegadiza",
+   "tipo": "Plegadiza caple/sulfatado",
+   "grupo": "pl",
+   "medida_cm": [
+    6.8,
+    6.5,
+    5
+   ],
+   "medida": "6.8 × 6.5 × 5 cm",
+   "ahorra_suaje": true,
+   "minimo": 1000
+  },
+  {
+   "codigo": "PL-005",
+   "nombre": "Caja plegadiza",
+   "tipo": "Plegadiza caple/sulfatado",
+   "grupo": "pl",
+   "medida_cm": [
+    8.5,
+    7,
+    7.5
+   ],
+   "medida": "8.5 × 7 × 7.5 cm",
+   "ahorra_suaje": true,
+   "minimo": 1000
+  },
+  {
+   "codigo": "PL-006",
+   "nombre": "Caja plegadiza",
+   "tipo": "Plegadiza caple/sulfatado",
+   "grupo": "pl",
+   "medida_cm": [
+    7.4,
+    4.5,
+    3.9
+   ],
+   "medida": "7.4 × 4.5 × 3.9 cm",
+   "ahorra_suaje": true,
+   "minimo": 1000
+  },
+  {
+   "codigo": "PL-007",
+   "nombre": "Caja plegadiza",
+   "tipo": "Plegadiza caple/sulfatado",
+   "grupo": "pl",
+   "medida_cm": [
+    7,
+    6.7,
+    4
+   ],
+   "medida": "7 × 6.7 × 4 cm",
+   "ahorra_suaje": true,
+   "minimo": 1000
+  },
+  {
+   "codigo": "PL-008",
+   "nombre": "Caja plegadiza",
+   "tipo": "Plegadiza caple/sulfatado",
+   "grupo": "pl",
+   "medida_cm": [
+    20,
+    10.5,
+    9
+   ],
+   "medida": "20 × 10.5 × 9 cm",
+   "ahorra_suaje": true,
+   "minimo": 1000
+  },
+  {
+   "codigo": "PL-009",
+   "nombre": "Caja plegadiza",
+   "tipo": "Plegadiza caple/sulfatado",
+   "grupo": "pl",
+   "medida_cm": [
+    19,
+    10,
+    10
+   ],
+   "medida": "19 × 10 × 10 cm",
+   "ahorra_suaje": true,
+   "minimo": 1000
+  },
+  {
+   "codigo": "PL-010",
+   "nombre": "Caja plegadiza",
+   "tipo": "Plegadiza caple/sulfatado",
+   "grupo": "pl",
+   "medida_cm": [
+    9.5,
+    6,
+    2.3
+   ],
+   "medida": "9.5 × 6 × 2.3 cm",
+   "ahorra_suaje": true,
+   "minimo": 1000
+  },
+  {
+   "codigo": "PL-011",
+   "nombre": "Caja plegadiza",
+   "tipo": "Plegadiza caple/sulfatado",
+   "grupo": "pl",
+   "medida_cm": [
+    9,
+    5,
+    2
+   ],
+   "medida": "9 × 5 × 2 cm",
+   "ahorra_suaje": true,
+   "minimo": 1000
+  },
+  {
+   "codigo": "PL-012",
+   "nombre": "Caja plegadiza",
+   "tipo": "Plegadiza caple/sulfatado",
+   "grupo": "pl",
+   "medida_cm": [
+    16,
+    8.5,
+    8.5
+   ],
+   "medida": "16 × 8.5 × 8.5 cm",
+   "ahorra_suaje": true,
+   "minimo": 1000
+  },
+  {
+   "codigo": "PL-030",
+   "nombre": "Caja plegadiza",
+   "tipo": "Plegadiza caple/sulfatado",
+   "grupo": "pl",
+   "medida_cm": [
+    20,
+    11.5,
+    14
+   ],
+   "medida": "20 × 11.5 × 14 cm",
+   "ahorra_suaje": true,
+   "minimo": 1000
+  },
+  {
+   "codigo": "PL-013",
+   "nombre": "Caja plegadiza",
+   "tipo": "Plegadiza caple/sulfatado",
+   "grupo": "pl",
+   "medida_cm": [
+    5.5,
+    5.5,
+    11.5
+   ],
+   "medida": "5.5 × 5.5 × 11.5 cm",
+   "ahorra_suaje": true,
+   "minimo": 1000
+  },
+  {
+   "codigo": "PL-014",
+   "nombre": "Caja plegadiza",
+   "tipo": "Plegadiza caple/sulfatado",
+   "grupo": "pl",
+   "medida_cm": [
+    8,
+    8,
+    5.3
+   ],
+   "medida": "8 × 8 × 5.3 cm",
+   "ahorra_suaje": true,
+   "minimo": 1000
+  },
+  {
+   "codigo": "PL-015",
+   "nombre": "Caja plegadiza",
+   "tipo": "Plegadiza caple/sulfatado",
+   "grupo": "pl",
+   "medida_cm": [
+    3.5,
+    3.5,
+    11
+   ],
+   "medida": "3.5 × 3.5 × 11 cm",
+   "ahorra_suaje": true,
+   "minimo": 1000
+  },
+  {
+   "codigo": "PL-016",
+   "nombre": "Caja plegadiza",
+   "tipo": "Plegadiza caple/sulfatado",
+   "grupo": "pl",
+   "medida_cm": [
+    1.8,
+    1.8,
+    11
+   ],
+   "medida": "1.8 × 1.8 × 11 cm",
+   "ahorra_suaje": true,
+   "minimo": 1000
+  },
+  {
+   "codigo": "PL-017",
+   "nombre": "Caja plegadiza",
+   "tipo": "Plegadiza caple/sulfatado",
+   "grupo": "pl",
+   "medida_cm": [
+    4,
+    4,
+    15
+   ],
+   "medida": "4 × 4 × 15 cm",
+   "ahorra_suaje": true,
+   "minimo": 1000
+  },
+  {
+   "codigo": "PL-028",
+   "nombre": "Caja plegadiza",
+   "tipo": "Plegadiza caple/sulfatado",
+   "grupo": "pl",
+   "medida_cm": [
+    2.8,
+    2.8,
+    7
+   ],
+   "medida": "2.8 × 2.8 × 7 cm",
+   "ahorra_suaje": true,
+   "minimo": 1000
+  },
+  {
+   "codigo": "PL-018",
+   "nombre": "Caja plegadiza",
+   "tipo": "Plegadiza caple/sulfatado",
+   "grupo": "pl",
+   "medida_cm": [
+    13.5,
+    9.5,
+    3
+   ],
+   "medida": "13.5 × 9.5 × 3 cm",
+   "ahorra_suaje": true,
+   "minimo": 1000
+  },
+  {
+   "codigo": "PL-019",
+   "nombre": "Caja plegadiza",
+   "tipo": "Plegadiza caple/sulfatado",
+   "grupo": "pl",
+   "medida_cm": [
+    19.5,
+    13,
+    5
+   ],
+   "medida": "19.5 × 13 × 5 cm",
+   "ahorra_suaje": true,
+   "minimo": 1000
+  },
+  {
+   "codigo": "PL-020",
+   "nombre": "Caja plegadiza",
+   "tipo": "Plegadiza caple/sulfatado",
+   "grupo": "pl",
+   "medida_cm": [
+    3.8,
+    3.8,
+    11.6
+   ],
+   "medida": "3.8 × 3.8 × 11.6 cm",
+   "ahorra_suaje": true,
+   "minimo": 1000
+  },
+  {
+   "codigo": "PL-021",
+   "nombre": "Caja plegadiza",
+   "tipo": "Plegadiza caple/sulfatado",
+   "grupo": "pl",
+   "medida_cm": [
+    5.9,
+    5.9,
+    4.8
+   ],
+   "medida": "5.9 × 5.9 × 4.8 cm",
+   "ahorra_suaje": true,
+   "minimo": 1000
+  },
+  {
+   "codigo": "PL-022",
+   "nombre": "Caja plegadiza",
+   "tipo": "Plegadiza caple/sulfatado",
+   "grupo": "pl",
+   "medida_cm": [
+    5,
+    5,
+    14
+   ],
+   "medida": "5 × 5 × 14 cm",
+   "ahorra_suaje": true,
+   "minimo": 1000
+  },
+  {
+   "codigo": "PL-023",
+   "nombre": "Caja plegadiza",
+   "tipo": "Plegadiza caple/sulfatado",
+   "grupo": "pl",
+   "medida_cm": [
+    2.3,
+    2.3,
+    8.8
+   ],
+   "medida": "2.3 × 2.3 × 8.8 cm",
+   "ahorra_suaje": true,
+   "minimo": 1000
+  },
+  {
+   "codigo": "PL-024",
+   "nombre": "Caja plegadiza",
+   "tipo": "Plegadiza caple/sulfatado",
+   "grupo": "pl",
+   "medida_cm": [
+    5.1,
+    5.1,
+    20.1
+   ],
+   "medida": "5.1 × 5.1 × 20.1 cm",
+   "ahorra_suaje": true,
+   "minimo": 1000
+  },
+  {
+   "codigo": "PL-025",
+   "nombre": "Caja plegadiza",
+   "tipo": "Plegadiza caple/sulfatado",
+   "grupo": "pl",
+   "medida_cm": [
+    5.2,
+    5.1,
+    20.1
+   ],
+   "medida": "5.2 × 5.1 × 20.1 cm",
+   "ahorra_suaje": true,
+   "minimo": 1000
+  },
+  {
+   "codigo": "PL-026",
+   "nombre": "Caja plegadiza",
+   "tipo": "Plegadiza caple/sulfatado",
+   "grupo": "pl",
+   "medida_cm": [
+    5.8,
+    2.8,
+    7.8
+   ],
+   "medida": "5.8 × 2.8 × 7.8 cm",
+   "ahorra_suaje": true,
+   "minimo": 1000
+  },
+  {
+   "codigo": "PL-027",
+   "nombre": "Caja plegadiza",
+   "tipo": "Plegadiza caple/sulfatado",
+   "grupo": "pl",
+   "medida_cm": [
+    5.6,
+    4.5,
+    16.9
+   ],
+   "medida": "5.6 × 4.5 × 16.9 cm",
+   "ahorra_suaje": true,
+   "minimo": 1000
+  },
+  {
+   "codigo": "PL-029",
+   "nombre": "Caja plegadiza",
+   "tipo": "Plegadiza caple/sulfatado",
+   "grupo": "pl",
+   "medida_cm": [
+    9.7,
+    4.9,
+    20.1
+   ],
+   "medida": "9.7 × 4.9 × 20.1 cm",
+   "ahorra_suaje": true,
+   "minimo": 1000
+  }
+ ]
+}
