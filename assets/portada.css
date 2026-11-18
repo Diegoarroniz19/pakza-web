@@ -1,4 +1,4 @@
-﻿/* PAKZA · assets/portada.css · SOLO index.html (diseno_final.md). Se carga después de estilos.css.
+/* PAKZA · assets/portada.css · SOLO index.html (diseno_final.md). Se carga después de estilos.css.
    Todo cuelga de body.pz o de clases pz-: no toca catalogo.html ni las páginas internas. Director de Diseño, 06/11/2026. */
 .pz{--linea:#DDD7CD;--coral-osc:#C43D1F;--cinta:rgba(255,90,54,.38);--tinte:rgba(255,90,54,.10);--celda:#FAF9F7;overflow-x:clip}
 .pz-sr{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
@@ -285,7 +285,7 @@ html:not(.listo) .pz-cifra:has([data-m]:empty),html:not(.listo) p:has(>[data-m]:
   .pz-galeria{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:40px}
   .pz-tipos{display:contents}
   .pz-puntos{display:none}
-  .pz-medida__cta{grid-column:3;grid-row:2;display:flex;flex-direction:column;justify-content:center;margin:0;padding:28px}
+  .pz-medida__cta{grid-column:2/4;grid-row:2;display:flex;flex-direction:column;justify-content:center;margin:0;padding:28px} /* 18/11/2026: llena las 2 celdas de la 2.a fila, sin hueco */
   .pz-medida__cta .pz-largo{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 }
 @media (hover:hover){.pz-tipo:hover{transform:translateY(-3px);border-color:var(--coral)}.pz-tipo:hover .pz-tipo__foto img{transform:scale(1.04)}}
@@ -362,7 +362,7 @@ html:not(.listo) .pz-cifra:has([data-m]:empty),html:not(.listo) p:has(>[data-m]:
   .pz-heroe{position:relative;overflow:hidden;background:#E4E3E0}
   .pz-heroe__visual{position:absolute;inset:0;margin:0}
   .pz-heroe__foto,.pz-heroe__foto img{display:block;width:100%;height:100%}
-  .pz-heroe__foto img{aspect-ratio:auto;object-fit:cover;object-position:right center;border-radius:0}
+  .pz-heroe__foto img{aspect-ratio:auto;object-fit:cover;object-position:right bottom;border-radius:0}
   .pz-heroe__in{position:static;grid-template-columns:minmax(0,45%) 1fr}
   .pz-heroe__texto,.pz-cifras{position:relative;z-index:1}
   .pz-heroe__texto{grid-column:1}
